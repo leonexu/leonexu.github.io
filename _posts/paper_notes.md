@@ -1,13 +1,14 @@
 ---
 layout:     post
-title:      paper note
-subtitle:   
-date:       2020-03-16
-author:     leonexu
-header-img: img/post-bg-cook.jpg
-catalog: true
+title:      定时器 你真的会使用吗？
+subtitle:   iOS定时器详解
+date:       2016-12-13
+author:     BY
+header-img: img/post-bg-ios9-web.jpg
+catalog: 	 true
 tags:
     - iOS
+    - 定时器
 ---
 
 # Conferences:
