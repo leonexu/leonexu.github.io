@@ -1,1 +1,0 @@
-/mnt/d/Dropbox/base/shared-among-computers/know_how/usually_used_commands.md

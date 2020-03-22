@@ -27,6 +27,14 @@ categories: scientists
 
 # models, algorithms
 
+## Differentiable programming 
+
+### 19, DIFFERENTIABLE COMPUTER GRAPHICS FOR TRAINING AND VERIFICATION OF MACHINE PERCEPTION
+
+### 19, Differentiable Monte Carlo Ray Tracing through Edge Sampling
+
+
+
 ## ODENet
 
 ### 18, Deep Neural Networks Motivated By Differential Equations
