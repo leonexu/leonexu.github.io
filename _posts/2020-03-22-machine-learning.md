@@ -3,7 +3,7 @@
 title: machine learning
 description: 
 categories: scientists
----
+---定时器 你真的会使用吗？
 ```
 
 
@@ -16,21 +16,21 @@ categories: scientists
 
 We do matrix multiplications: AB = C. When a small change in A causes a big (small) change in C, we call the multiplication ill-conditioned (well conditioned). 
 
-![image-20200315160015210](D:\Dropbox\job\codes\blog\source\image-20200315160015210.png)
+![image-20200315160015210](image-20200315160015210.png)
 
 The following is an example of ill conditioned MM.
 
-![image-20200315160113179](D:\Dropbox\job\codes\blog\source\image-20200315160113179.png)
+![image-20200315160113179](image-20200315160113179.png)
 
 
 
 We can use **condition number** of A, defined as $|A|_{\infin}|A^{-1}|_{\infin}$, to more quantitively describe the illness of a A. 
 
-![image-20200315160302216](D:\Dropbox\job\codes\blog\source\image-20200315160302216.png)
+![image-20200315160302216](image-20200315160302216.png)
 
 
 
-![image-20200315160528200](D:\Dropbox\job\codes\blog\source\image-20200315160528200.png)
+![image-20200315160528200](image-20200315160528200.png)
 
 
 
@@ -44,31 +44,31 @@ We can use **condition number** of A, defined as $|A|_{\infin}|A^{-1}|_{\infin}$
 
 每个函数可以表示为傅里叶序列，即一系列不同频率的sin，cos函数的和。
 
-![image-20200303013102285](D:\Dropbox\job\codes\blog\source\image-20200303013102285.png)
+![image-20200303013102285](image-20200303013102285.png)
 
 k表示频率，$a_k$和$b_k$表示系数。
 
 我们用傅里叶变换求$a_k$和$b_k$。Ft频率的系数可以如下计算$X(F)$。$X(F)$是一个复数，其实轴和虚轴分别对应$a_k$和$b_k$。
 
-![image-20200303013237646](D:\Dropbox\job\codes\blog\source\image-20200303013237646.png)
+![image-20200303013237646](image-20200303013237646.png)
 
 现实世界，我们经常是采样一些离散的$x(t)$，希望还原系数。如下，可以分别计算出第k个频率的$X_k$，再转换为$a_k$和$b_k$。N是采样数。
 
-![image-20200303014253530](D:\Dropbox\job\codes\blog\source\image-20200303014253530.png)
+![image-20200303014253530](image-20200303014253530.png)
 
 可以使用欧拉公式，把e项转换为正余弦函数，方便计算。
 
-![image-20200303014536663](D:\Dropbox\job\codes\blog\source\image-20200303014536663.png)
+![image-20200303014536663](image-20200303014536663.png)
 
 
 
 比如假设我们对一个正弦函数获得8个采样点。
 
-![image-20200303014918000](D:\Dropbox\job\codes\blog\source\image-20200303014918000.png)
+![image-20200303014918000](image-20200303014918000.png)
 
 那么，$X_2$这样算。
 
-![image-20200303014844453](D:\Dropbox\job\codes\blog\source\image-20200303014844453.png)
+![image-20200303014844453](image-20200303014844453.png)
 
 
 
@@ -76,7 +76,7 @@ k表示频率，$a_k$和$b_k$表示系数。
 
 把$X_k$转换为$a_k$和$b_k$。
 
-![image-20200303014710231](D:\Dropbox\job\codes\blog\source\image-20200303014710231.png)
+![image-20200303014710231](image-20200303014710231.png)
 
 
 
@@ -88,21 +88,21 @@ k表示频率，$a_k$和$b_k$表示系数。
 
 DFT可以写成矩阵形式
 
-![image-20200303020326957](D:\Dropbox\job\codes\blog\source\image-20200303020326957.png)
+![image-20200303020326957](image-20200303020326957.png)
 
 直接算WX的开销是$N^2$。我们可以把W分解为logN简单的矩阵，每个矩阵是稀疏的，只要求O(N)的计算量。这样，可以把开销降为$NlogN$。
 
 比如，对于四个采样点$x[i]$，$W$可以分解为$P$，$B_1$，$B_2$，从而$X=B_2B_1Px$。
 
-![image-20200303021030142](D:\Dropbox\job\codes\blog\source\image-20200303021030142.png)
+![image-20200303021030142](image-20200303021030142.png)
 
 $P$，$B_1$，$B_2$的形式如下
 
-![image-20200303021341929](D:\Dropbox\job\codes\blog\source\image-20200303021341929.png)
+![image-20200303021341929](image-20200303021341929.png)
 
 一般的
 
-![image-20200303021425179](D:\Dropbox\job\codes\blog\source\image-20200303021425179.png)
+![image-20200303021425179](image-20200303021425179.png)
 
 
 
@@ -110,7 +110,7 @@ $P$，$B_1$，$B_2$的形式如下
 
 [浅谈张量分解（二）：张量分解的数学基础，https://zhuanlan.zhihu.com/p/24824550]
 
-![image-20200304012216962](D:\Dropbox\job\codes\blog\source\image-20200304012216962.png)
+![image-20200304012216962](image-20200304012216962.png)
 
 
 
@@ -149,13 +149,13 @@ $P$，$B_1$，$B_2$的形式如下
 
 早期的思想，效果不好
 
-![image-20200205205419630](D:\Dropbox\job\codes\blog\source\image-20200205205419630.png)
+![image-20200205205419630](image-20200205205419630.png)
 
 
 
 降低对光滑性要求
 
-![image-20200205205517446](D:\Dropbox\job\codes\blog\source\image-20200205205517446.png)
+![image-20200205205517446](image-20200205205517446.png)
 
 但是把边界条件写成正则项破坏了变分的性质，使得难以求解。
 
@@ -163,13 +163,13 @@ $P$，$B_1$，$B_2$的形式如下
 
 解决边界条件的一个思想
 
-![image-20200205205906917](D:\Dropbox\job\codes\blog\source\image-20200205205906917.png)
+![image-20200205205906917](image-20200205205906917.png)
 
 
 
 加速训练。最后一层重要，先把最后一层的参数估计出来。
 
-![image-20200205210949919](D:\Dropbox\job\codes\blog\source\image-20200205210949919.png)
+![image-20200205210949919](image-20200205210949919.png)
 
 
 
@@ -177,17 +177,17 @@ $P$，$B_1$，$B_2$的形式如下
 
 把要求解的区域分块，分别用不同的NN求解。
 
-![image-20200205211337356](D:\Dropbox\job\codes\blog\source\image-20200205211337356.png)
+![image-20200205211337356](image-20200205211337356.png)
 
 同时大幅度提高了精度和速度。
 
-![image-20200205211551818](D:\Dropbox\job\codes\blog\source\image-20200205211551818.png)
+![image-20200205211551818](image-20200205211551818.png)
 
 
 
 动态调节误差函数，根据误差调整网格大小或阶数，调整的幅度也通过NN学习。效果很好。
 
-![image-20200205211816573](D:\Dropbox\job\codes\blog\source\image-20200205211816573.png)
+![image-20200205211816573](image-20200205211816573.png)
 
 
 
@@ -219,19 +219,19 @@ $P$，$B_1$，$B_2$的形式如下
 
 如果连续的朝着一个方向走，增加这个方向的步长。在梯度变化小的方向加速。
 
-![image-20200222161736644](D:\Dropbox\job\codes\blog\source\image-20200222161736644.png)
+![image-20200222161736644](image-20200222161736644.png)
 
-![image-20200222161942939](D:\Dropbox\job\codes\blog\source\image-20200222161942939.png)
+![image-20200222161942939](image-20200222161942939.png)
 
 #### AdaGrad
 
 计算梯度
 
-![image-20200222161436333](D:\Dropbox\job\codes\blog\source\image-20200222161436333.png)
+![image-20200222161436333](image-20200222161436333.png)
 
 对每个不同的参数调整不同的学习率。频繁变化的参数以更小的步长进行更新，而稀疏的参数以更大的步长进行更新。
 
-![image-20200222161430785](D:\Dropbox\job\codes\blog\source\image-20200222161430785.png)
+![image-20200222161430785](image-20200222161430785.png)
 
 缺点：主要缺陷来自分母项的对梯度平方不断累积，随之时间步地增加，分母项越来越大，最终导致学习率收缩到太小无法进行有效更新。
 
@@ -246,13 +246,13 @@ $P$，$B_1$，$B_2$的形式如下
 
 结合梯度平方的指数移动平均数来调节学习率的变化。
 
-![image-20200222155525511](D:\Dropbox\job\codes\blog\source\image-20200222155525511.png)
+![image-20200222155525511](image-20200222155525511.png)
 
 计算梯度平方的加权平均。只看最近一段时间g的变化，而不是迄今为止所有的g，避免Ada里v无限增大的问题：
 
-![image-20200222155544676](D:\Dropbox\job\codes\blog\source\image-20200222155544676.png)
+![image-20200222155544676](image-20200222155544676.png)
 
-![image-20200222155558551](D:\Dropbox\job\codes\blog\source\image-20200222155558551.png)
+![image-20200222155558551](image-20200222155558551.png)
 
 克服了AdaGrad梯度急剧减小的问题。
 
@@ -264,19 +264,19 @@ $P$，$B_1$，$B_2$的形式如下
 
 动量
 
-![image-20200222162017722](D:\Dropbox\job\codes\blog\source\image-20200222162017722.png)
+![image-20200222162017722](image-20200222162017722.png)
 
 RMSProp
 
-![image-20200222162044453](D:\Dropbox\job\codes\blog\source\image-20200222162044453.png)
+![image-20200222162044453](image-20200222162044453.png)
 
 一点矫正
 
-![image-20200222162152369](D:\Dropbox\job\codes\blog\source\image-20200222162152369.png)
+![image-20200222162152369](image-20200222162152369.png)
 
 更新
 
-![image-20200222162205021](D:\Dropbox\job\codes\blog\source\image-20200222162205021.png)
+![image-20200222162205021](image-20200222162205021.png)
 
 #### LARS
 
@@ -300,9 +300,9 @@ RMSProp
 
 #### 牛顿法
 
-![image-20200228001800117](D:\Dropbox\job\codes\blog\source\image-20200228001800117.png)
+![image-20200228001800117](image-20200228001800117.png)
 
-![image-20200228001823980](D:\Dropbox\job\codes\blog\source\image-20200228001823980.png)
+![image-20200228001823980](image-20200228001823980.png)
 
 
 
@@ -327,17 +327,17 @@ RMSProp
 
 
 
-![image-20200201134941307](D:\Dropbox\job\codes\blog\source\image-20200201134941307.png)
+![image-20200201134941307](image-20200201134941307.png)
 
 [Global and derivative-free optimization, Lectures 1-2, Coralia Cartis, University of Oxford INFOMM CDT: Contemporary Numerical Techniques]
 
 
 
-![image-20200201124250207](D:\Dropbox\job\codes\blog\source\image-20200201124250207.png)
+![image-20200201124250207](image-20200201124250207.png)
 
 
 
-![image-20200201124501509](D:\Dropbox\job\codes\blog\source\image-20200201124501509.png)
+![image-20200201124501509](image-20200201124501509.png)
 
 
 
@@ -347,7 +347,7 @@ RMSProp
 
 #### 时间发展顺序
 
-![image-20200201111518267](D:\Dropbox\job\codes\blog\source\image-20200201111518267.png)
+![image-20200201111518267](image-20200201111518267.png)
 
 [Derivative-free optimization: A review of algorithms and comparison of software implementations]
 
@@ -365,31 +365,31 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 1. 对解排序，计算中心点，
 
-   ![image-20200201131542436](D:\Dropbox\job\codes\blog\source\image-20200201131542436.png)
+   ![image-20200201131542436](image-20200201131542436.png)
 
 2. 根据现有解的值，基于三种变换生成新解。
 
    **Reflection**
 
-![image-20200201131609004](D:\Dropbox\job\codes\blog\source\image-20200201131609004.png)
+![image-20200201131609004](image-20200201131609004.png)
 
-![image-20200201131557812](D:\Dropbox\job\codes\blog\source\image-20200201131557812.png)
+![image-20200201131557812](image-20200201131557812.png)
 
 
 
 ​		**expansion**
 
-![image-20200201131704832](D:\Dropbox\job\codes\blog\source\image-20200201131704832.png)
+![image-20200201131704832](image-20200201131704832.png)
 
-![image-20200201131716250](D:\Dropbox\job\codes\blog\source\image-20200201131716250.png)
+![image-20200201131716250](image-20200201131716250.png)
 
 ​	**Contraction**
 
-![image-20200201131815025](D:\Dropbox\job\codes\blog\source\image-20200201131815025.png)
+![image-20200201131815025](image-20200201131815025.png)
 
 
 
-![image-20200201131827376](D:\Dropbox\job\codes\blog\source\image-20200201131827376.png)
+![image-20200201131827376](image-20200201131827376.png)
 
 
 
@@ -399,9 +399,9 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 
 
-![image-20200201131901958](D:\Dropbox\job\codes\blog\source\image-20200201131901958.png)
+![image-20200201131901958](image-20200201131901958.png)
 
-![image-20200201131917245](D:\Dropbox\job\codes\blog\source\image-20200201131917245.png)
+![image-20200201131917245](image-20200201131917245.png)
 
 
 
@@ -409,7 +409,7 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 
 
-![image-20200201132432569](D:\Dropbox\job\codes\blog\source\image-20200201132432569.png)
+![image-20200201132432569](image-20200201132432569.png)
 
 
 
@@ -419,7 +419,7 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 每一步，生成一组接。每个解是从一组方向里选一个，走一步而生成。评估部分或全部新解。选一个更好的解作为当前解。如果没有更好的解，降低步长。
 
-![image-20200202025919158](D:\Dropbox\job\codes\blog\source\image-20200202025919158.png)
+![image-20200202025919158](image-20200202025919158.png)
 
 
 
@@ -427,7 +427,7 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 交替的以两种方式搜索。在每个坐标轴方向搜索。模式搜索，沿着前一个解和当前解的连线方向搜索。每一迭代，如果能找到更好的解则加大步长，否则减小步长。
 
-<img src="D:\Dropbox\job\codes\blog\source\image-20200202101137780.png" alt="image-20200202101137780" style="zoom:50%;" />
+<img src="image-20200202101137780.png" alt="image-20200202101137780" style="zoom:50%;" />
 
 [https://blog.csdn.net/uestcmarvin/article/details/78731417]
 
@@ -439,9 +439,9 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 每个迭代生成一个新解，基于当前解的质量，新解的质量，温度决定是否接受新解。
 
-![image-20200202120735846](D:\Dropbox\job\codes\blog\source\image-20200202120735846.png)
+![image-20200202120735846](image-20200202120735846.png)
 
-![image-20200202120803283](D:\Dropbox\job\codes\blog\source\image-20200202120803283.png)
+![image-20200202120803283](image-20200202120803283.png)
 
 
 
@@ -451,11 +451,11 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 每个迭代尝试search和poll两种搜索方式。search是在mesh中一些固定的点搜索。poll是搜索一些新生成的点。每个点通过在一些方向上移动一个不长生成。如果search和poll没有找到更好的解，减小步长，否则增加步长。
 
-![image-20200202104834438](D:\Dropbox\job\codes\blog\source\image-20200202104834438.png)
+![image-20200202104834438](image-20200202104834438.png)
 
 
 
-![image-20200202104915113](D:\Dropbox\job\codes\blog\source\image-20200202104915113.png)
+![image-20200202104915113](image-20200202104915113.png)
 
 [The mesh adaptive direct search algorithm for granular and discrete variables, S´ebastien Le Digabel, The Optimization Days 2018, 2018–05–08, https://www.gerad.ca/Sebastien.Le.Digabel/talks/2018_JOPT_25mins.pdf]
 
@@ -471,7 +471,7 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 
 
-![image-20200202121353072](D:\Dropbox\job\codes\blog\source\image-20200202121353072.png)
+![image-20200202121353072](image-20200202121353072.png)
 
 
 
@@ -483,9 +483,9 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 2. 根据每个解自己的质量和其他解的质量更新这个解。
 
-算一个更新方向![image-20200201141205997](D:\Dropbox\job\codes\blog\source\image-20200201141205997.png)
+算一个更新方向![image-20200201141205997](image-20200201141205997.png)
 
-更新：![image-20200201141131319](D:\Dropbox\job\codes\blog\source\image-20200201141131319.png)
+更新：![image-20200201141131319](image-20200201141131319.png)
 
 2. 回到1，直到找到符合质量的解或达到预定迭代次数
 
@@ -493,7 +493,7 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 评估：
 
-![image-20200201141506697](D:\Dropbox\job\codes\blog\source\image-20200201141506697.png)
+![image-20200201141506697](image-20200201141506697.png)
 
 
 
@@ -519,15 +519,15 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 
 
-<img src="D:\Dropbox\job\codes\blog\source\image-20200202111251795.png" alt="image-20200202111251795" style="zoom:67%;" />
+<img src="image-20200202111251795.png" alt="image-20200202111251795" style="zoom:67%;" />
 
-<img src="D:\Dropbox\job\codes\blog\source\image-20200202111312120.png" alt="image-20200202111312120" style="zoom:67%;" />
+<img src="image-20200202111312120.png" alt="image-20200202111312120" style="zoom:67%;" />
 
 
 
 参数
 
-<img src="D:\Dropbox\job\codes\blog\source\image-20200202111203790.png" alt="image-20200202111203790" style="zoom:67%;" />
+<img src="image-20200202111203790.png" alt="image-20200202111203790" style="zoom:67%;" />
 
 
 
@@ -537,7 +537,7 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 基于差分近似梯度。
 
-![image-20200202023332073](D:\Dropbox\job\codes\blog\source\image-20200202023332073.png)
+![image-20200202023332073](image-20200202023332073.png)
 
 
 
@@ -545,7 +545,7 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 估计一个方向，走一步，调整方向，重复以上过程。
 
-![image-20200202124344635](D:\Dropbox\job\codes\blog\source\image-20200202124344635.png)
+![image-20200202124344635](image-20200202124344635.png)
 
 
 
@@ -557,7 +557,7 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 如何调整范围？有一个surrogate model。cost model估计走一步后解的改进量为v0，实际改进量是v1。以减小v0与v1的差距为目标调整cost model，进而调整范围。
 
-![image-20200202122619459](D:\Dropbox\job\codes\blog\source\image-20200202122619459.png)
+![image-20200202122619459](image-20200202122619459.png)
 
 ###### Cross-Entropy Method (1997)
 
@@ -567,7 +567,7 @@ https://codesachin.wordpress.com/2016/01/16/nelder-mead-optimization/
 
 用高斯函数作为surrogate model。
 
-<img src="D:\Dropbox\job\codes\blog\source\image-20200201142408120.png" alt="image-20200201142408120" style="zoom:67%;" />
+<img src="image-20200201142408120.png" alt="image-20200201142408120" style="zoom:67%;" />
 
 
 
@@ -585,7 +585,7 @@ NAS，automl
 
 强化学习，演化算法
 
-![image-20200201110107351](D:\Dropbox\job\codes\blog\source\image-20200201110107351.png)
+![image-20200201110107351](image-20200201110107351.png)
 
 [https://planspace.org/20170830-berkeley_deep_rl_bootcamp/]
 
@@ -615,7 +615,7 @@ facebook nevergrad
 
 南大zoopt
 
-![image-20200201111655431](D:\Dropbox\job\codes\blog\source\image-20200201111655431.png)
+![image-20200201111655431](image-20200201111655431.png)
 
 
 
@@ -635,27 +635,27 @@ LSTM部分成都解决了问题，但还是不行。
 
 比如，一个编码解码器，需要对输入编码，生成输出。
 
-![image-20200228010907109](D:\Dropbox\job\codes\blog\source\image-20200228010907109.png)
+![image-20200228010907109](image-20200228010907109.png)
 
-![image-20200228010632669](D:\Dropbox\job\codes\blog\source\image-20200228010632669.png)
+![image-20200228010632669](image-20200228010632669.png)
 
 
 
 先对没对输入和输出元素编码
 
-![image-20200228010708827](D:\Dropbox\job\codes\blog\source\image-20200228010708827.png)
+![image-20200228010708827](image-20200228010708827.png)
 
 计算元素对间的相关性，即注意力
 
-![image-20200228010723686](D:\Dropbox\job\codes\blog\source\image-20200228010723686.png)
+![image-20200228010723686](image-20200228010723686.png)
 
 基于注意力对整个输入字符串编码
 
-![image-20200228010827285](D:\Dropbox\job\codes\blog\source\image-20200228010827285.png)
+![image-20200228010827285](image-20200228010827285.png)
 
 解码
 
-![image-20200228010838513](D:\Dropbox\job\codes\blog\source\image-20200228010838513.png)
+![image-20200228010838513](image-20200228010838513.png)
 
 ### 自注意力机制
 
@@ -663,11 +663,11 @@ LSTM部分成都解决了问题，但还是不行。
 
 不是算输入和输出元素之间的注意力，而是算输入元素之间的注意力，对输入元素序列编码。
 
-![image-20200228011648067](D:\Dropbox\job\codes\blog\source\image-20200228011648067.png)
+![image-20200228011648067](image-20200228011648067.png)
 
 
 
-![image-20200228014826615](D:\Dropbox\job\codes\blog\source\image-20200228014826615.png)
+![image-20200228014826615](image-20200228014826615.png)
 
 
 
@@ -733,26 +733,26 @@ http://blog.sina.cn/dpool/blog/s/blog_78fd98af0100xk7k.html
 
 我们都知道 GD（Gradient Descent） 的本质就是希望逐步逼近最优，其迭代公式为
 
-![\theta^i=\theta^{i-1}-\eta\nabla C(D:\Dropbox\job\codes\blog\source\clip_image002.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif)
+![\theta^i=\theta^{i-1}-\eta\nabla C(clip_image002.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif)
 
 
 我们最常用的 GD，是使用所有的训练样本来求梯度，即
 
-![\nabla C(D:\Dropbox\job\codes\blog\source\clip_image004.gif)=\frac 1R\sum_r\nabla C^r(\theta^{i-1})](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image004.gif)
+![\nabla C(clip_image004.gif)=\frac 1R\sum_r\nabla C^r(\theta^{i-1})](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image004.gif)
 
 
 利用所有的训练样本来求梯度，好处是梯度下降的方向会稳定地朝着极值方向并收敛，不容易受噪声影响；但是问题也比较明显，一个是考虑了所有的数据所有收敛慢，同时容易陷入局部最优。随着数据量的增大，更大的问题就是每更新一次参数，计算量太大；同时，由于考虑了所有数据，收敛就慢。
 
 因此 SGD（Stochastic Gradient Descent） 就应运而生：每次 Iteration 计算梯度并更新参数时只考虑一个样本，对每一个样本执行完这个过程称为一次 Epoch。即
 
-![\theta^i=\theta^{i-1}-\eta\nabla C^r(D:\Dropbox\job\codes\blog\source\clip_image006.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image006.gif)
+![\theta^i=\theta^{i-1}-\eta\nabla C^r(clip_image006.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image006.gif)
 
 
 SGD 的好处就是加快了收敛的速度。问题就是由于根据一个样本求的梯度，方向并不一定指向极值方向；甚至可能出现每一次 Iteration 求出的梯度方向差异巨大，最终无法收敛。
 
-因此 Mini-batch GD（Stochastic Gradient Descent） 又应运而生：每次 Iteration 计算梯度并更新参数时考虑 Batch_Size 个样本（称为一个 Batch），对所有样本执行完这个过程称为一次 Epoch。其公式如下，![b](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image008.gif)表示本次选择的 Batch，![B](D:\Dropbox\job\codes\blog\source\clip_image010.gif)表示 Batch_Size
+因此 Mini-batch GD（Stochastic Gradient Descent） 又应运而生：每次 Iteration 计算梯度并更新参数时考虑 Batch_Size 个样本（称为一个 Batch），对所有样本执行完这个过程称为一次 Epoch。其公式如下，![b](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image008.gif)表示本次选择的 Batch，![B](clip_image010.gif)表示 Batch_Size
 
-![\nabla C(D:\Dropbox\job\codes\blog\source\clip_image012.gif)=\frac 1B\sum_{x^r\in b}\nabla C^r(\theta^{i-1})](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image012.gif)
+![\nabla C(clip_image012.gif)=\frac 1B\sum_{x^r\in b}\nabla C^r(\theta^{i-1})](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image012.gif)
 
 ## 隐马尔科夫模型
 
@@ -790,7 +790,7 @@ SGD 的好处就是加快了收敛的速度。问题就是由于根据一个样�
 
  
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image014-1580182413033.jpg)
+![img](clip_image014-1580182413033.jpg)
 
 ### svm与lr异同
 
@@ -858,7 +858,7 @@ SGD 的好处就是加快了收敛的速度。问题就是由于根据一个样�
 
 **定义**
 
-由数据学习联合概率分布P(X,Y), 然后由P(Y|X)=[![clip_image002](D:\Dropbox\job\codes\blog\source\clip_image025.gif)](http://images.cnitblog.com/blog/408927/201310/20163233-81e4d6d415084e7ea32d81a3843fa77e.gif)求出概率分布P(Y|X)。该方法表示了给定输入X产生输出Y的生成关系。
+由数据学习联合概率分布P(X,Y), 然后由P(Y|X)=[![clip_image002](clip_image025.gif)](http://images.cnitblog.com/blog/408927/201310/20163233-81e4d6d415084e7ea32d81a3843fa77e.gif)求出概率分布P(Y|X)。该方法表示了给定输入X产生输出Y的生成关系。
 
 **典型模型**
 
@@ -1080,11 +1080,11 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
 ​      线性回归就是假设这个方式是一个线性方程，即假设这个方程是一个多元一次方程。以咱们上面提到的例子为例：假设房子的房屋面积和卧室数量为自变量x，用x1表示房屋面积，x2表示卧室数量；房屋的交易价格为因变量y，我们用h(x)来表示y。假设房屋面积、卧室数量与房屋的交易价格是线性关系。他们满足公式
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image027.jpg)
+  ![img](clip_image027.jpg)
 
 ​      上述公式中的θ为参数，也称为权重，可以理解为x1和x2对h(x)的影响度。对这个公式稍作变化就是
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image029.jpg)
+  ![img](clip_image029.jpg)
 
 ​      公式中θ和x是向量，n是样本数。
 
@@ -1098,7 +1098,7 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
 ​      我们要做的是依据我们的训练集，选取最优的θ，在我们的训练集中让h(x)尽可能接近真实的值。h(x)和真实的值之间的差距，我们定义了一个函数来描述这个差距，这个函数称为损失函数，表达式如下：
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image031.jpg)
+![img](clip_image031.jpg)
 
 ​      这里的这个损失函数就是著名的**最小二乘****损失函数**，这里还涉及一个概念叫**最小二乘法**，这里不再展开了。
 
@@ -1114,15 +1114,15 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
 ​      首先我们给θ一个初试值，然后向着让J(θ)变化最大的方向更新θ的取值，如此迭代。公式如下：
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image033.jpg)
+  ![img](clip_image033.jpg)
 
 ​      公式中α称为步长（learning rate），它控制θ每次向J(θ)变小的方向迭代时的变化幅度。J(θ)对θ的偏导表示J(θ)变化最大的方向。由于求的是极小值，因此梯度方向是偏导数的反方向。求解一下这个偏导，过程如下：
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image035.jpg)
+  ![img](clip_image035.jpg)
 
 ​      那么θ的迭代公式就变为：
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image037.jpg)
+  ![img](clip_image037.jpg)
 
 ​      这是当训练集只有一个样本时的数学表达。我们又**两种方式**将只有一个样本的数学表达转化为样本为多个的情况：**梯度下降（****gradient descent****）**和**正****则方程（****The normal equations****）**。这里我们重点讲梯度下降。
 
@@ -1138,7 +1138,7 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
 ​      转化为处理多个样本就是如下表达：
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image039.jpg)
+  ![img](clip_image039.jpg)
 
 ​      这种新的表达式每一步都是计算的全部训练集的数据，所以称之为**批梯度下降（****batch gradient descent****）**。
 
@@ -1146,7 +1146,7 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
 ​      批梯度下降的算法执行过程如下图：
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image041.jpg)
+  ![img](clip_image041.jpg)
 
  
 
@@ -1160,15 +1160,15 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
 ​      随机梯度下降表达式如下：
 
-  ![Title: clip_image001 - Description: clip_image001](D:\Dropbox\job\codes\blog\source\clip_image043.gif)
+  ![Title: clip_image001 - Description: clip_image001](clip_image043.gif)
 
 ​      执行过程如下图：
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image045.jpg)
+  ![img](clip_image045.jpg)
 
 ​      批梯度下降和随机梯度下降在三维图上对比如下：
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image047.jpg)
+  ![img](clip_image047.jpg)
 
  
 
@@ -1178,7 +1178,7 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
  如果一个分布可以用如下公式表达，那么这个分布就属于指数分布族：
 
- ![img](D:\Dropbox\job\codes\blog\source\clip_image049.jpg)
+ ![img](clip_image049.jpg)
 
   公式中y是随机变量；h(x)称为基础度量值（base measure）；
 
@@ -1188,7 +1188,7 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
   a(η)称为对数分割函数（log partition function）；
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image050.gif)本质上是一个归一化常数，确保![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image051.gif)概率和为1。
+  ![img](clip_image050.gif)本质上是一个归一化常数，确保![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image051.gif)概率和为1。
 
   当T(y)被固定时，a(η)、b(y)就定义了一个以η为参数的一个指数分布。我们变化η就得到这个分布的不同分布。
 
@@ -1196,13 +1196,13 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
   伯努利分布属于指数分布族。伯努利分布均值为φ，写为Bernoulli(φ)，是一个二值分布，y ∈ {0, 1}。所以p(y = 1; φ) = φ; p(y = 0; φ) = 1 − φ。当我们变化φ就得到了不同均值的伯努利分布。伯努利分布表达式转化为指数分布族表达式过程如下：
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image053.jpg)
+  ![img](clip_image053.jpg)
 
   其中，
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image054.gif)
+![img](clip_image054.gif)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image056.jpg)
+![img](clip_image056.jpg)
 
  
 
@@ -1210,11 +1210,11 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
    在分类和回归问题中，我们通过构建一个关于x的模型来预测y。这种问题可以利用**广****义线性模型（****Generalized linear models****，****GMLs****）**来解决。构建广义线性模型我们基于三个假设，也可以理解为我们基于三个设计决策，这三个决策帮助我们构建广义线性模型：
 
-\1.  ![img](D:\Dropbox\job\codes\blog\source\clip_image057.gif),假设![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image058.gif)满足一个以为参数的指数分布。例如，给定了输入x和参数θ，那么可以构建y关于η的表达式。
+\1.  ![img](clip_image057.gif),假设![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image058.gif)满足一个以为参数的指数分布。例如，给定了输入x和参数θ，那么可以构建y关于η的表达式。
 
-\2.  给定x，我们的目标是要确定T(y)，即![img](D:\Dropbox\job\codes\blog\source\clip_image059.gif)。大多数情况下T(y)=y，那么我们实际上要确定的是![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image060.gif)。即给定x，假设我们的目标函数是![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image060.gif)。（在逻辑回归中期望值是，因此目标函数h是φ；在线性回归中期望值是μ，而高斯分布中![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image061.gif)，因此线性回归中目标函数![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image062.gif)）。
+\2.  给定x，我们的目标是要确定T(y)，即![img](clip_image059.gif)。大多数情况下T(y)=y，那么我们实际上要确定的是![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image060.gif)。即给定x，假设我们的目标函数是![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image060.gif)。（在逻辑回归中期望值是，因此目标函数h是φ；在线性回归中期望值是μ，而高斯分布中![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image061.gif)，因此线性回归中目标函数![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image062.gif)）。
 
-\3.  假设自然参数η和x是线性相关，即假设：![img](D:\Dropbox\job\codes\blog\source\clip_image063.gif)
+\3.  假设自然参数η和x是线性相关，即假设：![img](clip_image063.gif)
 
  
 
@@ -1230,15 +1230,15 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
 \1.  最小二乘法得到的目标变量y是一个连续值，我们假设给定x下y的分布符合高斯分布。假设1中的ExponentialFamily(η)就是高斯分布。
 
-\2.  在高斯分布中![img](D:\Dropbox\job\codes\blog\source\clip_image061.gif)，目标函数![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image062.gif)
+\2.  在高斯分布中![img](clip_image061.gif)，目标函数![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image062.gif)
 
 \3.  假设：![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image063.gif)
 
    推导过程如下：
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image065.jpg)
+![img](clip_image065.jpg)
 
-   第一步变换根据假设2：![img](D:\Dropbox\job\codes\blog\source\clip_image060.gif)
+   第一步变换根据假设2：![img](clip_image060.gif)
 
    第二步变换根据y|x; θ ∼ N(μ, σ2)，高斯分布的期望值是μ
 
@@ -1256,15 +1256,15 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
 ###### GLMs构建逻辑回归
 
-   逻辑回归可以用于解决二分类问题，而分类问题目标函数y是二值的离散值，![img](D:\Dropbox\job\codes\blog\source\clip_image066.gif)。根据统计知识，二分类问题可以选择伯努利分布来构建模型。
+   逻辑回归可以用于解决二分类问题，而分类问题目标函数y是二值的离散值，![img](clip_image066.gif)。根据统计知识，二分类问题可以选择伯努利分布来构建模型。
 
-   在伯努利分布的指数分布族表达式中我们已知：![img](D:\Dropbox\job\codes\blog\source\clip_image067.gif)，从而得到![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image068.gif)。
+   在伯努利分布的指数分布族表达式中我们已知：![img](clip_image067.gif)，从而得到![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image068.gif)。
 
    构建广义线性模型的三个假设：
 
-\1.  假设符合伯努利分布，![img](D:\Dropbox\job\codes\blog\source\clip_image069.gif)
+\1.  假设符合伯努利分布，![img](clip_image069.gif)
 
-\2.  ![img](D:\Dropbox\job\codes\blog\source\clip_image060.gif)，伯努利分布中![img](D:\Dropbox\job\codes\blog\source\clip_image070.gif)
+\2.  ![img](clip_image060.gif)，伯努利分布中![img](clip_image070.gif)
 
 \3.  ![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image063.gif)
 
@@ -1272,13 +1272,13 @@ Maximum Entropy Discrimination marries both methods: Solve over a distribution o
 
 推导过程如下：
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image072.jpg)
+  ![img](clip_image072.jpg)
 
    同最小二乘模型一样，接下来的工作就由梯度下降或牛顿方法来完成。
 
  
 
-   注意一下上面的推到结果![img](D:\Dropbox\job\codes\blog\source\clip_image073.gif)，回忆一下，在[逻辑回归](http://www.cnblogs.com/BYRans/p/4713624.html)中，我们选用Sigmoid函数![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image074.gif)。
+   注意一下上面的推到结果![img](clip_image073.gif)，回忆一下，在[逻辑回归](http://www.cnblogs.com/BYRans/p/4713624.html)中，我们选用Sigmoid函数![img](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image074.gif)。
 
    之所以在逻辑回归中选用这个g(z)作为Sigmoid函数是由一套理论作支持的，这个理论便是广义线性模型。
 
@@ -1320,93 +1320,93 @@ Softmax 处理多分类问题。
 
  
 
-回想一下在 logistic 回归中，我们的训练集由 ![\textstyle m](D:\Dropbox\job\codes\blog\source\clip_image075.gif) 个已标记的样本构成：![\{ (x^{(1)}, y^{(1)}), \ldots, (x^{(m)}, y^{(m)}) \}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image076.gif) ，其中输入特征![x^{(i)} \in \Re^{n+1}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image077.gif)。（我们对符号的约定如下：特征向量 ![\textstyle x](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image078.gif) 的维度为 ![\textstyle n+1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image079.gif)，其中 ![\textstyle x_0 = 1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image080.gif) 对应截距项 。） 由于 logistic 回归是针对二分类问题的，因此类标记 ![y^{(i)} \in \{0,1\}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image081.gif)。假设函数(hypothesis function) 如下：
+回想一下在 logistic 回归中，我们的训练集由 ![\textstyle m](clip_image075.gif) 个已标记的样本构成：![\{ (x^{(1)}, y^{(1)}), \ldots, (x^{(m)}, y^{(m)}) \}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image076.gif) ，其中输入特征![x^{(i)} \in \Re^{n+1}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image077.gif)。（我们对符号的约定如下：特征向量 ![\textstyle x](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image078.gif) 的维度为 ![\textstyle n+1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image079.gif)，其中 ![\textstyle x_0 = 1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image080.gif) 对应截距项 。） 由于 logistic 回归是针对二分类问题的，因此类标记 ![y^{(i)} \in \{0,1\}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image081.gif)。假设函数(hypothesis function) 如下：
 
-![\begin{align} h_\theta(D:\Dropbox\job\codes\blog\source\clip_image082.gif) = \frac{1}{1+\exp(-\theta^Tx)}, \end{align}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image082.gif)
-
- 
-
-我们将训练模型参数 ![\textstyle \theta](D:\Dropbox\job\codes\blog\source\clip_image083.gif)，使其能够最小化代价函数 ：
-
-![ \begin{align} J(D:\Dropbox\job\codes\blog\source\clip_image084.gif) = -\frac{1}{m} \left[ \sum_{i=1}^m y^{(i)} \log h_\theta(x^{(i)}) + (1-y^{(i)}) \log (1-h_\theta(x^{(i)})) \right] \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image084.gif)
+![\begin{align} h_\theta(clip_image082.gif) = \frac{1}{1+\exp(-\theta^Tx)}, \end{align}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image082.gif)
 
  
 
-在 softmax回归中，我们解决的是多分类问题（相对于 logistic 回归解决的二分类问题），类标 ![\textstyle y](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image085.gif) 可以取 ![\textstyle k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image086.gif) 个不同的值（而不是 2 个）。因此，对于训练集 ![\{ (D:\Dropbox\job\codes\blog\source\clip_image076.gif), \ldots, (x^{(m)}, y^{(m)}) \}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image076.gif)，我们有 ![y^{(i)} \in \{1, 2, \ldots, k\}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image087.gif)。（注意此处的类别下标从 1 开始，而不是 0）。例如，在 MNIST 数字识别任务中，我们有 ![\textstyle k=10](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image088.gif) 个不同的类别。
+我们将训练模型参数 ![\textstyle \theta](clip_image083.gif)，使其能够最小化代价函数 ：
+
+![ \begin{align} J(clip_image084.gif) = -\frac{1}{m} \left[ \sum_{i=1}^m y^{(i)} \log h_\theta(x^{(i)}) + (1-y^{(i)}) \log (1-h_\theta(x^{(i)})) \right] \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image084.gif)
 
  
 
-对于给定的测试输入 ![\textstyle x](D:\Dropbox\job\codes\blog\source\clip_image078.gif)，我们想用假设函数针对每一个类别j估算出概率值 ![\textstyle p(y=j | x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image089.gif)。也就是说，我们想估计 ![\textstyle x](D:\Dropbox\job\codes\blog\source\clip_image078.gif) 的每一种分类结果出现的概率。因此，我们的假设函数将要输出一个 ![\textstyle k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image086.gif) 维的向量（向量元素的和为1）来表示这 ![\textstyle k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image086.gif) 个估计的概率值。 具体地说，我们的假设函数 ![\textstyle h_{\theta}(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image090.gif) 形式如下：
-
-![ \begin{align} h_\theta(D:\Dropbox\job\codes\blog\source\clip_image091.gif) = \begin{bmatrix} p(y^{(i)} = 1 | x^{(i)}; \theta) \\ p(y^{(i)} = 2 | x^{(i)}; \theta) \\ \vdots \\ p(y^{(i)} = k | x^{(i)}; \theta) \end{bmatrix} = \frac{1}{ \sum_{j=1}^{k}{e^{ \theta_j^T x^{(i)} }} } \begin{bmatrix} e^{ \theta_1^T x^{(i)} } \\ e^{ \theta_2^T x^{(i)} } \\ \vdots \\ e^{ \theta_k^T x^{(i)} } \\ \end{bmatrix} \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image091.gif)
+在 softmax回归中，我们解决的是多分类问题（相对于 logistic 回归解决的二分类问题），类标 ![\textstyle y](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image085.gif) 可以取 ![\textstyle k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image086.gif) 个不同的值（而不是 2 个）。因此，对于训练集 ![\{ (clip_image076.gif), \ldots, (x^{(m)}, y^{(m)}) \}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image076.gif)，我们有 ![y^{(i)} \in \{1, 2, \ldots, k\}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image087.gif)。（注意此处的类别下标从 1 开始，而不是 0）。例如，在 MNIST 数字识别任务中，我们有 ![\textstyle k=10](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image088.gif) 个不同的类别。
 
  
 
-其中 ![\theta_1, \theta_2, \ldots, \theta_k \in \Re^{n+1}](D:\Dropbox\job\codes\blog\source\clip_image092.gif) 是模型的参数。请注意 ![\frac{1}{ \sum_{j=1}^{k}{e^{ \theta_j^T x^{(i)} }} } ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image093.gif)这一项对概率分布进行归一化，使得所有概率之和为 1 。
+对于给定的测试输入 ![\textstyle x](clip_image078.gif)，我们想用假设函数针对每一个类别j估算出概率值 ![\textstyle p(y=j | x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image089.gif)。也就是说，我们想估计 ![\textstyle x](clip_image078.gif) 的每一种分类结果出现的概率。因此，我们的假设函数将要输出一个 ![\textstyle k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image086.gif) 维的向量（向量元素的和为1）来表示这 ![\textstyle k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image086.gif) 个估计的概率值。 具体地说，我们的假设函数 ![\textstyle h_{\theta}(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image090.gif) 形式如下：
+
+![ \begin{align} h_\theta(clip_image091.gif) = \begin{bmatrix} p(y^{(i)} = 1 | x^{(i)}; \theta) \\ p(y^{(i)} = 2 | x^{(i)}; \theta) \\ \vdots \\ p(y^{(i)} = k | x^{(i)}; \theta) \end{bmatrix} = \frac{1}{ \sum_{j=1}^{k}{e^{ \theta_j^T x^{(i)} }} } \begin{bmatrix} e^{ \theta_1^T x^{(i)} } \\ e^{ \theta_2^T x^{(i)} } \\ \vdots \\ e^{ \theta_k^T x^{(i)} } \\ \end{bmatrix} \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image091.gif)
 
  
 
-为了方便起见，我们同样使用符号 ![\textstyle \theta](D:\Dropbox\job\codes\blog\source\clip_image083.gif) 来表示全部的模型参数。在实现Softmax回归时，将 ![\textstyle \theta](D:\Dropbox\job\codes\blog\source\clip_image083.gif) 用一个 ![\textstyle k \times(D:\Dropbox\job\codes\blog\source\clip_image094.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image094.gif) 的矩阵来表示会很方便，该矩阵是将 ![\theta_1, \theta_2, \ldots, \theta_k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image095.gif) 按行罗列起来得到的，如下所示：
+其中 ![\theta_1, \theta_2, \ldots, \theta_k \in \Re^{n+1}](clip_image092.gif) 是模型的参数。请注意 ![\frac{1}{ \sum_{j=1}^{k}{e^{ \theta_j^T x^{(i)} }} } ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image093.gif)这一项对概率分布进行归一化，使得所有概率之和为 1 。
 
-![ \theta = \begin{bmatrix} \mbox{---} \theta_1^T \mbox{---} \\ \mbox{---} \theta_2^T \mbox{---} \\ \vdots \\ \mbox{---} \theta_k^T \mbox{---} \\ \end{bmatrix} ](D:\Dropbox\job\codes\blog\source\clip_image096.gif)
+ 
+
+为了方便起见，我们同样使用符号 ![\textstyle \theta](clip_image083.gif) 来表示全部的模型参数。在实现Softmax回归时，将 ![\textstyle \theta](clip_image083.gif) 用一个 ![\textstyle k \times(clip_image094.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image094.gif) 的矩阵来表示会很方便，该矩阵是将 ![\theta_1, \theta_2, \ldots, \theta_k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image095.gif) 按行罗列起来得到的，如下所示：
+
+![ \theta = \begin{bmatrix} \mbox{---} \theta_1^T \mbox{---} \\ \mbox{---} \theta_2^T \mbox{---} \\ \vdots \\ \mbox{---} \theta_k^T \mbox{---} \\ \end{bmatrix} ](clip_image096.gif)
 
  
 
 ###### 代价函数
 
-现在我们来介绍 softmax 回归算法的代价函数。在下面的公式中，![\textstyle 1\{\cdot\}](D:\Dropbox\job\codes\blog\source\clip_image097.gif) 是示性函数，其取值规则为：
+现在我们来介绍 softmax 回归算法的代价函数。在下面的公式中，![\textstyle 1\{\cdot\}](clip_image097.gif) 是示性函数，其取值规则为：
 
-![\textstyle 1\{](D:\Dropbox\job\codes\blog\source\clip_image098.gif) 值为真的表达式 ![\textstyle \}=1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image099.gif)
+![\textstyle 1\{](clip_image098.gif) 值为真的表达式 ![\textstyle \}=1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image099.gif)
 
  
 
-， ![\textstyle 1\{](D:\Dropbox\job\codes\blog\source\clip_image098.gif) 值为假的表达式 ![\textstyle \}=0](D:\Dropbox\job\codes\blog\source\clip_image100.gif)。举例来说，表达式 ![\textstyle 1\{2+2=4\}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image101.gif) 的值为1 ，![\textstyle 1\{1+1=5\}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image102.gif)的值为 0。我们的代价函数为：
+， ![\textstyle 1\{](clip_image098.gif) 值为假的表达式 ![\textstyle \}=0](clip_image100.gif)。举例来说，表达式 ![\textstyle 1\{2+2=4\}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image101.gif) 的值为1 ，![\textstyle 1\{1+1=5\}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image102.gif)的值为 0。我们的代价函数为：
 
-![ \begin{align} J(D:\Dropbox\job\codes\blog\source\clip_image103.gif) = - \frac{1}{m} \left[ \sum_{i=1}^{m} \sum_{j=1}^{k}  1\left\{y^{(i)} = j\right\} \log \frac{e^{\theta_j^T x^{(i)}}}{\sum_{l=1}^k e^{ \theta_l^T x^{(i)} }}\right] \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image103.gif)
+![ \begin{align} J(clip_image103.gif) = - \frac{1}{m} \left[ \sum_{i=1}^{m} \sum_{j=1}^{k}  1\left\{y^{(i)} = j\right\} \log \frac{e^{\theta_j^T x^{(i)}}}{\sum_{l=1}^k e^{ \theta_l^T x^{(i)} }}\right] \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image103.gif)
 
  
 
 值得注意的是，上述公式是logistic回归代价函数的推广。logistic回归代价函数可以改为：
 
-![ \begin{align} J(D:\Dropbox\job\codes\blog\source\clip_image104.gif) &= -\frac{1}{m} \left[ \sum_{i=1}^m   (1-y^{(i)}) \log (1-h_\theta(x^{(i)})) + y^{(i)} \log h_\theta(x^{(i)}) \right] \\ &= - \frac{1}{m} \left[ \sum_{i=1}^{m} \sum_{j=0}^{1} 1\left\{y^{(i)} = j\right\} \log p(y^{(i)} = j | x^{(i)} ; \theta) \right] \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image104.gif)
+![ \begin{align} J(clip_image104.gif) &= -\frac{1}{m} \left[ \sum_{i=1}^m   (1-y^{(i)}) \log (1-h_\theta(x^{(i)})) + y^{(i)} \log h_\theta(x^{(i)}) \right] \\ &= - \frac{1}{m} \left[ \sum_{i=1}^{m} \sum_{j=0}^{1} 1\left\{y^{(i)} = j\right\} \log p(y^{(i)} = j | x^{(i)} ; \theta) \right] \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image104.gif)
 
  
 
-可以看到，Softmax代价函数与logistic 代价函数在形式上非常类似，只是在Softmax损失函数中对类标记的 ![\textstyle k](D:\Dropbox\job\codes\blog\source\clip_image086.gif) 个可能值进行了累加。注意在Softmax回归中将 ![\textstyle x](D:\Dropbox\job\codes\blog\source\clip_image078.gif) 分类为类别 ![\textstyle j](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image105.gif) 的概率为：
+可以看到，Softmax代价函数与logistic 代价函数在形式上非常类似，只是在Softmax损失函数中对类标记的 ![\textstyle k](clip_image086.gif) 个可能值进行了累加。注意在Softmax回归中将 ![\textstyle x](clip_image078.gif) 分类为类别 ![\textstyle j](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image105.gif) 的概率为：
 
-![ p(D:\Dropbox\job\codes\blog\source\clip_image106.gif) = \frac{e^{\theta_j^T x^{(i)}}}{\sum_{l=1}^k e^{ \theta_l^T x^{(i)}} } ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image106.gif).
-
- 
-
-对于 ![\textstyle J(D:\Dropbox\job\codes\blog\source\clip_image107.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image107.gif) 的最小化问题，目前还没有闭式解法。因此，我们使用迭代的优化算法（例如梯度下降法，或 L-BFGS）。经过求导，我们得到梯度公式如下：
-
-![ \begin{align} \nabla_{\theta_j} J(D:\Dropbox\job\codes\blog\source\clip_image108.gif) = - \frac{1}{m} \sum_{i=1}^{m}{ \left[ x^{(i)} \left( 1\{ y^{(i)} = j\}  - p(y^{(i)} = j | x^{(i)}; \theta) \right) \right]  } \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image108.gif)
+![ p(clip_image106.gif) = \frac{e^{\theta_j^T x^{(i)}}}{\sum_{l=1}^k e^{ \theta_l^T x^{(i)}} } ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image106.gif).
 
  
 
-让我们来回顾一下符号 "![\textstyle \nabla_{\theta_j}](D:\Dropbox\job\codes\blog\source\clip_image109.gif)" 的含义。![\textstyle \nabla_{\theta_j} J(\theta)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image110.gif) 本身是一个向量，它的第 ![\textstyle l](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image111.gif) 个元素 ![\textstyle \frac{\partial J(\theta)}{\partial \theta_{jl}}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image112.gif) 是 ![\textstyle J(D:\Dropbox\job\codes\blog\source\clip_image107.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image107.gif)对![\textstyle \theta_j](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image113.gif) 的第 ![\textstyle l](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image111.gif) 个分量的偏导数。
+对于 ![\textstyle J(clip_image107.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image107.gif) 的最小化问题，目前还没有闭式解法。因此，我们使用迭代的优化算法（例如梯度下降法，或 L-BFGS）。经过求导，我们得到梯度公式如下：
+
+![ \begin{align} \nabla_{\theta_j} J(clip_image108.gif) = - \frac{1}{m} \sum_{i=1}^{m}{ \left[ x^{(i)} \left( 1\{ y^{(i)} = j\}  - p(y^{(i)} = j | x^{(i)}; \theta) \right) \right]  } \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image108.gif)
 
  
 
-有了上面的偏导数公式以后，我们就可以将它代入到梯度下降法等算法中，来最小化 ![\textstyle J(D:\Dropbox\job\codes\blog\source\clip_image107.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image107.gif)。 例如，在梯度下降法的标准实现中，每一次迭代需要进行如下更新: ![\textstyle \theta_j := \theta_j - \alpha \nabla_{\theta_j} J(D:\Dropbox\job\codes\blog\source\clip_image114.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image114.gif)(![\textstyle j=1,\ldots,k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image115.gif)）。
+让我们来回顾一下符号 "![\textstyle \nabla_{\theta_j}](clip_image109.gif)" 的含义。![\textstyle \nabla_{\theta_j} J(\theta)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image110.gif) 本身是一个向量，它的第 ![\textstyle l](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image111.gif) 个元素 ![\textstyle \frac{\partial J(\theta)}{\partial \theta_{jl}}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image112.gif) 是 ![\textstyle J(clip_image107.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image107.gif)对![\textstyle \theta_j](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image113.gif) 的第 ![\textstyle l](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image111.gif) 个分量的偏导数。
+
+ 
+
+有了上面的偏导数公式以后，我们就可以将它代入到梯度下降法等算法中，来最小化 ![\textstyle J(clip_image107.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image107.gif)。 例如，在梯度下降法的标准实现中，每一次迭代需要进行如下更新: ![\textstyle \theta_j := \theta_j - \alpha \nabla_{\theta_j} J(clip_image114.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image114.gif)(![\textstyle j=1,\ldots,k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image115.gif)）。
 
 当实现 softmax 回归算法时， 我们通常会使用上述代价函数的一个改进版本。具体来说，就是和权重衰减(weight decay)一起使用。我们接下来介绍使用它的动机和细节。
 
 ###### Softmax回归与Logistic 回归的关系
 
-当类别数 ![\textstyle k = 2](D:\Dropbox\job\codes\blog\source\clip_image116.gif) 时，softmax 回归退化为 logistic 回归。这表明 softmax 回归是 logistic 回归的一般形式。具体地说，当 ![\textstyle k = 2](D:\Dropbox\job\codes\blog\source\clip_image116.gif) 时，softmax 回归的假设函数为：
+当类别数 ![\textstyle k = 2](clip_image116.gif) 时，softmax 回归退化为 logistic 回归。这表明 softmax 回归是 logistic 回归的一般形式。具体地说，当 ![\textstyle k = 2](clip_image116.gif) 时，softmax 回归的假设函数为：
 
-![ \begin{align} h_\theta(D:\Dropbox\job\codes\blog\source\clip_image117.gif) &=  \frac{1}{ e^{\theta_1^Tx}  + e^{ \theta_2^T x^{(i)} } } \begin{bmatrix} e^{ \theta_1^T x } \\ e^{ \theta_2^T x } \end{bmatrix} \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image117.gif)
-
- 
-
-利用softmax回归参数冗余的特点，我们令 ![\textstyle \psi = \theta_1](D:\Dropbox\job\codes\blog\source\clip_image118.gif)，并且从两个参数向量中都减去向量 ![\textstyle \theta_1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image119.gif)，得到:
-
-![ \begin{align} h(D:\Dropbox\job\codes\blog\source\clip_image120.gif) &=  \frac{1}{ e^{\vec{0}^Tx}  + e^{ (\theta_2-\theta_1)^T x^{(i)} } } \begin{bmatrix} e^{ \vec{0}^T x } \\ e^{ (\theta_2-\theta_1)^T x } \end{bmatrix} \\   &= \begin{bmatrix} \frac{1}{ 1 + e^{ (\theta_2-\theta_1)^T x^{(i)} } } \\ \frac{e^{ (\theta_2-\theta_1)^T x }}{ 1 + e^{ (\theta_2-\theta_1)^T x^{(i)} } } \end{bmatrix} \\  &= \begin{bmatrix} \frac{1}{ 1  + e^{ (\theta_2-\theta_1)^T x^{(i)} } } \\ 1 - \frac{1}{ 1  + e^{ (\theta_2-\theta_1)^T x^{(i)} } } \\ \end{bmatrix} \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image120.gif)
+![ \begin{align} h_\theta(clip_image117.gif) &=  \frac{1}{ e^{\theta_1^Tx}  + e^{ \theta_2^T x^{(i)} } } \begin{bmatrix} e^{ \theta_1^T x } \\ e^{ \theta_2^T x } \end{bmatrix} \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image117.gif)
 
  
 
-因此，用 ![\textstyle \theta'](D:\Dropbox\job\codes\blog\source\clip_image121.gif)来表示![\textstyle \theta_2-\theta_1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image122.gif)，我们就会发现 softmax 回归器预测其中一个类别的概率为 ![\textstyle \frac{1}{ 1  + e^{ (\theta')^T x^{(i)} } }](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image123.gif)，另一个类别概率的为 ![\textstyle 1 - \frac{1}{ 1 + e^{ (\theta')^T x^{(i)} } }](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image124.gif)，这与 logistic回归是一致的。
+利用softmax回归参数冗余的特点，我们令 ![\textstyle \psi = \theta_1](clip_image118.gif)，并且从两个参数向量中都减去向量 ![\textstyle \theta_1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image119.gif)，得到:
+
+![ \begin{align} h(clip_image120.gif) &=  \frac{1}{ e^{\vec{0}^Tx}  + e^{ (\theta_2-\theta_1)^T x^{(i)} } } \begin{bmatrix} e^{ \vec{0}^T x } \\ e^{ (\theta_2-\theta_1)^T x } \end{bmatrix} \\   &= \begin{bmatrix} \frac{1}{ 1 + e^{ (\theta_2-\theta_1)^T x^{(i)} } } \\ \frac{e^{ (\theta_2-\theta_1)^T x }}{ 1 + e^{ (\theta_2-\theta_1)^T x^{(i)} } } \end{bmatrix} \\  &= \begin{bmatrix} \frac{1}{ 1  + e^{ (\theta_2-\theta_1)^T x^{(i)} } } \\ 1 - \frac{1}{ 1  + e^{ (\theta_2-\theta_1)^T x^{(i)} } } \\ \end{bmatrix} \end{align} ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image120.gif)
+
+ 
+
+因此，用 ![\textstyle \theta'](clip_image121.gif)来表示![\textstyle \theta_2-\theta_1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image122.gif)，我们就会发现 softmax 回归器预测其中一个类别的概率为 ![\textstyle \frac{1}{ 1  + e^{ (\theta')^T x^{(i)} } }](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image123.gif)，另一个类别概率的为 ![\textstyle 1 - \frac{1}{ 1 + e^{ (\theta')^T x^{(i)} } }](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image124.gif)，这与 logistic回归是一致的。
 
  
 
@@ -1436,31 +1436,31 @@ Softmax 处理多分类问题。
 
    朴素贝叶斯分类的正式定义如下：
 
-   1、设![http://latex.codecogs.com/gif.latex?x=\%7ba_1,a_2,...,a_m\%7d](D:\Dropbox\job\codes\blog\source\clip_image125.gif)为一个待分类项，而每个a为x的一个特征属性。
+   1、设![http://latex.codecogs.com/gif.latex?x=\%7ba_1,a_2,...,a_m\%7d](clip_image125.gif)为一个待分类项，而每个a为x的一个特征属性。
 
-   2、有类别集合![http://latex.codecogs.com/gif.latex?C=\%7by_1,y_2,...,y_n\%7d](D:\Dropbox\job\codes\blog\source\clip_image126.gif)。
+   2、有类别集合![http://latex.codecogs.com/gif.latex?C=\%7by_1,y_2,...,y_n\%7d](clip_image126.gif)。
 
-   3、计算![http://latex.codecogs.com/gif.latex?P(D:\Dropbox\job\codes\blog\source\clip_image127.gif),P(y_2|x),...,P(y_n|x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image127.gif)。
+   3、计算![http://latex.codecogs.com/gif.latex?P(clip_image127.gif),P(y_2|x),...,P(y_n|x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image127.gif)。
 
-   4、如果![http://latex.codecogs.com/gif.latex?P(D:\Dropbox\job\codes\blog\source\clip_image128.gif)=max\%7bP(y_1|x),P(y_2|x),...,P(y_n|x)\%7d](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image128.gif)，则![http://latex.codecogs.com/gif.latex?x%20\in%20y_k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image129.gif)。
+   4、如果![http://latex.codecogs.com/gif.latex?P(clip_image128.gif)=max\%7bP(y_1|x),P(y_2|x),...,P(y_n|x)\%7d](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image128.gif)，则![http://latex.codecogs.com/gif.latex?x%20\in%20y_k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image129.gif)。
 
    那么现在的关键就是如何计算第3步中的各个条件概率。我们可以这么做：
 
    1、找到一个已知分类的待分类项集合，这个集合叫做训练样本集。
 
-   2、统计得到在各类别下各个特征属性的条件概率估计。即![http://latex.codecogs.com/gif.latex?P(D:\Dropbox\job\codes\blog\source\clip_image130.gif),P(a_2|y_1),...,P(a_m|y_1);P(a_1|y_2),P(a_2|y_2),...,P(a_m|y_2);...;P(a_1|y_n),P(a_2|y_n),...,P(a_m|y_n)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image130.gif)。
+   2、统计得到在各类别下各个特征属性的条件概率估计。即![http://latex.codecogs.com/gif.latex?P(clip_image130.gif),P(a_2|y_1),...,P(a_m|y_1);P(a_1|y_2),P(a_2|y_2),...,P(a_m|y_2);...;P(a_1|y_n),P(a_2|y_n),...,P(a_m|y_n)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image130.gif)。
 
    3、如果各个特征属性是条件独立的，则根据贝叶斯定理有如下推导：
 
-   ![http://latex.codecogs.com/gif.latex?P(D:\Dropbox\job\codes\blog\source\clip_image131.gif)=\frac%7bP(x|y_i)P(y_i)%7d%7bP(x)%7d](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image131.gif)
+   ![http://latex.codecogs.com/gif.latex?P(clip_image131.gif)=\frac%7bP(x|y_i)P(y_i)%7d%7bP(x)%7d](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image131.gif)
 
    因为分母对于所有类别为常数，因为我们只要将分子最大化皆可。又因为各特征属性是条件独立的，所以有：
 
-   ![http://latex.codecogs.com/gif.latex?P(D:\Dropbox\job\codes\blog\source\clip_image132.gif)P(y_i)=P(a_1|y_i)P(a_2|y_i)...P(a_m|y_i)P(y_i)=P(y_i)\prod%5em_%7bj=1%7dP(a_j|y_i)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image132.gif)
+   ![http://latex.codecogs.com/gif.latex?P(clip_image132.gif)P(y_i)=P(a_1|y_i)P(a_2|y_i)...P(a_m|y_i)P(y_i)=P(y_i)\prod%5em_%7bj=1%7dP(a_j|y_i)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image132.gif)
 
    根据上述分析，朴素贝叶斯分类的流程可以由下图表示（暂时不考虑验证）：
 
-[![http://images.cnblogs.com/cnblogs_com/leoo2sk/WindowsLiveWriter/4f6168bb064a_9C14/1_thumb.png](D:\Dropbox\job\codes\blog\source\clip_image134.gif)](http://images.cnblogs.com/cnblogs_com/leoo2sk/WindowsLiveWriter/4f6168bb064a_9C14/1_2.png)
+[![http://images.cnblogs.com/cnblogs_com/leoo2sk/WindowsLiveWriter/4f6168bb064a_9C14/1_thumb.png](clip_image134.gif)](http://images.cnblogs.com/cnblogs_com/leoo2sk/WindowsLiveWriter/4f6168bb064a_9C14/1_2.png)
 
    可以看到，整个朴素贝叶斯分类分为三个阶段：
 
@@ -1492,17 +1492,17 @@ Softmax 处理多分类问题。
 
 ##### **有向****图模型（贝叶斯网络****）**
 
-  举个例子，譬如有一组变量![http://latex.codecogs.com/gif.latex?x_1%2Cx_2%2C...%2Cx_n](D:\Dropbox\job\codes\blog\source\clip_image135.gif)，如果每个变量只与其前一个变量有关（1阶马尔可夫过程），那么以下等式成立
+  举个例子，譬如有一组变量![http://latex.codecogs.com/gif.latex?x_1%2Cx_2%2C...%2Cx_n](clip_image135.gif)，如果每个变量只与其前一个变量有关（1阶马尔可夫过程），那么以下等式成立
 
-![http://latex.codecogs.com/gif.latex?p%28x_1%2Cx_2%2C...%2Cx_n%29%3Dp%28x_1%29p%28x_2%7Cx_1%29...p%28x_n%7Cx_%7Bn-1%7D%29](D:\Dropbox\job\codes\blog\source\clip_image136.gif)
+![http://latex.codecogs.com/gif.latex?p%28x_1%2Cx_2%2C...%2Cx_n%29%3Dp%28x_1%29p%28x_2%7Cx_1%29...p%28x_n%7Cx_%7Bn-1%7D%29](clip_image136.gif)
 
-  那么如何用图来表示这一关系呢？自然，我们要表示的是右边的式子，右边的式子表示了变量之间的联系。而当我们观察条件概率时，我们发现我们必须要指明哪个是条件。如果我们采用变量为节点，采用无向图这种节点等价的关系显然不能直接描述条件概率，因此这里选择了有向图来描述这一关系，即![http://latex.codecogs.com/gif.latex?p%28x_2%7Cx_1%29](D:\Dropbox\job\codes\blog\source\clip_image137.gif)表示为
+  那么如何用图来表示这一关系呢？自然，我们要表示的是右边的式子，右边的式子表示了变量之间的联系。而当我们观察条件概率时，我们发现我们必须要指明哪个是条件。如果我们采用变量为节点，采用无向图这种节点等价的关系显然不能直接描述条件概率，因此这里选择了有向图来描述这一关系，即![http://latex.codecogs.com/gif.latex?p%28x_2%7Cx_1%29](clip_image137.gif)表示为
 
-[![image](D:\Dropbox\job\codes\blog\source\clip_image139.gif)](http://images.cnitblog.com/blog/663760/201503/092002518247365.png)
+[![image](clip_image139.gif)](http://images.cnitblog.com/blog/663760/201503/092002518247365.png)
 
-  那么此时上述的1阶马尔可夫过程表示为，注意其中没有箭头指向![http://latex.codecogs.com/gif.latex?x_1](D:\Dropbox\job\codes\blog\source\clip_image140.gif)，故表示![http://latex.codecogs.com/gif.latex?p%28x_1%29](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image141.gif)意味着无条件。
+  那么此时上述的1阶马尔可夫过程表示为，注意其中没有箭头指向![http://latex.codecogs.com/gif.latex?x_1](clip_image140.gif)，故表示![http://latex.codecogs.com/gif.latex?p%28x_1%29](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image141.gif)意味着无条件。
 
-[![image](D:\Dropbox\job\codes\blog\source\clip_image143.gif)](http://images.cnitblog.com/blog/663760/201503/092002535891937.png)
+[![image](clip_image143.gif)](http://images.cnitblog.com/blog/663760/201503/092002535891937.png)
 
   有向图模型，或称贝叶斯网络，描述的是条件概率，或许这就是其被称为贝叶斯网络的原因吧。此处不再细说，更多内容（包括d-separation等）可参考后文提及的相关资料。
 
@@ -1514,27 +1514,27 @@ Softmax 处理多分类问题。
 
   和相关对应的是独立（实际上是不相关，这里不做区分了），我们可以这样来构造图模型，如果两个节点之间独立，那么没有路使其相连。条件独立即去掉条件中节点后，两节点之间没有路相连。具体可由《PATTERN RECOGNITION and MACHINE LEARNING》中的例子阐述
 
-[![image](D:\Dropbox\job\codes\blog\source\clip_image145.gif)](http://images.cnitblog.com/blog/663760/201503/092002548861369.png)
+[![image](clip_image145.gif)](http://images.cnitblog.com/blog/663760/201503/092002548861369.png)
 
-  如上图所示，A中节点到B集合中节点的每一条路都通过了C中节点，这代表着![http://latex.codecogs.com/gif.latex?A%20%5Cperp%5C%21%5C%21%5C%21%5Cperp%20B%20%5Cmid%20C](D:\Dropbox\job\codes\blog\source\clip_image146.gif)。无向图模型很完美的将这种弱的关系表现出来了，有一种很神奇的感觉，但光表示是没有多大用处的，我们还是要计算概率。对于变量![http://latex.codecogs.com/gif.latex?x_1%2Cx_2%2C...%2Cx_n](D:\Dropbox\job\codes\blog\source\clip_image135.gif)，显然有
+  如上图所示，A中节点到B集合中节点的每一条路都通过了C中节点，这代表着![http://latex.codecogs.com/gif.latex?A%20%5Cperp%5C%21%5C%21%5C%21%5Cperp%20B%20%5Cmid%20C](clip_image146.gif)。无向图模型很完美的将这种弱的关系表现出来了，有一种很神奇的感觉，但光表示是没有多大用处的，我们还是要计算概率。对于变量![http://latex.codecogs.com/gif.latex?x_1%2Cx_2%2C...%2Cx_n](clip_image135.gif)，显然有
 
-![http://latex.codecogs.com/gif.latex?p%28x_1%2Cx_2%2C...x_n%29%3Dp%28x_1%2Cx_2%2C...x_n%29](D:\Dropbox\job\codes\blog\source\clip_image147.gif)
+![http://latex.codecogs.com/gif.latex?p%28x_1%2Cx_2%2C...x_n%29%3Dp%28x_1%2Cx_2%2C...x_n%29](clip_image147.gif)
 
   但更显然的是我们不应该这样做，因为没有意义。所以他们是这样做的，为什么可以？我也没弄明白，我只是感觉了一下，觉得差不多……思想是一样的，就是把概率分开，分开了才能体现特点。
 
   将图中的节点分成多个小的集合XcXc，其中集合内的点两两之间有边相连接，这些集合被称为cliques，那么概率分布满足
 
-![http://latex.codecogs.com/gif.latex?p%28x_1%2Cx_2%2C...x_n%29%3D%5Cfrac%7B1%7D%7BZ%7D%5Cprod_%7Bc%5Cin%5Cmathbb%7BC%7D%7D%5CPhi%20%28X_c%29](D:\Dropbox\job\codes\blog\source\clip_image148.gif)
+![http://latex.codecogs.com/gif.latex?p%28x_1%2Cx_2%2C...x_n%29%3D%5Cfrac%7B1%7D%7BZ%7D%5Cprod_%7Bc%5Cin%5Cmathbb%7BC%7D%7D%5CPhi%20%28X_c%29](clip_image148.gif)
 
   其中ZZ是归一化因子（使得概率之和为1），ΦΦ函数是势能函数，恒正。取为
 
-![http://latex.codecogs.com/gif.latex?%5CPhi%20%28X_c%29%3Dexp%28-E%28X_c%29%29](D:\Dropbox\job\codes\blog\source\clip_image149.gif)
+![http://latex.codecogs.com/gif.latex?%5CPhi%20%28X_c%29%3Dexp%28-E%28X_c%29%29](clip_image149.gif)
 
-  ![http://latex.codecogs.com/gif.latex?E%28X_c%29](D:\Dropbox\job\codes\blog\source\clip_image150.gif)是能量函数，不得不说这是一个很神奇的东西。不太会就先总结到这里了。
+  ![http://latex.codecogs.com/gif.latex?E%28X_c%29](clip_image150.gif)是能量函数，不得不说这是一个很神奇的东西。不太会就先总结到这里了。
 
 ###### 能量函数
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image152.jpg)
+![img](clip_image152.jpg)
 
  
 
@@ -1542,25 +1542,25 @@ Softmax 处理多分类问题。
 
   **HMM**，隐马尔可夫模型，是一种有向图模型。这和上述的1阶马尔可夫过程是类似的，不同之处在于我们能够观测到的量不是过程本身，而是与其有一定关系的另一些量。HMM应用很广泛，可以参考[隐马尔可夫模型（HMM）攻略](http://blog.csdn.net/likelet/article/details/7056068) 。
 
-[![image](D:\Dropbox\job\codes\blog\source\clip_image154.gif)](http://images.cnitblog.com/blog/663760/201503/092002581993213.png)
+[![image](clip_image154.gif)](http://images.cnitblog.com/blog/663760/201503/092002581993213.png)
 
   **RBM**，限制玻尔兹曼机，无向图模型。了解深度学习相关知识的对这个应该很熟悉，看到无向图模型的时候就会发现，都有一个势能函数。这个我不太会，就不介绍了。
 
-[![image](D:\Dropbox\job\codes\blog\source\clip_image156.gif)](http://images.cnitblog.com/blog/663760/201503/092003000116500.png)
+[![image](clip_image156.gif)](http://images.cnitblog.com/blog/663760/201503/092003000116500.png)
 
   **图像去噪**，PRML中的一个例子，无向图模型。目的是从观测到的有噪声的图片中恢复出原始图片，做出的假设是观察到的图片像素点和原始图片相关，同时原始图片相邻像素点之间相关。
 
-[![image](D:\Dropbox\job\codes\blog\source\clip_image158.gif)](http://images.cnitblog.com/blog/663760/201503/092003018391858.png)
+[![image](clip_image158.gif)](http://images.cnitblog.com/blog/663760/201503/092003018391858.png)
 
   **LDPC****译码**，差错控制编码中的例子，因子图。其中YY是观测节点，和变量节点XX相关，同时ff是因子节点，约束是连接该节点的变量节点模2和为0。（也可以去掉YY,这样就是比较标准的因子图了）
 
-[![image](D:\Dropbox\job\codes\blog\source\clip_image160.gif)](http://images.cnitblog.com/blog/663760/201503/092003035424645.png)
+[![image](clip_image160.gif)](http://images.cnitblog.com/blog/663760/201503/092003035424645.png)
 
 ##### 5.推理：和积算法
 
-  本节将以和积算法为例，说明概率图模型下的概率计算过程。和积算法也用在[LDPC译码](http://www.cnblogs.com/sea-wind2/p/4282640.html)过程中，这一过程也将证实“一些概率上的复杂的计算可以理解为图上的信息传递，这是我们就无需关注太多的复杂表达式了”这一观点。和积算法作用在因子图上，旨在计算边缘概率![http://images.cnitblog.com/blog/716236/201502/182323091118184.png](D:\Dropbox\job\codes\blog\source\clip_image161.gif)
+  本节将以和积算法为例，说明概率图模型下的概率计算过程。和积算法也用在[LDPC译码](http://www.cnblogs.com/sea-wind2/p/4282640.html)过程中，这一过程也将证实“一些概率上的复杂的计算可以理解为图上的信息传递，这是我们就无需关注太多的复杂表达式了”这一观点。和积算法作用在因子图上，旨在计算边缘概率![http://images.cnitblog.com/blog/716236/201502/182323091118184.png](clip_image161.gif)
 
-  其中，![http://images.cnitblog.com/blog/716236/201502/182323095645112.png](D:\Dropbox\job\codes\blog\source\clip_image162.gif)表示除![http://images.cnitblog.com/blog/716236/201502/182323098928312.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image163.gif)之外的变量集合。 具体算法推导过程可以参考PRML的p402。这里仅简单叙述。
+  其中，![http://images.cnitblog.com/blog/716236/201502/182323095645112.png](clip_image162.gif)表示除![http://images.cnitblog.com/blog/716236/201502/182323098928312.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image163.gif)之外的变量集合。 具体算法推导过程可以参考PRML的p402。这里仅简单叙述。
 
  
 
@@ -1568,7 +1568,7 @@ Softmax 处理多分类问题。
 
   这里我们做出一个假设是一旦我们断开了一条变量节点和因子节点的边，那么因子图就变成了两个互不连通的因子图。（否则则有环，但实际上很多有环的图采用这一算法也得到了很好的结果）
 
-[![image](D:\Dropbox\job\codes\blog\source\clip_image165.gif)](http://images.cnitblog.com/blog/663760/201503/092003050272132.png)
+[![image](clip_image165.gif)](http://images.cnitblog.com/blog/663760/201503/092003050272132.png)
 
   考虑图上的信息流动，从因子节点fsfs到变量节点xx以及从变量节点xx到因子节点fsfs。充分利用上述假设带来的结果，最后我们可以推得
 
@@ -1580,9 +1580,9 @@ Softmax 处理多分类问题。
 
   此处不做具体解释，仅说明何为“图上的信息传递”。推理过程和最后的结果都不是很直观，但我们可以理解
 
-  ![http://latex.codecogs.com/gif.latex?%7B%5Cmu%20_%7B%7Bf_s%7D%20%5Cto%20x%7D%7D](D:\Dropbox\job\codes\blog\source\clip_image166.gif)是因子节点传递给变量节点的信息，这包括除该变量节点之外的所有因子节点传递给校验节点的信息。表示为因子节点接收到的信息的乘积乘上因子节点本身的约束函数后求和。
+  ![http://latex.codecogs.com/gif.latex?%7B%5Cmu%20_%7B%7Bf_s%7D%20%5Cto%20x%7D%7D](clip_image166.gif)是因子节点传递给变量节点的信息，这包括除该变量节点之外的所有因子节点传递给校验节点的信息。表示为因子节点接收到的信息的乘积乘上因子节点本身的约束函数后求和。
 
-  ![http://latex.codecogs.com/gif.latex?%7B%5Cmu%20_%7B%7Bx_m%7D%20%5Cto%20f_s%7D%7D](D:\Dropbox\job\codes\blog\source\clip_image167.gif)是变量节点传递给因子节点的信息，这表现为接收到的其他变量节点信息的乘积。
+  ![http://latex.codecogs.com/gif.latex?%7B%5Cmu%20_%7B%7Bx_m%7D%20%5Cto%20f_s%7D%7D](clip_image167.gif)是变量节点传递给因子节点的信息，这表现为接收到的其他变量节点信息的乘积。
 
  
 
@@ -1688,7 +1688,7 @@ BP算法的两个关键过程：（1）通过加权乘积计算所有的局部�
 
 ​    对于参数估计，我们本质上还是想获得一个使似然函数最大化的那个参数θ，现在与最大似然不同的只是似然函数式中多了一个未知的变量z，见下式（1）。也就是说我们的目标是找到适合的θ和z让L(θ)最大。那我们也许会想，你就是多了一个未知的变量而已啊，我也可以分别对未知的θ和z分别求偏导，再令其等于0，求解出来不也一样吗？
 
-![http://img.my.csdn.net/uploads/201301/24/1359004165_6698.jpg](D:\Dropbox\job\codes\blog\source\clip_image168.jpg)
+![http://img.my.csdn.net/uploads/201301/24/1359004165_6698.jpg](clip_image168.jpg)
 
    本质上我们是需要最大化（1）式（对（1）式，我们回忆下联合概率密度下某个变量的边缘概率密度函数的求解，注意这里z也是随机变量。对每一个样本i的所有可能类别z求等式右边的联合概率密度函数和，也就得到等式左边为随机变量x的边缘概率密度），也就是似然函数，但是可以看到里面有“和的对数”，求导后形式会非常复杂（自己可以想象下log(f1(x)+ f2(x)+ f3(x)+…)复合函数的求导），所以很难求解得到未知参数z和θ。那OK，我们可否对（1）式做一些改变呢？我们看（2）式，（2）式只是分子分母同乘以一个相等的函数，还是有“和的对数”啊，还是求解不了，那为什么要这么做呢？咱们先不管，看（3）式，发现（3）式变成了“对数的和”，那这样求导就容易了。我们注意点，还发现等号变成了不等号，为什么能这么变呢？这就是Jensen不等式的大显神威的地方。
 
@@ -1704,7 +1704,7 @@ Jensen不等式表述如下：
 
 ​    如果用图表示会很清晰：
 
- ![http://img.my.csdn.net/uploads/201301/24/1359004230_7889.jpg](D:\Dropbox\job\codes\blog\source\clip_image169.jpg)
+ ![http://img.my.csdn.net/uploads/201301/24/1359004230_7889.jpg](clip_image169.jpg)
 
 ​    图中，实线f是凸函数，X是随机变量，有0.5的概率是a，有0.5的概率是b。（就像掷硬币一样）。X的期望值就是a和b的中值了，图中可以看到E[f(X)]>=f(E[X])成立。
 
@@ -1716,25 +1716,25 @@ Jensen不等式表述如下：
 
 ​    回到公式（2），因为f(x)=log x为凹函数（其二次导数为-1/x2<0）。
 
-（2）式中![http://img.my.csdn.net/uploads/201301/24/1359004420_6093.jpg](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image170.jpg)的期望，（考虑到E(X)=∑x*p(x)，f(X)是X的函数，则E(f(X))=∑f(x)*p(x)），又![http://img.my.csdn.net/uploads/201301/24/1359004435_1667.jpg](D:\Dropbox\job\codes\blog\source\clip_image171.jpg)，所以就可以得到公式（3）的不等式了（若不明白，请拿起笔，呵呵）：
+（2）式中![http://img.my.csdn.net/uploads/201301/24/1359004420_6093.jpg](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image170.jpg)的期望，（考虑到E(X)=∑x*p(x)，f(X)是X的函数，则E(f(X))=∑f(x)*p(x)），又![http://img.my.csdn.net/uploads/201301/24/1359004435_1667.jpg](clip_image171.jpg)，所以就可以得到公式（3）的不等式了（若不明白，请拿起笔，呵呵）：
 
-![http://img.my.csdn.net/uploads/201301/24/1359004457_8988.jpg](D:\Dropbox\job\codes\blog\source\clip_image173.jpg)
+![http://img.my.csdn.net/uploads/201301/24/1359004457_8988.jpg](clip_image173.jpg)
 
 ​    OK，到这里，现在式（3）就容易地求导了，但是式（2）和式（3）是不等号啊，式（2）的最大值不是式（3）的最大值啊，而我们想得到式（2）的最大值，那怎么办呢？
 
    现在我们就需要一点想象力了，上面的式（2）和式（3）不等式可以写成：似然函数L(θ)>=J(z,Q)，那么我们可以通过不断的最大化这个下界J，来使得L(θ)不断提高，最终达到它的最大值。
 
-![http://img.my.csdn.net/uploads/201301/24/1359004484_7944.jpg](D:\Dropbox\job\codes\blog\source\clip_image175.jpg)
+![http://img.my.csdn.net/uploads/201301/24/1359004484_7944.jpg](clip_image175.jpg)
 
    见上图，我们固定θ，调整Q(z)使下界J(z,Q)上升至与L(θ)在此点θ处相等（绿色曲线到蓝色曲线），然后固定Q(z)，调整θ使下界J(z,Q)达到最大值（θt到θt+1），然后再固定θ，调整Q(z)……直到收敛到似然函数L(θ)的最大值处的θ*。这里有两个问题：什么时候下界J(z,Q)与L(θ)在此点θ处相等？为什么一定会收敛？
 
    首先第一个问题，在Jensen不等式中说到，当自变量X是常数的时候，等式成立。而在这里，即：
 
-![http://img.my.csdn.net/uploads/201301/24/1359004517_4140.jpg](D:\Dropbox\job\codes\blog\source\clip_image176.jpg)
+![http://img.my.csdn.net/uploads/201301/24/1359004517_4140.jpg](clip_image176.jpg)
 
    再推导下，由于![http://img.my.csdn.net/uploads/201301/24/1359004538_8410.jpg](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image171.jpg)（因为Q是随机变量z(i)的概率密度函数），则可以得到：分子的和等于c（分子分母都对所有z(i)求和：多个等式分子分母相加不变，这个认为每个样例的两个概率比值都是c），则：
 
-![http://img.my.csdn.net/uploads/201301/24/1359004651_3922.jpg](D:\Dropbox\job\codes\blog\source\clip_image177.jpg)
+![http://img.my.csdn.net/uploads/201301/24/1359004651_3922.jpg](clip_image177.jpg)
 
    至此，我们推出了在固定参数θ后，使下界拉升的Q(z)的计算公式就是后验概率，解决了Q(z)如何选择的问题。这一步就是E步，建立L(θ)的下界。接下来的M步，就是在给定Q(z)后，调整θ，去极大化L(θ)的下界J（在固定Q(z)后，下界还可以调整的更大）。那么一般的EM算法的步骤如下：
 
@@ -1746,17 +1746,17 @@ Jensen不等式表述如下：
 
 ​    **E****步****骤：**根据参数初始值或上一次迭代的模型参数来计算出隐性变量的后验概率，其实就是隐性变量的期望。作为隐藏变量的现估计值：
 
-​    ![http://img.my.csdn.net/uploads/201301/24/1359004674_9261.jpg](D:\Dropbox\job\codes\blog\source\clip_image178.jpg)
+​    ![http://img.my.csdn.net/uploads/201301/24/1359004674_9261.jpg](clip_image178.jpg)
 
 ​    **M****步****骤：**将似然函数最大化以获得新的参数值：
 
-​     ![http://img.my.csdn.net/uploads/201301/24/1359004692_8552.jpg](D:\Dropbox\job\codes\blog\source\clip_image179.jpg)
+​     ![http://img.my.csdn.net/uploads/201301/24/1359004692_8552.jpg](clip_image179.jpg)
 
 ​    这个不断的迭代，就可以得到使似然函数L(θ)最大化的参数θ了。那就得回答刚才的第二个问题了，它会收敛吗？
 
 感性的说，因为下界不断提高，所以极大似然估计单调增加，那么最终我们会到达最大似然估计的最大值。理性分析的话，就会得到下面的东西：
 
-![http://img.my.csdn.net/uploads/201301/24/1359004726_5955.jpg](D:\Dropbox\job\codes\blog\source\clip_image181.jpg)
+![http://img.my.csdn.net/uploads/201301/24/1359004726_5955.jpg](clip_image181.jpg)
 
 具体如何证明的，看推导过程参考：Andrew Ng《The EM algorithm》
 
@@ -1768,7 +1768,7 @@ http://www.cnblogs.com/jerrylead/archive/2011/04/06/2006936.html
 
 坐标上升法（Coordinate ascent）：
 
-![http://img.my.csdn.net/uploads/201301/24/1359004760_8452.jpg](D:\Dropbox\job\codes\blog\source\clip_image182.jpg)
+![http://img.my.csdn.net/uploads/201301/24/1359004760_8452.jpg](clip_image182.jpg)
 
 ​    图中的直线式迭代优化的路径，可以看到每一步都会向最优值前进一步，而且前进路线是平行于坐标轴的，因为每一步只优化一个变量。
 
@@ -1892,7 +1892,7 @@ pLSA和LDA模型的训练算法没有在意低频数据。
 
 ###### 蒙特卡洛方法
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image184.jpg)
+![img](clip_image184.jpg)
 
 ###### **Negative Sampling (用于主题模型)**
 
@@ -1936,7 +1936,7 @@ MH算法在参数空间随机取值，作为起始点。按照参数的概率分
 
  
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image186.jpg)
+![img](clip_image186.jpg)
 
 然而这个算法有一个缺点，就是抽样的效率不高，有些样本会被舍弃掉。从而产生了Gibbs算法。
 
@@ -1948,9 +1948,9 @@ MH算法在参数空间随机取值，作为起始点。按照参数的概率分
 
  
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image188.jpg)
+![img](clip_image188.jpg)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image190.jpg)
+![img](clip_image190.jpg)
 
 **Explanation 1**
 
@@ -1980,7 +1980,7 @@ sampling就是以一定的概率分布，看发生什么事件。举一个例子
 
  
 
- ![img](D:\Dropbox\job\codes\blog\source\clip_image192.jpg)
+ ![img](clip_image192.jpg)
 
  上图所示的RBM含有12个可见单元(构成一个向量v)和3个隐藏单元(构成一个向量h)，W是一个12*3的矩阵，表示可见单元和隐藏单元之间的边的权重。
 
@@ -1988,25 +1988,25 @@ sampling就是以一定的概率分布，看发生什么事件。举一个例子
 
  RBM是一种基于能量(Energy-based)的模型，其可见变量v和隐藏变量h的联合配置(joint configuration)的能量为：
 
- ![img](D:\Dropbox\job\codes\blog\source\clip_image194.jpg)（式子-1）
+ ![img](clip_image194.jpg)（式子-1）
 
  其中θ是RBM的参数{W, a, b}, W为可见单元和隐藏单元之间的边的权重，b和a分别为可见单元和隐藏单元的偏置(bias)。
 
  有了v和h的联合配置的能量之后，我们就可以得到v和h的联合概率：
 
-  ![img](D:\Dropbox\job\codes\blog\source\clip_image196.jpg)         （式子-2）
+  ![img](clip_image196.jpg)         （式子-2）
 
  其中Z(θ)是归一化因子，也称为配分函数(partition function)。根据式子-1，可以将上式写为：
 
- ![img](D:\Dropbox\job\codes\blog\source\clip_image198.jpg) （式子-3）
+ ![img](clip_image198.jpg) （式子-3）
 
  我们希望最大化观测数据的似然函数P(v)，P(v)可由式子-3求P(v,h)对h的边缘分布得到:
 
- ![img](D:\Dropbox\job\codes\blog\source\clip_image200.jpg)   (式子-4)
+ ![img](clip_image200.jpg)   (式子-4)
 
  我们通过最大化P(v)来得到RBM的参数，最大化P(v)等同于最大化log(P(v))=L(θ)：
 
- ![img](D:\Dropbox\job\codes\blog\source\clip_image202.jpg)           (式子-5)
+ ![img](clip_image202.jpg)           (式子-5)
 
  
 
@@ -2050,7 +2050,7 @@ sampling就是以一定的概率分布，看发生什么事件。举一个例子
 
 回归树总体流程类似于分类树，区别在于，回归树的每一个节点都会得一个预测值，以年龄为例，该预测值等于属于这个节点的所有人年龄的平均值。分枝时穷举每一个feature的每个阈值找最好的分割点，但衡量最好的标准不再是最大熵，而是最小化平方误差。也就是被预测出错的人数越多，错的越离谱，平方误差就越大，通过最小化平方误差能够找到最可靠的分枝依据。分枝直到每个叶子节点上人的年龄都唯一或者达到预设的终止条件(如叶子个数上限)，若最终叶子节点上人的年龄不唯一，则以该节点上所有人的平均年龄做为该叶子节点的预测年龄。(引用自一篇博客，详见参考文献3)
 
-![2](D:\Dropbox\job\codes\blog\source\clip_image204.gif)
+![2](clip_image204.gif)
 
  
 
@@ -2070,9 +2070,9 @@ Boosting方法是一种用来提高弱分类算法准确度的方法,这种方�
 
 ##### AdaBoost
 
-AdaBoost（Adaptive Boosting）针对的是两类分类问题。其弱学习算法![L](D:\Dropbox\job\codes\blog\source\clip_image206.gif)也是一个两类分类器，可以根据需要选择。AdaBoost 的伪代码如下：
+AdaBoost（Adaptive Boosting）针对的是两类分类问题。其弱学习算法![L](clip_image206.gif)也是一个两类分类器，可以根据需要选择。AdaBoost 的伪代码如下：
 
-![https://pic2.zhimg.com/v2-b1db524dfb651d258928c0e175571555_b.png](D:\Dropbox\job\codes\blog\source\clip_image208.gif)
+![https://pic2.zhimg.com/v2-b1db524dfb651d258928c0e175571555_b.png](clip_image208.gif)
 
 可以看出：AdaBoost 本质就是，每次迭代更新样本分布，然后对新的分布下的样本学习一个弱分类器，和它对应的权重。更新样本分布的规则是：减小之前弱分类器分类效果较好的数据的概率，增大之前弱分类器分类效果较差的数据的概率。最终的分类器是弱分类器线性组合。
 
@@ -2082,81 +2082,81 @@ AdaBoost（Adaptive Boosting）针对的是两类分类问题。其弱学习算�
 
 **首先，**
 
-我们有训练样本![(x_1, y_1),...,(x_m,y_m) ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image210.gif)，其中![y\in\{-1,1\}](D:\Dropbox\job\codes\blog\source\clip_image212.gif)。目标是训练出一个两类分类器![H(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)，使损失函数最小，损失函数表达如下。（感谢[@haijin jiang](http://www.zhihu.com/people/91e2911ae6be0c3032eb1ed3b8e29aa9) 提醒，这里需要说明下，下式中的![f(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image216.gif)表示的是样本![x](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image218.gif)对应的真实类别；同时，![h(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image220.gif)应该理解为![H(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)，会与下文更连贯）：
+我们有训练样本![(x_1, y_1),...,(x_m,y_m) ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image210.gif)，其中![y\in\{-1,1\}](clip_image212.gif)。目标是训练出一个两类分类器![H(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)，使损失函数最小，损失函数表达如下。（感谢[@haijin jiang](http://www.zhihu.com/people/91e2911ae6be0c3032eb1ed3b8e29aa9) 提醒，这里需要说明下，下式中的![f(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image216.gif)表示的是样本![x](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image218.gif)对应的真实类别；同时，![h(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image220.gif)应该理解为![H(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)，会与下文更连贯）：
 
-![https://pic3.zhimg.com/v2-ad6872b443103e3488715501febb9cfe_b.png](D:\Dropbox\job\codes\blog\source\clip_image222.gif)
+![https://pic3.zhimg.com/v2-ad6872b443103e3488715501febb9cfe_b.png](clip_image222.gif)
 
-同时，![H(D:\Dropbox\job\codes\blog\source\clip_image214.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)由若干个弱分类器线性组合而成
+同时，![H(clip_image214.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)由若干个弱分类器线性组合而成
 
-![https://pic4.zhimg.com/v2-7cb22f05ad084afaab6d78de136917eb_b.png](D:\Dropbox\job\codes\blog\source\clip_image224.gif)
+![https://pic4.zhimg.com/v2-7cb22f05ad084afaab6d78de136917eb_b.png](clip_image224.gif)
 
-**随后**，我们需要证明如果求出![H](D:\Dropbox\job\codes\blog\source\clip_image226.gif)，它是否是有效的分类器
+**随后**，我们需要证明如果求出![H](clip_image226.gif)，它是否是有效的分类器
 
-为了求出令损失函数![\iota_{exp}](D:\Dropbox\job\codes\blog\source\clip_image228.gif)最小的![H](D:\Dropbox\job\codes\blog\source\clip_image226.gif)，我们对其求导
+为了求出令损失函数![\iota_{exp}](clip_image228.gif)最小的![H](clip_image226.gif)，我们对其求导
 
-![https://pic4.zhimg.com/v2-4ba4e744b0132c2d8d0410fc20a07e53_b.png](D:\Dropbox\job\codes\blog\source\clip_image230.gif)
+![https://pic4.zhimg.com/v2-4ba4e744b0132c2d8d0410fc20a07e53_b.png](clip_image230.gif)
 
 可以求得
 
-![https://pic4.zhimg.com/v2-d91a64285cbce8c8b41cc2cd70cdf98f_b.png](D:\Dropbox\job\codes\blog\source\clip_image232.gif)
+![https://pic4.zhimg.com/v2-d91a64285cbce8c8b41cc2cd70cdf98f_b.png](clip_image232.gif)
 
 而将![H(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)二值化，则能得到最终的二类分类器
 
-![https://pic1.zhimg.com/v2-ea20c128c101475d9d9781083839f304_b.png](D:\Dropbox\job\codes\blog\source\clip_image234.gif)
+![https://pic1.zhimg.com/v2-ea20c128c101475d9d9781083839f304_b.png](clip_image234.gif)
 
 从上式能够看出，通过最小化损失函数![\iota_{exp}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image228.gif)，我们求出的![H(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)能够最小化分类误差，所以![H(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)是有效的
 
-**随后**，由于弱分类器![h_t(D:\Dropbox\job\codes\blog\source\clip_image236.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)是可以自己选择的，训练过程无需描述；但是需要求它对应的权值![\alpha_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image238.gif)
+**随后**，由于弱分类器![h_t(clip_image236.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)是可以自己选择的，训练过程无需描述；但是需要求它对应的权值![\alpha_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image238.gif)
 
-![H(D:\Dropbox\job\codes\blog\source\clip_image214.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)是弱分类器![h_t(D:\Dropbox\job\codes\blog\source\clip_image236.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)的线性组合，当第![t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image240.gif)次迭代中，![h_t(D:\Dropbox\job\codes\blog\source\clip_image236.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)已经训练完毕（步骤3），接下来就要求![h_t(D:\Dropbox\job\codes\blog\source\clip_image236.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)对应的系数![\alpha_t](D:\Dropbox\job\codes\blog\source\clip_image238.gif)，使![\alpha_th_t(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image242.gif)能最小化本轮的损失函数![\iota_{exp}](D:\Dropbox\job\codes\blog\source\clip_image228.gif)
+![H(clip_image214.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image214.gif)是弱分类器![h_t(clip_image236.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)的线性组合，当第![t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image240.gif)次迭代中，![h_t(clip_image236.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)已经训练完毕（步骤3），接下来就要求![h_t(clip_image236.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)对应的系数![\alpha_t](clip_image238.gif)，使![\alpha_th_t(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image242.gif)能最小化本轮的损失函数![\iota_{exp}](clip_image228.gif)
 
-![https://pic4.zhimg.com/v2-d3a8ffae2362c6b478bf3618b5b651a3_b.png](D:\Dropbox\job\codes\blog\source\clip_image244.gif)
+![https://pic4.zhimg.com/v2-d3a8ffae2362c6b478bf3618b5b651a3_b.png](clip_image244.gif)
 
-其中，![\epsilon_t](D:\Dropbox\job\codes\blog\source\clip_image246.gif)为
+其中，![\epsilon_t](clip_image246.gif)为
 
-![https://pic2.zhimg.com/v2-487182b2ec21358808d53aa05a873bd1_b.png](D:\Dropbox\job\codes\blog\source\clip_image248.gif)
+![https://pic2.zhimg.com/v2-487182b2ec21358808d53aa05a873bd1_b.png](clip_image248.gif)
 
 为了求![\alpha_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image238.gif)，对![\iota_{exp}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image228.gif)求导
 
-![https://pic2.zhimg.com/v2-dcb30c4bad1f5616dc50f82191d77881_b.png](D:\Dropbox\job\codes\blog\source\clip_image250.gif)
+![https://pic2.zhimg.com/v2-dcb30c4bad1f5616dc50f82191d77881_b.png](clip_image250.gif)
 
 可以求得![h_t(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)的权值![\alpha_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image238.gif)
 
-![https://pic3.zhimg.com/v2-1b5d7da4264eeeda7e962941294f9652_b.png](D:\Dropbox\job\codes\blog\source\clip_image252.gif)
+![https://pic3.zhimg.com/v2-1b5d7da4264eeeda7e962941294f9652_b.png](clip_image252.gif)
 
 **之后**，需要明确如何通过前几轮的学习效果，确定下一个弱分类器
 
-假设在第![t-1](D:\Dropbox\job\codes\blog\source\clip_image254.gif)轮迭代后，我们得到了![t-1](D:\Dropbox\job\codes\blog\source\clip_image254.gif)个弱分类器，此时将它们组合成强分类器![H_{t-1}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image256.gif)。接下来，我们希望下一个弱分类器![h_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image258.gif)能够纠正![H_{t-1}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image256.gif)中的所有错误。即，由于![h_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image258.gif)纠正了所有的错误，此时的损失函数![\iota_{exp}](D:\Dropbox\job\codes\blog\source\clip_image228.gif)应该最小
+假设在第![t-1](clip_image254.gif)轮迭代后，我们得到了![t-1](clip_image254.gif)个弱分类器，此时将它们组合成强分类器![H_{t-1}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image256.gif)。接下来，我们希望下一个弱分类器![h_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image258.gif)能够纠正![H_{t-1}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image256.gif)中的所有错误。即，由于![h_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image258.gif)纠正了所有的错误，此时的损失函数![\iota_{exp}](clip_image228.gif)应该最小
 
-![https://pic4.zhimg.com/v2-0a51142711968a86d6925d842a13425f_b.png](D:\Dropbox\job\codes\blog\source\clip_image260.gif)
+![https://pic4.zhimg.com/v2-0a51142711968a86d6925d842a13425f_b.png](clip_image260.gif)
 
-对![e^{-f(D:\Dropbox\job\codes\blog\source\clip_image262.gif)h_t(x)}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image262.gif)泰勒展开，且由于![f(x)^2=1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image264.gif)，![h_t(x)^2=1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image266.gif)
+对![e^{-f(clip_image262.gif)h_t(x)}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image262.gif)泰勒展开，且由于![f(x)^2=1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image264.gif)，![h_t(x)^2=1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image266.gif)
 
-![https://pic1.zhimg.com/v2-0c69a50e811304e6c1c6f3b17d5af174_b.png](D:\Dropbox\job\codes\blog\source\clip_image268.gif)
+![https://pic1.zhimg.com/v2-0c69a50e811304e6c1c6f3b17d5af174_b.png](clip_image268.gif)
 
 因此，理想的![h_t(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)应该能够有如下性质
 
-![https://pic2.zhimg.com/v2-3ff0f74a30bdad7a47fe6c9101b15035_b.png](D:\Dropbox\job\codes\blog\source\clip_image270.gif)
+![https://pic2.zhimg.com/v2-3ff0f74a30bdad7a47fe6c9101b15035_b.png](clip_image270.gif)
 
-需要注意的是，上式最后两行，只是单纯除以了一个常数而已。有了这个常数，我们可以定义一个分布![D_t](D:\Dropbox\job\codes\blog\source\clip_image272.gif)
+需要注意的是，上式最后两行，只是单纯除以了一个常数而已。有了这个常数，我们可以定义一个分布![D_t](clip_image272.gif)
 
-![https://pic1.zhimg.com/v2-926260ea8ba07f1ecb12560088506100_b.png](D:\Dropbox\job\codes\blog\source\clip_image274.gif)
+![https://pic1.zhimg.com/v2-926260ea8ba07f1ecb12560088506100_b.png](clip_image274.gif)
 
 于是，![h_t(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)可以被写成
 
-![https://pic2.zhimg.com/v2-521b6825170cec218018b656a3b380e9_b.png](D:\Dropbox\job\codes\blog\source\clip_image276.gif)
+![https://pic2.zhimg.com/v2-521b6825170cec218018b656a3b380e9_b.png](clip_image276.gif)
 
-由于又有下式（其中![I(x)=1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image278.gif)当![x](D:\Dropbox\job\codes\blog\source\clip_image218.gif)为真；![I(x)=0](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image280.gif)当![x](D:\Dropbox\job\codes\blog\source\clip_image218.gif)为假）
+由于又有下式（其中![I(x)=1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image278.gif)当![x](clip_image218.gif)为真；![I(x)=0](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image280.gif)当![x](clip_image218.gif)为假）
 
-![https://pic4.zhimg.com/v2-84c0e919bddd3b9bf8d8c69d80c2a9e7_b.png](D:\Dropbox\job\codes\blog\source\clip_image282.gif)
+![https://pic4.zhimg.com/v2-84c0e919bddd3b9bf8d8c69d80c2a9e7_b.png](clip_image282.gif)
 
 ![h_t(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)最终可以写成
 
-![https://pic1.zhimg.com/v2-aa6cd56d96c37c2466f33f115059fa1c_b.png](D:\Dropbox\job\codes\blog\source\clip_image284.gif)
+![https://pic1.zhimg.com/v2-aa6cd56d96c37c2466f33f115059fa1c_b.png](clip_image284.gif)
 
 此时，![h_t(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image236.gif)只与定义出的分布![D_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image272.gif)相关，因此我们只需要求出![D_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image272.gif)的表达即可
 
-![https://pic1.zhimg.com/v2-6c0273c70801387a774ef7ddfc740f7c_b.png](D:\Dropbox\job\codes\blog\source\clip_image286.gif)
+![https://pic1.zhimg.com/v2-6c0273c70801387a774ef7ddfc740f7c_b.png](clip_image286.gif)
 
 上式最后一项是个常数，可以理解为将![D_t](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image272.gif)归一化为分布的系数，即得到了步骤7中的公式
 
@@ -2164,16 +2164,16 @@ AdaBoost（Adaptive Boosting）针对的是两类分类问题。其弱学习算�
 
 ##### Gradient Boosting
 
-Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\source\clip_image288.gif)，使损失函数![\psi(y,F(x))](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image290.gif)最小，即
+Gradient Boosting 的本质，就是训练出![F^*](clip_image288.gif)，使损失函数![\psi(y,F(x))](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image290.gif)最小，即
 
-![F^*=\underset{F(D:\Dropbox\job\codes\blog\source\clip_image292.gif)}{\arg\min}E_{y,x}\psi(y,F(x))](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image292.gif)
+![F^*=\underset{F(clip_image292.gif)}{\arg\min}E_{y,x}\psi(y,F(x))](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image292.gif)
 
 
 其求解步骤如下：
 
-![http://pic2.zhimg.com/v2-9fbb970e03e82b6d6ef4040c1c7c0fad_b.png](D:\Dropbox\job\codes\blog\source\clip_image294.gif)
+![http://pic2.zhimg.com/v2-9fbb970e03e82b6d6ef4040c1c7c0fad_b.png](clip_image294.gif)
 
-所以，我们首先得定义出损失函数![\psi(D:\Dropbox\job\codes\blog\source\clip_image290.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image290.gif)，才能谈求解的事情。接下来我们针对不同场景，介绍相应的损失函数。
+所以，我们首先得定义出损失函数![\psi(clip_image290.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image290.gif)，才能谈求解的事情。接下来我们针对不同场景，介绍相应的损失函数。
 
  
 
@@ -2181,96 +2181,96 @@ Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\so
 
 在说明分类之前，我们先介绍一种损失函数。与常见的直接求预测与真实值的偏差不同，这种损失函数的目的是最大化预测值为真实值的概率。这种损失函数叫做对数损失函数（Log-Likehood Loss），定义如下
 
-![L(D:\Dropbox\job\codes\blog\source\clip_image296.gif)=-logP(Y|X)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image296.gif)
+![L(clip_image296.gif)=-logP(Y|X)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image296.gif)
 
 
-对于二项分布，![y^*\in\{0,1\}](D:\Dropbox\job\codes\blog\source\clip_image298.gif)，我们定义预测概率为![p(x)=P(y^*=1)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image300.gif)，即二项分布的概率，可得
+对于二项分布，![y^*\in\{0,1\}](clip_image298.gif)，我们定义预测概率为![p(x)=P(y^*=1)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image300.gif)，即二项分布的概率，可得
 
-![L(D:\Dropbox\job\codes\blog\source\clip_image302.gif)=\begin{cases}-log(p(x)),& \text{if $y^*$=1}\\-log(1-p(x)),& \text{if $y^*$=0}\end{cases}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image302.gif)
+![L(clip_image302.gif)=\begin{cases}-log(p(x)),& \text{if $y^*$=1}\\-log(1-p(x)),& \text{if $y^*$=0}\end{cases}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image302.gif)
 
 
 即，可以合并写成
 
-![L(D:\Dropbox\job\codes\blog\source\clip_image304.gif)=-ylog(p(x))-(1-y)log(1-p(x))](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image304.gif)
+![L(clip_image304.gif)=-ylog(p(x))-(1-y)log(1-p(x))](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image304.gif)
 
 
-对于![p(D:\Dropbox\job\codes\blog\source\clip_image306.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image306.gif)与![F(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image308.gif)的关系，我们定义为
+对于![p(clip_image306.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image306.gif)与![F(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image308.gif)的关系，我们定义为
 
-![p(D:\Dropbox\job\codes\blog\source\clip_image310.gif)=\frac{e^{F(x)}}{e^{F(x)}+e^{-F(x)}}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image310.gif)
+![p(clip_image310.gif)=\frac{e^{F(x)}}{e^{F(x)}+e^{-F(x)}}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image310.gif)
 
 
-即，![F(D:\Dropbox\job\codes\blog\source\clip_image312.gif)=\frac{1}{2}log(\frac{p(x)}{1-p(x)})](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image312.gif)。当![p(x)=1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image314.gif)，![F(x)\to\infty](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image316.gif)；当![p(x)=0](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image318.gif)，![F(x)\to-\infty](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image320.gif)
+即，![F(clip_image312.gif)=\frac{1}{2}log(\frac{p(x)}{1-p(x)})](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image312.gif)。当![p(x)=1](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image314.gif)，![F(x)\to\infty](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image316.gif)；当![p(x)=0](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image318.gif)，![F(x)\to-\infty](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image320.gif)
 
 ###### 两类分类
 
-对于两类分类，![y\in\{-1,1\}](D:\Dropbox\job\codes\blog\source\clip_image212.gif)，我们先将它转成二项分布![y^*\in\{0,1\}](D:\Dropbox\job\codes\blog\source\clip_image298.gif)，即令![y^*=(D:\Dropbox\job\codes\blog\source\clip_image322.gif)/2](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image322.gif)。
+对于两类分类，![y\in\{-1,1\}](clip_image212.gif)，我们先将它转成二项分布![y^*\in\{0,1\}](clip_image298.gif)，即令![y^*=(clip_image322.gif)/2](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image322.gif)。
 
 于是根据上面得到的，损失函数期望为
 
 
 
 
-其中，![F(D:\Dropbox\job\codes\blog\source\clip_image308.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image308.gif)定义为
+其中，![F(clip_image308.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image308.gif)定义为
 
-![http://pic1.zhimg.com/v2-418c42039a65659200e478af1acf574c_b.png](D:\Dropbox\job\codes\blog\source\clip_image324.gif)
+![http://pic1.zhimg.com/v2-418c42039a65659200e478af1acf574c_b.png](clip_image324.gif)
 
 接下来求出梯度
 
-![http://pic4.zhimg.com/v2-07914e6e32532d9625ed8af612710a4f_b.png](D:\Dropbox\job\codes\blog\source\clip_image326.gif)
+![http://pic4.zhimg.com/v2-07914e6e32532d9625ed8af612710a4f_b.png](clip_image326.gif)
 
 这样，Gradient Boosting 需要的条件就准备齐了。
 
 但是，如果我们将弱算法设置为决策树，并在求解步长的时候利用牛顿法，原算法能够得到如下更简洁的形式，即两类分类的 GBDT 算法流程如下
 
-![http://pic1.zhimg.com/v2-975e17afba3f820b69d1e022feaac3a8_b.png](D:\Dropbox\job\codes\blog\source\clip_image328.gif)
+![http://pic1.zhimg.com/v2-975e17afba3f820b69d1e022feaac3a8_b.png](clip_image328.gif)
 
-最后依据计算出来的![F_m(D:\Dropbox\job\codes\blog\source\clip_image330.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image330.gif)分类即可。即，通过![F_m(D:\Dropbox\job\codes\blog\source\clip_image330.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image330.gif)估算预测的概率
+最后依据计算出来的![F_m(clip_image330.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image330.gif)分类即可。即，通过![F_m(clip_image330.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image330.gif)估算预测的概率
 
-![http://pic1.zhimg.com/v2-8f9d583850c9197fc1eb7495a91ac050_b.png](D:\Dropbox\job\codes\blog\source\clip_image332.gif)
+![http://pic1.zhimg.com/v2-8f9d583850c9197fc1eb7495a91ac050_b.png](clip_image332.gif)
 
-然后根据以下准则预测标签，其中![c(D:\Dropbox\job\codes\blog\source\clip_image334.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image334.gif)是代价函数，表示当真实类别为![y](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image336.gif)，预测类别为![\hat y](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image338.gif)时的代价
+然后根据以下准则预测标签，其中![c(clip_image334.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image334.gif)是代价函数，表示当真实类别为![y](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image336.gif)，预测类别为![\hat y](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image338.gif)时的代价
 
-![http://pic2.zhimg.com/v2-1571e87355b09c6988fb6272a5282d69_b.png](D:\Dropbox\job\codes\blog\source\clip_image340.gif)      
+![http://pic2.zhimg.com/v2-1571e87355b09c6988fb6272a5282d69_b.png](clip_image340.gif)      
 
  
 
 ###### 多类分类
 
-模仿上面两类分类的损失函数，我们能够将![K](D:\Dropbox\job\codes\blog\source\clip_image342.gif)类分类的损失函数定义为
+模仿上面两类分类的损失函数，我们能够将![K](clip_image342.gif)类分类的损失函数定义为
 
-![http://pic4.zhimg.com/v2-74eee9e955abbfde9bfd35c207ac5217_b.png](D:\Dropbox\job\codes\blog\source\clip_image344.gif)
+![http://pic4.zhimg.com/v2-74eee9e955abbfde9bfd35c207ac5217_b.png](clip_image344.gif)
 
-其中，![p_k(D:\Dropbox\job\codes\blog\source\clip_image346.gif)=P(y_k=1|x_k)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image346.gif)，且将![p_k(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image348.gif)与![F_k(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image350.gif)关系定义为
+其中，![p_k(clip_image346.gif)=P(y_k=1|x_k)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image346.gif)，且将![p_k(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image348.gif)与![F_k(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image350.gif)关系定义为
 
-![http://pic2.zhimg.com/v2-6e7fc52c1e26a2893282939f6056d58d_b.png](D:\Dropbox\job\codes\blog\source\clip_image352.gif)
+![http://pic2.zhimg.com/v2-6e7fc52c1e26a2893282939f6056d58d_b.png](clip_image352.gif)
 
 或者，换一种表达方式
 
-![http://pic1.zhimg.com/v2-bb163a7c1fe96c481af9d88c9c9d59dc_b.png](D:\Dropbox\job\codes\blog\source\clip_image354.gif)接下来求出梯度
+![http://pic1.zhimg.com/v2-bb163a7c1fe96c481af9d88c9c9d59dc_b.png](clip_image354.gif)接下来求出梯度
 
-![http://pic3.zhimg.com/v2-a72017b87e36115c93ca4d7cefe126c6_b.png](D:\Dropbox\job\codes\blog\source\clip_image356.gif)
+![http://pic3.zhimg.com/v2-a72017b87e36115c93ca4d7cefe126c6_b.png](clip_image356.gif)
 
-于是可以看出，这里在每一次迭代，都要求![K](D:\Dropbox\job\codes\blog\source\clip_image342.gif)个参数，和对应的![F_k(D:\Dropbox\job\codes\blog\source\clip_image350.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image350.gif)。而求出的![F_k(D:\Dropbox\job\codes\blog\source\clip_image350.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image350.gif)则可以理解为![x](D:\Dropbox\job\codes\blog\source\clip_image218.gif)属于第![k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image358.gif)类而不是其他类的概率。本质上就是OneVsRest的思想。
+于是可以看出，这里在每一次迭代，都要求![K](clip_image342.gif)个参数，和对应的![F_k(clip_image350.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image350.gif)。而求出的![F_k(clip_image350.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image350.gif)则可以理解为![x](clip_image218.gif)属于第![k](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image358.gif)类而不是其他类的概率。本质上就是OneVsRest的思想。
 
 同上，如果我们对弱算法选择决策树，则有![K](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image342.gif)类分类的 GBDT 算法流程为
 
-![http://pic1.zhimg.com/v2-0572e445509e2530cfd433b3964b033c_b.png](D:\Dropbox\job\codes\blog\source\clip_image360.gif)
+![http://pic1.zhimg.com/v2-0572e445509e2530cfd433b3964b033c_b.png](clip_image360.gif)
 
-然后，根据上面的公式，将最终得到的![\{F_{kM}(D:\Dropbox\job\codes\blog\source\clip_image362.gif)\}_1^K](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image362.gif)转换为对应的类别概率![\{p_{kM}(x)\}_1^K](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image364.gif)，并用于分类即可。分类准则如下
+然后，根据上面的公式，将最终得到的![\{F_{kM}(clip_image362.gif)\}_1^K](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image362.gif)转换为对应的类别概率![\{p_{kM}(x)\}_1^K](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image364.gif)，并用于分类即可。分类准则如下
 
-![http://pic1.zhimg.com/v2-95b03106cb7cbe2589c5c8f631b7fd58_b.png](D:\Dropbox\job\codes\blog\source\clip_image366.gif)
+![http://pic1.zhimg.com/v2-95b03106cb7cbe2589c5c8f631b7fd58_b.png](clip_image366.gif)
 
-其中，![c(k,k^\prime)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image368.gif)是代价函数，表示当真实类别为![k^\prime](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image370.gif)，预测类别为![k](D:\Dropbox\job\codes\blog\source\clip_image358.gif)时的代价
+其中，![c(k,k^\prime)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image368.gif)是代价函数，表示当真实类别为![k^\prime](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image370.gif)，预测类别为![k](clip_image358.gif)时的代价
 
 ###### 正则化
 
-采取以上算法去训练测试样本集，能很好地拟合测试数据，相对不可避免地会产生过拟合。为了减少过拟合，可以从两个方面入手，即弱算法的个数![M](D:\Dropbox\job\codes\blog\source\clip_image372.gif)，以及收缩率![v](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image374.gif)。
+采取以上算法去训练测试样本集，能很好地拟合测试数据，相对不可避免地会产生过拟合。为了减少过拟合，可以从两个方面入手，即弱算法的个数![M](clip_image372.gif)，以及收缩率![v](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image374.gif)。
 
 弱算法的个数
 
 在推导 AdaBoost 的时候，我们就介绍过，我们希望训练出的![F(x)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image308.gif)是若干个弱算法的线性组合，即
 
-![http://pic2.zhimg.com/v2-226a5a0d807a1d67a0cd9d9bf95cffbd_b.png](D:\Dropbox\job\codes\blog\source\clip_image376.gif)
+![http://pic2.zhimg.com/v2-226a5a0d807a1d67a0cd9d9bf95cffbd_b.png](clip_image376.gif)
 
 因此，这个![M](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image372.gif)的大小就影响着算法的复杂度。
 
@@ -2278,13 +2278,13 @@ Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\so
 
 收缩率
 
-前面介绍过，在第![m](D:\Dropbox\job\codes\blog\source\clip_image378.gif)次迭代时，我们用如下公式更新![F_m(D:\Dropbox\job\codes\blog\source\clip_image330.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image330.gif)
+前面介绍过，在第![m](clip_image378.gif)次迭代时，我们用如下公式更新![F_m(clip_image330.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image330.gif)
 
-![http://pic1.zhimg.com/v2-61a2410900583598a4437e46a88c4468_b.png](D:\Dropbox\job\codes\blog\source\clip_image380.gif)
+![http://pic1.zhimg.com/v2-61a2410900583598a4437e46a88c4468_b.png](clip_image380.gif)
 
-而增加收缩率![v](D:\Dropbox\job\codes\blog\source\clip_image374.gif)后，则更新公式变为
+而增加收缩率![v](clip_image374.gif)后，则更新公式变为
 
-![http://pic1.zhimg.com/v2-cfa8a2d0f5f25e2f9387d7324c4785b0_b.png](D:\Dropbox\job\codes\blog\source\clip_image382.gif)
+![http://pic1.zhimg.com/v2-cfa8a2d0f5f25e2f9387d7324c4785b0_b.png](clip_image382.gif)
 
 即越往后训练出的弱算法，其在总算法中占得权重相对越低，于是真正有效的弱算法也就前面有限个，因而影响了算法的复杂度。
 
@@ -2354,7 +2354,7 @@ Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\so
 
 #### 自编码器
 
-![autoencoder_schema.jpg](D:\Dropbox\job\codes\blog\source\clip_image383.jpg)
+![autoencoder_schema.jpg](clip_image383.jpg)
 
 自动编码器是一种数据的压缩算法，其中数据的压缩和解压缩函数是1）数据相关的,2）有损的，3）从样本中自动学习的。在大部分提到自动编码器的场合，压缩和解压缩的函数是通过神经网络实现的。
 
@@ -2382,7 +2382,7 @@ Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\so
 
 在应用自监督学习的视觉问题中，可能应用自编码器的领域有例如拼图，细节纹理匹配（从低分辨率的图像块中匹配其高分辨率的对应块）。下面这篇文章研究了拼图问题，其实很有意思，不妨一读。[Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles.](http://arxiv.org/abs/1603.09246)。此类问题的模型输入有些内置的假设，例如“视觉块比像素级的细节更重要”这样的，这种假设是普通的自编码器没有的。
 
-![jigsaw-puzzle.png](D:\Dropbox\job\codes\blog\source\clip_image385.jpg)
+![jigsaw-puzzle.png](clip_image385.jpg)
 
  
 
@@ -2396,14 +2396,14 @@ Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\so
 
 如果我们想用生成式的模型去解决这个问题，就需要利用贝叶斯公式把这个问题转换过来：
 
-![p(D:\Dropbox\job\codes\blog\source\clip_image387.gif)=\frac{p(X|z)p(z)}{p(X)}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image387.gif)
+![p(clip_image387.gif)=\frac{p(X|z)p(z)}{p(X)}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image387.gif)
 
 
 为了遵从大多数教科书上的变量用法，这里将y变成了z。当然，这个时候的z可能比上面提到的“类别”y要复杂一些。在很多的生成模型中，我们把z称作隐含变量，把X称作观测变量。一般来说，我们可以比较容易地观察到X，但是X背后的z却不那么容易见到，而很多时候X是由z构造出来的，比方说一天的天气好与坏是由很多不易观察的因素决定的。于是我们自然而然就有了一个需求，当我们拿到这些X之后，我们想知道背后的z是什么，于是乎就有了上面那个公式。
 
 对于一些简单的问题，上面的公式还是比较容易解出的，比方说朴素贝叶斯模型，但是还是有很多模型是不易解出的，尤其当隐含变量处于一个高维度的连续空间中：
 
-![p(D:\Dropbox\job\codes\blog\source\clip_image389.gif)=\frac{p(X|z)p(z)}{\int_z{p(X|z)p(z)dz}}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image389.gif)
+![p(clip_image389.gif)=\frac{p(X|z)p(z)}{\int_z{p(X|z)p(z)dz}}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image389.gif)
 
 
 这里的积分就没那么容易搞定了。于是乎，各路大神开始想尽一切办法让上面的式子变得好解些。
@@ -2432,23 +2432,23 @@ Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\so
 
 所以就有了：
 
-![KL(D:\Dropbox\job\codes\blog\source\clip_image391.gif)=\int{q(z)log \frac{q(z)}{p(z|X)}}dz](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image391.gif)
+![KL(clip_image391.gif)=\int{q(z)log \frac{q(z)}{p(z|X)}}dz](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image391.gif)
  ![=\int{q(z)[log q(z) - log p(z|X)]}dz](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image393.gif)
 
 
 我们做一下贝叶斯公式的变换，就得到了：
 
-![=\int{q(D:\Dropbox\job\codes\blog\source\clip_image395.gif)[log q(z) - log p(X|z) - log p(z) + logp(X)]}dz](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image395.gif)
+![=\int{q(clip_image395.gif)[log q(z) - log p(X|z) - log p(z) + logp(X)]}dz](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image395.gif)
 
 
 再将和z无关的项目从积分符号中拿出来，就得到了：
 
-![=\int{q(D:\Dropbox\job\codes\blog\source\clip_image397.gif)[log q(z) - log p(X|z) - log p(z)]}dz + log p(X)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image397.gif)
+![=\int{q(clip_image397.gif)[log q(z) - log p(X|z) - log p(z)]}dz + log p(X)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image397.gif)
 
 
 左右整理一下，就得到了：
 
-![log p(D:\Dropbox\job\codes\blog\source\clip_image399.gif) - KL(q(z)||p(z|X))=\int{q(z) log p(X|z)}dz-KL(q(z)||p(z))](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image399.gif)
+![log p(clip_image399.gif) - KL(q(z)||p(z|X))=\int{q(z) log p(X|z)}dz-KL(q(z)||p(z))](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image399.gif)
 
 
 好吧，其实整理了一圈，这个公式还是很乱，不过因为KL散度的特殊关系，我们还是从这个公式中看到了一丝曙光：
@@ -2473,11 +2473,11 @@ Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\so
 
 比方说我们有一个随机变 量a服从高斯分布N(1,1)，根据定理我们可以定义一个随机变量b=a-1，那么它将服从高斯分布N(0,1)，换句话说，我们可以用一个均值为0，方差为1的随机变量加上1来表示现在的随机变量a。这样我们就把一个随机变量分成了两部分——一部分是确定的，一部分是随机的。
 
-对于上面的Q'(z|X)，我们同样可以采用上面的方法完成。我们可以把一个服从这个条件概率的z拆分成两部分，一部分是一个复杂的函数![g_\phi(D:\Dropbox\job\codes\blog\source\clip_image401.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image401.gif)，它解决了确定部分的问题，我们再定义另外一个随机变量![\varepsilon ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image403.gif)，它负责随机的部分。为了书写的一致性，我们用![g_\phi(X+\varepsilon )](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image405.gif)来表示服从条件概率的z。
+对于上面的Q'(z|X)，我们同样可以采用上面的方法完成。我们可以把一个服从这个条件概率的z拆分成两部分，一部分是一个复杂的函数![g_\phi(clip_image401.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image401.gif)，它解决了确定部分的问题，我们再定义另外一个随机变量![\varepsilon ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image403.gif)，它负责随机的部分。为了书写的一致性，我们用![g_\phi(X+\varepsilon )](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image405.gif)来表示服从条件概率的z。
 
-这样做有什么好处呢？现在我们知道了z条件概率值完全取决于生成它所使用的![\varepsilon ](D:\Dropbox\job\codes\blog\source\clip_image403.gif)的概率。也就是说如果![z^{(i)}=g_\phi(X+\varepsilon^{(i)} )](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image407.gif)，那么![q(z^{(i)})=p(\varepsilon ^{(i)})](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image409.gif)，那么上面关于变分推导的公式也就变成了下面的公式：
+这样做有什么好处呢？现在我们知道了z条件概率值完全取决于生成它所使用的![\varepsilon ](clip_image403.gif)的概率。也就是说如果![z^{(i)}=g_\phi(X+\varepsilon^{(i)} )](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image407.gif)，那么![q(z^{(i)})=p(\varepsilon ^{(i)})](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image409.gif)，那么上面关于变分推导的公式也就变成了下面的公式：
 
-![log p(D:\Dropbox\job\codes\blog\source\clip_image411.gif) - KL(q(z)||p(z|X))=\int{p(\varepsilon ) log p(X|g_{\phi}(X,\varepsilon )  )}dz-KL(q(z|X,\varepsilon  )||p(z))](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image411.gif)
+![log p(clip_image411.gif) - KL(q(z)||p(z|X))=\int{p(\varepsilon ) log p(X|g_{\phi}(X,\varepsilon )  )}dz-KL(q(z|X,\varepsilon  )||p(z))](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image411.gif)
 
 
 这就是替换的一小步，求解的一大步！实际上到了这里，我们已经接近问题最终的答案了，剩下的只是我们的临门一脚——我们可不可以假设这个随机部分服从什么样的分布呢？
@@ -2497,7 +2497,7 @@ Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\so
 
 真的有种世界清静了的感觉……我们下面的目标就是利用encoder的部分根据X求解z的均值方差。这部分我们采用一个深度的神经网络就可以了。由于实际训练过程中我们采用的是batch的训练方法，因此我们需要输入一个batch的X信息，然后进行模型的计算和优化。
 
-如果我们用一个向量![\sigma_1](D:\Dropbox\job\codes\blog\source\clip_image415.gif)来表示上面协方差矩阵的主对角线，情况将会更加美好：
+如果我们用一个向量![\sigma_1](clip_image415.gif)来表示上面协方差矩阵的主对角线，情况将会更加美好：
 
 ![KL(p1(\mu_1,\sigma_1)||N(0,I))=\frac{1}{2}[-\sum_i{log [(\sigma_{1i})}] - d + \sum_i(\sigma_{1i})+\mu_1^T \mu_1]](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image417.gif)
 
@@ -2528,16 +2528,16 @@ Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\so
 
 那么，不管是什么样的任务，都包含了一系列的**动作****Action**,**观察****Observation**还有**反****馈值****Reward**。所谓的Reward就是Agent执行了动作与环境进行交互后，环境会发生变化，变化的好与坏就用Reward来表示。如上面的例子。如果机械臂离手机变近了，那么Reward就应该是正的，如果玩赛车游戏赛车越来越偏离跑道，那么Reward就是负的。接下来这里用了Observation观察一词而不是环境那是因为Agent不一定能得到环境的所有信息，比如机械臂上的摄像头就只能得到某个特定角度的画面。因此，只能用Observation来表示Agent获取的感知信息。
 
-![http://pic4.zhimg.com/601390d3e432c05da7cc24f3f96bb9fb_b.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image419.gif)上面这张图（[来自David Silver的课程ppt](http://link.zhihu.com/?target=http%3A//www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html)）可以很清楚的看到整个交互过程。事实上，这就是人与环境交互的一种模型化表示。在每个时间点time-step Agent都会从可以选择的动作集合A中选择一个动作![a_t](D:\Dropbox\job\codes\blog\source\clip_image421.gif)执行.这个动作集合可以是连续的比如机器人的控制也可以是离散的比如游戏中的几个按键。动作集合的数量将直接影响整个任务的求解难度，因此DeepMind才从玩最简单的游戏做起，DQN算法（不考虑其变种）仅适用于离散输出问题。
+![http://pic4.zhimg.com/601390d3e432c05da7cc24f3f96bb9fb_b.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image419.gif)上面这张图（[来自David Silver的课程ppt](http://link.zhihu.com/?target=http%3A//www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html)）可以很清楚的看到整个交互过程。事实上，这就是人与环境交互的一种模型化表示。在每个时间点time-step Agent都会从可以选择的动作集合A中选择一个动作![a_t](clip_image421.gif)执行.这个动作集合可以是连续的比如机器人的控制也可以是离散的比如游戏中的几个按键。动作集合的数量将直接影响整个任务的求解难度，因此DeepMind才从玩最简单的游戏做起，DQN算法（不考虑其变种）仅适用于离散输出问题。
 
-那么知道了整个过程，任务的目标就出来了，那就是要能获取尽可能多的Reward。没有目标，控制也就无从谈起，因此，获取Reward就是一个量化的标准，Reward越多，就表示执行得越好。每个时间片，Agent都是根据当前的观察来确定下一步的动作。观察Observation的集合就作为Agent的所处的**状****态****State**，因此，**状****态****State**和**动作****Action**存在映射关系，也就是一个state可以对应一个action，或者对应不同动作的概率（常常用概率来表示，概率最高的就是最值得执行的动作）。状态与动作的关系其实就是输入与输出的关系，而状态State到动作Action的过程就称之为一个**策略****Policy****，**一般用![\pi ](D:\Dropbox\job\codes\blog\source\clip_image423.gif)表示，也就是需要找到以下关系：
+那么知道了整个过程，任务的目标就出来了，那就是要能获取尽可能多的Reward。没有目标，控制也就无从谈起，因此，获取Reward就是一个量化的标准，Reward越多，就表示执行得越好。每个时间片，Agent都是根据当前的观察来确定下一步的动作。观察Observation的集合就作为Agent的所处的**状****态****State**，因此，**状****态****State**和**动作****Action**存在映射关系，也就是一个state可以对应一个action，或者对应不同动作的概率（常常用概率来表示，概率最高的就是最值得执行的动作）。状态与动作的关系其实就是输入与输出的关系，而状态State到动作Action的过程就称之为一个**策略****Policy****，**一般用![\pi ](clip_image423.gif)表示，也就是需要找到以下关系：
 
-![a=\pi(D:\Dropbox\job\codes\blog\source\clip_image425.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image425.gif)
+![a=\pi(clip_image425.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image425.gif)
 
 
 或者
 
-![\pi(D:\Dropbox\job\codes\blog\source\clip_image427.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image427.gif)
+![\pi(clip_image427.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image427.gif)
 
 
 其中a是action，s是state。第一种是一一对应的表示，第二种是概率的表示。
@@ -2546,7 +2546,7 @@ Gradient Boosting 的本质，就是训练出![F^*](D:\Dropbox\job\codes\blog\so
 
 我们一开始并不知道最优的策略是什么，因此往往从随机的策略开始，使用随机的策略进行试验，就可以得到一系列的状态,动作和反馈：
 
-![\{s_1,a_1,r_1,s_2,a_2,r_2,...s_t,a_t,r_t\}](D:\Dropbox\job\codes\blog\source\clip_image429.gif)
+![\{s_1,a_1,r_1,s_2,a_2,r_2,...s_t,a_t,r_t\}](clip_image429.gif)
 
 
 这就是一系列的**样本****Sample**。增强学习的算法就是需要根据这些样本来改进Policy，从而使得得到的样本中的Reward更好。由于这种让Reward越来越好的特性，所以这种算法就叫做增强学习Reinforcement Learning。
@@ -2563,13 +2563,13 @@ MDP基于这样一种假设：
 
 用数学的话来描述就是：
 
-一个状态![S_t](D:\Dropbox\job\codes\blog\source\clip_image431.gif)是Markov当且仅当
+一个状态![S_t](clip_image431.gif)是Markov当且仅当
 
-![P(D:\Dropbox\job\codes\blog\source\clip_image433.gif)=P(s_{t+1}|s_t,s_{t-1},...s_1,s_0)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image433.gif)
+![P(clip_image433.gif)=P(s_{t+1}|s_t,s_{t-1},...s_1,s_0)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image433.gif)
 
 增强学习的问题都可以模型化为MDP的问题。
 
-一个基本的MDP可以用（S,A,P）来表示，S表示状态，A表示动作，P表示状态转移概率，也就是根据当前的状态![s_t](D:\Dropbox\job\codes\blog\source\clip_image435.gif)和![a_t](D:\Dropbox\job\codes\blog\source\clip_image421.gif)转移到![s_{t+1}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image437.gif)的概率。如果我们知道了转移概率P，也就是称为我们获得了**模型****Model**，有了模型，未来就可以求解，那么获取最优的动作也就有可能，这种通过模型来获取最优动作的方法也就称为Model-based的方法。但是现实情况下，很多问题是很难得到准确的模型的，因此就有Model-free的方法来寻找最优的动作。关于具体的方法这里不具体讨论。在以后的文章中我们会通过分析具体的算法对此有个明确的认识。
+一个基本的MDP可以用（S,A,P）来表示，S表示状态，A表示动作，P表示状态转移概率，也就是根据当前的状态![s_t](clip_image435.gif)和![a_t](clip_image421.gif)转移到![s_{t+1}](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image437.gif)的概率。如果我们知道了转移概率P，也就是称为我们获得了**模型****Model**，有了模型，未来就可以求解，那么获取最优的动作也就有可能，这种通过模型来获取最优动作的方法也就称为Model-based的方法。但是现实情况下，很多问题是很难得到准确的模型的，因此就有Model-free的方法来寻找最优的动作。关于具体的方法这里不具体讨论。在以后的文章中我们会通过分析具体的算法对此有个明确的认识。
 
 #### 回报Result
 
@@ -2577,16 +2577,16 @@ MDP基于这样一种假设：
 
 那么状态的好坏其实等价于对未来回报的期望。因此，引入**回****报****Return**来表示某个时刻t的状态将具备的回报：
 
-![G_t = R_{t+1} + \lambda R_{t+2} + ... = \sum_{k=0}^\infty\lambda^kR_{t+k+1}](D:\Dropbox\job\codes\blog\source\clip_image439.gif)
+![G_t = R_{t+1} + \lambda R_{t+2} + ... = \sum_{k=0}^\infty\lambda^kR_{t+k+1}](clip_image439.gif)
 
 
 上面R是Reward反馈，λ是discount factor折扣因子，一般小于1，就是说一般当下的反馈是比较重要的，时间越久，影响越小。
 
-那么实际上除非整个过程结束，否则显然我们无法获取所有的reward来计算出每个状态的Return，因此，再引入一个概念价值函数Value Function,用value function ![v(D:\Dropbox\job\codes\blog\source\clip_image441.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image441.gif)来表示一个状态未来的潜在价值。还是上面的例子，这里就变成是向左看感觉左边是悬崖那么左边的状态的估值就低。
+那么实际上除非整个过程结束，否则显然我们无法获取所有的reward来计算出每个状态的Return，因此，再引入一个概念价值函数Value Function,用value function ![v(clip_image441.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image441.gif)来表示一个状态未来的潜在价值。还是上面的例子，这里就变成是向左看感觉左边是悬崖那么左边的状态的估值就低。
 
 从定义上看，value function就是回报的期望：
 
-![v(D:\Dropbox\job\codes\blog\source\clip_image443.gif) = \mathbb E[G_t|S_t = s]](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image443.gif)
+![v(clip_image443.gif) = \mathbb E[G_t|S_t = s]](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image443.gif)
 
 
 引出价值函数，对于获取最优的策略Policy这个目标，我们就会有两种方法：
@@ -2649,21 +2649,21 @@ MDP基于这样一种假设：
 
 因此，
 
-![v(D:\Dropbox\job\codes\blog\source\clip_image445.gif) = \mathbb E[R_{t+1} + \lambda v(S_{t+1})|S_t = s]](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image445.gif)
+![v(clip_image445.gif) = \mathbb E[R_{t+1} + \lambda v(S_{t+1})|S_t = s]](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image445.gif)
 
 
 上面这个公式就是**Bellman****方程**的基本形态。从公式上看，当前状态的价值和下一步的价值以及当前的反馈Reward有关。
 
 #### Action-Value function 动作价值函数
 
-前面我们引出了价值函数，考虑到每个状态之后都有多种动作可以选择，每个动作之下的状态又多不一样，我们更关心在某个状态下的不同动作的价值。显然。如果知道了每个动作的价值，那么就可以选择价值最大的一个动作去执行了。这就是Action-Value function![Q^\pi(D:\Dropbox\job\codes\blog\source\clip_image447.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image447.gif)。那么同样的道理，也是使用reward来表示，只是这里的reward和之前的reward不一样，这里是执行完动作action之后得到的reward，之前state对应的reward则是多种动作对应的reward的期望值。显然，动作之后的reward更容易理解。
+前面我们引出了价值函数，考虑到每个状态之后都有多种动作可以选择，每个动作之下的状态又多不一样，我们更关心在某个状态下的不同动作的价值。显然。如果知道了每个动作的价值，那么就可以选择价值最大的一个动作去执行了。这就是Action-Value function![Q^\pi(clip_image447.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image447.gif)。那么同样的道理，也是使用reward来表示，只是这里的reward和之前的reward不一样，这里是执行完动作action之后得到的reward，之前state对应的reward则是多种动作对应的reward的期望值。显然，动作之后的reward更容易理解。
 
 那么，有了上面的定义，动作价值函数就为如下表示：
 
 
 
 
-这里要说明的是动作价值函数的定义，加了![\pi ](D:\Dropbox\job\codes\blog\source\clip_image423.gif),也就是说是在策略下的动作价值。因为对于每一个动作而已，都需要由策略根据当前的状态生成，因此必须有策略的支撑。而前面的价值函数则不一定依赖于策略。当然，如果定义![v^\pi(D:\Dropbox\job\codes\blog\source\clip_image449.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image449.gif)则表示在策略![\pi ](D:\Dropbox\job\codes\blog\source\clip_image423.gif)下的价值。
+这里要说明的是动作价值函数的定义，加了![\pi ](clip_image423.gif),也就是说是在策略下的动作价值。因为对于每一个动作而已，都需要由策略根据当前的状态生成，因此必须有策略的支撑。而前面的价值函数则不一定依赖于策略。当然，如果定义![v^\pi(clip_image449.gif)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image449.gif)则表示在策略![\pi ](clip_image423.gif)下的价值。
 
 那么事实上我们会更多的使用动作价值函数而不是价值函数，因为动作价值函数更直观，更方便应用于算法当中。
 
@@ -2675,14 +2675,14 @@ MDP基于这样一种假设：
 
 首先是最优动作价值函数和一般的动作价值函数的关系：
 
-![Q^*(D:\Dropbox\job\codes\blog\source\clip_image451.gif) = \max_\pi Q^\pi(s,a)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image451.gif)
+![Q^*(clip_image451.gif) = \max_\pi Q^\pi(s,a)](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image451.gif)
 
 
 也就是最优的动作价值函数就是所有策略下的动作价值函数的最大值。通过这样的定义就可以使最优的动作价值的唯一性，从而可以求解整个MDP。这部分在上一篇文章的评论中有介绍。
 
 那么套用上一节得到的value function，可以得到
 
-![Q^*(D:\Dropbox\job\codes\blog\source\clip_image453.gif) = \mathbb E_{s^\prime}[r+\lambda \max _{a^\prime}Q^*(s^\prime,a^\prime)|s,a] ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image453.gif)
+![Q^*(clip_image453.gif) = \mathbb E_{s^\prime}[r+\lambda \max _{a^\prime}Q^*(s^\prime,a^\prime)|s,a] ](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image453.gif)
 
 
 因为最优的Q值必然为最大值，所以，等式右侧的Q值必然为使a′取最大的Q值。
@@ -2695,7 +2695,7 @@ Policy Iteration的目的是通过迭代计算value function 价值函数的方�
 
 Policy Iteration本质上就是直接使用Bellman方程而得到的：
 
-![https://pic1.zhimg.com/0779070465d82cc108991b0c47bd03b4_b.png](D:\Dropbox\job\codes\blog\source\clip_image455.gif)
+![https://pic1.zhimg.com/0779070465d82cc108991b0c47bd03b4_b.png](clip_image455.gif)
 
 那么Policy Iteration一般分成两步：
 
@@ -2703,20 +2703,20 @@ Policy Iteration本质上就是直接使用Bellman方程而得到的：
 
 \2.  Policy Improvement 策略改进。 使用 greedy policy 产生新的样本用于第一步的策略评估。
 
-![https://pic1.zhimg.com/aeb96f036bea2860a8e1cbde2eef4c04_b.png](D:\Dropbox\job\codes\blog\source\clip_image457.gif)本质上就是使用当前策略产生新的样本，然后使用新的样本更好的估计策略的价值，然后利用策略的价值更新策略，然后不断反复。理论可以证明最终策略将收敛到最优。
+![https://pic1.zhimg.com/aeb96f036bea2860a8e1cbde2eef4c04_b.png](clip_image457.gif)本质上就是使用当前策略产生新的样本，然后使用新的样本更好的估计策略的价值，然后利用策略的价值更新策略，然后不断反复。理论可以证明最终策略将收敛到最优。
  具体算法：
 
-![https://pic1.zhimg.com/bbe1f4c8a17a236ebefad6ef4a545448_b.png](D:\Dropbox\job\codes\blog\source\clip_image459.gif)那么这里要注意的是policy evaluation部分。这里的迭代很重要的一点是需要知道state状态转移概率p。也就是说依赖于model模型。而且按照算法要反复迭代直到收敛为止。所以一般需要做限制。比如到某一个比率或者次数就停止迭代。那么需要特别说明的是不管是策略迭代还是值迭代都是在理想化的情况下（上帝视角）推导出来的算法，本质上并不能直接应用，因为依赖Model。
+![https://pic1.zhimg.com/bbe1f4c8a17a236ebefad6ef4a545448_b.png](clip_image459.gif)那么这里要注意的是policy evaluation部分。这里的迭代很重要的一点是需要知道state状态转移概率p。也就是说依赖于model模型。而且按照算法要反复迭代直到收敛为止。所以一般需要做限制。比如到某一个比率或者次数就停止迭代。那么需要特别说明的是不管是策略迭代还是值迭代都是在理想化的情况下（上帝视角）推导出来的算法，本质上并不能直接应用，因为依赖Model。
 
 #### 5 Value Iteration 价值迭代
 
 Value Iteration则是使用Bellman 最优方程得到
 
-![https://pic3.zhimg.com/b5ab5f7f40e44cd730bfec4ca88ab3a2_b.png](D:\Dropbox\job\codes\blog\source\clip_image461.gif)然后改变成迭代形式
+![https://pic3.zhimg.com/b5ab5f7f40e44cd730bfec4ca88ab3a2_b.png](clip_image461.gif)然后改变成迭代形式
 
-![https://pic2.zhimg.com/f0ebe85027cd67e39048b51ec4943f1d_b.png](D:\Dropbox\job\codes\blog\source\clip_image463.gif)value iteration的算法如下：
+![https://pic2.zhimg.com/f0ebe85027cd67e39048b51ec4943f1d_b.png](clip_image463.gif)value iteration的算法如下：
 
-![https://pic4.zhimg.com/7c066b17d9955f036757c9e28f4076d7_b.png](D:\Dropbox\job\codes\blog\source\clip_image465.gif)
+![https://pic4.zhimg.com/7c066b17d9955f036757c9e28f4076d7_b.png](clip_image465.gif)
 
 那么问题来了：
 
@@ -2724,15 +2724,15 @@ Value Iteration则是使用Bellman 最优方程得到
 
 ·     为什么一个叫policy iteration，一个叫value iteration呢？
 
-原因其实很好理解，policy iteration使用bellman方程来更新value，最后收敛的value 即![v_\pi](D:\Dropbox\job\codes\blog\source\clip_image467.gif)是当前policy下的value值（所以叫做对policy进行评估），目的是为了后面的policy improvement得到新的policy。
+原因其实很好理解，policy iteration使用bellman方程来更新value，最后收敛的value 即![v_\pi](clip_image467.gif)是当前policy下的value值（所以叫做对policy进行评估），目的是为了后面的policy improvement得到新的policy。
 
-而value iteration是使用bellman 最优方程来更新value，最后收敛得到的value即![v_*](D:\Dropbox\job\codes\blog\source\clip_image469.gif)就是当前state状态下的最优的value值。因此，只要最后收敛，那么最优的policy也就得到的。因此这个方法是基于更新value的，所以叫value iteration。
+而value iteration是使用bellman 最优方程来更新value，最后收敛得到的value即![v_*](clip_image469.gif)就是当前state状态下的最优的value值。因此，只要最后收敛，那么最优的policy也就得到的。因此这个方法是基于更新value的，所以叫value iteration。
 
 从上面的分析看，value iteration较之policy iteration更直接。不过问题也都是一样，需要知道状态转移函数p才能计算。本质上依赖于模型，而且理想条件下需要遍历所有的状态，这在稍微复杂一点的问题上就基本不可能了。
 
 那么上面引用的是价值函数的版本，那么如果是使用动作价值函数呢，公式基本是一样的：
 
-![Q_{i+1}(D:\Dropbox\job\codes\blog\source\clip_image471.gif) = \mathbb E_{s^\prime}[r+\lambda \max_{a^\prime}Q_i(s^\prime,a^\prime)|s,a]](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image471.gif)
+![Q_{i+1}(clip_image471.gif) = \mathbb E_{s^\prime}[r+\lambda \max_{a^\prime}Q_i(s^\prime,a^\prime)|s,a]](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image471.gif)
 
 
 怎么直观的理解呢？
@@ -2759,7 +2759,7 @@ Value Iteration则是使用Bellman 最优方程得到
 
 常用的神经网络模型, 一般只包含输入层, 输出层和一个隐藏层：
 
-​    ![http://images.cnitblog.com/blog/326731/201308/18144053-59fa75b367cd421994bcecffe18340d2.png](D:\Dropbox\job\codes\blog\source\clip_image473.gif)
+​    ![http://images.cnitblog.com/blog/326731/201308/18144053-59fa75b367cd421994bcecffe18340d2.png](clip_image473.gif)
 
  理论上来说, 隐藏层越多, 模型的表达能力应该越强。但是, 当隐藏层数多于一层时, 如果我们使用随机值来初始化权重, 使用梯度下降来优化参数就会出现许多问题[1]:
 
@@ -2773,19 +2773,19 @@ Value Iteration则是使用Bellman 最优方程得到
 
  DBN是由Hinton在2006年提出的一种概率生成模型, 由多个[限制玻尔兹曼机(RBM)](http://www.cnblogs.com/kemaswill/p/3203605.html)[3]堆栈而成:
 
-![http://images.cnitblog.com/blog/326731/201308/18150222-dac89f3f2ac24916880a02534a5eff9f.png](D:\Dropbox\job\codes\blog\source\clip_image475.jpg)![http://images.cnitblog.com/blog/326731/201308/18150232-4dad0cc2c9b84177aaf31d3b7d143890.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image477.jpg)
+![http://images.cnitblog.com/blog/326731/201308/18150222-dac89f3f2ac24916880a02534a5eff9f.png](clip_image475.jpg)![http://images.cnitblog.com/blog/326731/201308/18150232-4dad0cc2c9b84177aaf31d3b7d143890.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image477.jpg)
 
  在训练时, Hinton采用了逐层无监督的方法来学习参数。首先把数据向量x和第一层隐藏层作为一个[RBM](http://www.cnblogs.com/kemaswill/p/3203605.html), 训练出这个RBM的参数(连接x和h1的权重, x和h1各个节点的偏置等等), 然后固定这个RBM的参数, 把h1视作可见向量, 把h2视作隐藏向量, 训练第二个RBM, 得到其参数, 然后固定这些参数, 训练h2和h3构成的RBM, 具体的训练算法如下:
 
- ![http://images.cnitblog.com/blog/326731/201308/18151442-a849c8aa7ddc4454b832343926f266ff.png](D:\Dropbox\job\codes\blog\source\clip_image479.jpg)
+ ![http://images.cnitblog.com/blog/326731/201308/18151442-a849c8aa7ddc4454b832343926f266ff.png](clip_image479.jpg)
 
  上图最右边就是最终训练得到的生成模型:
 
- ![http://images.cnitblog.com/blog/326731/201308/18151139-9bff6318a201473e8a79173d1b578671.png](D:\Dropbox\job\codes\blog\source\clip_image481.jpg)
+ ![http://images.cnitblog.com/blog/326731/201308/18151139-9bff6318a201473e8a79173d1b578671.png](clip_image481.jpg)
 
  用公式表示为:
 
- ![http://images.cnitblog.com/blog/326731/201308/18151259-34d5e056b90d4ee3a69865a7a9347c59.png](D:\Dropbox\job\codes\blog\source\clip_image483.jpg)
+ ![http://images.cnitblog.com/blog/326731/201308/18151259-34d5e056b90d4ee3a69865a7a9347c59.png](clip_image483.jpg)
 
 \3. 利用DBN进行有监督学习
 
@@ -2817,7 +2817,7 @@ KL散度是两个概率分布P和Q差别的非对称性的度量。 KL散度是�
 
  
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image485.gif)
+![img](clip_image485.gif)
 
 N-gram的意思就是每个词出现只看其前面的n个词，可以对每个词出现的概率进行近似
 
@@ -2837,11 +2837,11 @@ N-gram的效果还是不错的，否则不会这么多人用，但是其存在�
 
  
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image487.gif)
+![img](clip_image487.gif)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image489.gif)
+![img](clip_image489.gif)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image491.gif)
+![img](clip_image491.gif)
 
 #### **Continuous Bag-of-Words模型**
 
@@ -2855,9 +2855,9 @@ Skip-gram模型与CBOW正好相反，是通过中间词来预测前后词，一�
 
  
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image493.gif)
+![img](clip_image493.gif)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image495.gif)
+![img](clip_image495.gif)
 
 #### **word2vec**
 
@@ -2893,9 +2893,9 @@ http://blog.csdn.net/u014595019/article/details/51884529
 
  
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image497.gif)
+![img](clip_image497.gif)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image499.gif)
+![img](clip_image499.gif)
 
 ### CNN
 
@@ -2905,10 +2905,10 @@ http://blog.csdn.net/u014595019/article/details/51884529
 
 本科时应该都学过卷积的公式
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image501.jpg)
+![img](clip_image501.jpg)
  简写成
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image503.jpg)
+![img](clip_image503.jpg)
 
 
  一般认为x是输入，w是卷积核。卷积结果叫做feature map，注意这里的feature map定义，之后会用到。
@@ -2923,11 +2923,11 @@ http://blog.csdn.net/u014595019/article/details/51884529
 
 如下图，所有层与层之间的连接都是全连接。
 
-[![MLPs](D:\Dropbox\job\codes\blog\source\clip_image505.gif)](http://oegkvp6e0.bkt.clouddn.com/16-10-4/52717341.jpg)
+[![MLPs](clip_image505.gif)](http://oegkvp6e0.bkt.clouddn.com/16-10-4/52717341.jpg)
 
 在CNN中，考虑到这种全连接的冗余参数的特性，科学家尝试用稀疏连接的方式来连接两层之间。
 
-[![Sparse connectivity](D:\Dropbox\job\codes\blog\source\clip_image507.gif)](http://oegkvp6e0.bkt.clouddn.com/16-10-4/49723760.jpg)
+[![Sparse connectivity](clip_image507.gif)](http://oegkvp6e0.bkt.clouddn.com/16-10-4/49723760.jpg)
 
 从上图中，我们可以看出，一个宽为3的卷积核卷积输入之后可以连接到3个输出，同样，每个输出可以接受来自3个不同的输入的特征，这样的参数就大大减少了。
 
@@ -2935,7 +2935,7 @@ http://blog.csdn.net/u014595019/article/details/51884529
 
 实际上，如果层数少的话，可能会有这个问题，但是对于CNN来说，其本身是MLPs的衍化，最少也是有3层的，那么至少也可以看到下面这种结构。
 
-[![多层连接](D:\Dropbox\job\codes\blog\source\clip_image509.gif)](http://oegkvp6e0.bkt.clouddn.com/16-10-4/92596899.jpg)
+[![多层连接](clip_image509.gif)](http://oegkvp6e0.bkt.clouddn.com/16-10-4/92596899.jpg)
 
 相邻两层之间的连接可能要稀疏一点，但是隔了一层以后，反而可以获得所有的输入，考虑到我们的神经网络是一个黑盒操作，其中连接多少并无所谓，我们只要能够使得输入和输出尽可能关联即可。
 
@@ -2945,7 +2945,7 @@ http://blog.csdn.net/u014595019/article/details/51884529
 
 而网络上有一个更明显的说明图
 
-[![image](D:\Dropbox\job\codes\blog\source\clip_image510.jpg)](http://www.36dsj.com/wp-content/uploads/2015/03/511-600x224.jpg)
+[![image](clip_image510.jpg)](http://www.36dsj.com/wp-content/uploads/2015/03/511-600x224.jpg)
 
 假设有一张1000*1000的图像作为input layer，假设有1000000个隐层神经元。左边是全连通的方式，需要多少参数呢？答案很简单：1000×1000×1000000=10121000×1000×1000000=1012个参数。而假如把这1000000个神经元平铺开来，每人管一块10×1010×10区域，那么只需要100×1000000=108100×1000000=108个参数。这个道理就像是我有许多人才，全放在中央没那么多岗位，让每个人都管全国，严重资源浪费，效率还不高。不如把这些人都派到各个县市，做个地方官，然后各自治理，然后把结果汇报中央就好了，省了不少事情。
 
@@ -2953,17 +2953,17 @@ http://blog.csdn.net/u014595019/article/details/51884529
 
 下图左：如果我们有1000x1000像素的图像，有1百万个隐层神经元，那么他们全连接的话（每个隐层神经元都连接图像的每一个像素点），就有1000x1000x1000000=10^12个连接，也就是10^12个权值参数。然而图像的空间联系是局部的，就像人是通过一个局部的感受野去感受外界图像一样，每一个神经元都不需要对全局图像做感受，每个神经元只感受局部的图像区域，然后在更高层，将这些感受不同局部的神经元综合起来就可以得到全局的信息了。这样，我们就可以减少连接的数目，也就是减少神经网络需要训练的权值参数的个数了。如下图右：假如局部感受野是10x10，隐层每个感受野只需要和这10x10的局部图像相连接，所以1百万个隐层神经元就只有一亿个连接，即10^8个参数。比原来减少了四个0（数量级），这样训练起来就没那么费力了，但还是感觉很多的啊，那还有啥办法没？
 
- ![http://img.my.csdn.net/uploads/201304/10/1365562155_9356.jpg](D:\Dropbox\job\codes\blog\source\clip_image512.jpg)
+ ![http://img.my.csdn.net/uploads/201304/10/1365562155_9356.jpg](clip_image512.jpg)
 
 ​    我们知道，隐含层的每一个神经元都连接10x10个图像区域，也就是说每一个神经元存在10x10=100个连接权值参数。那如果我们每个神经元这100个参数是相同的呢？也就是说每个神经元用的是同一个卷积核去卷积图像。这样我们就只有多少个参数？？只有100个参数啊！！！亲！不管你隐层的神经元个数有多少，两层间的连接我只有100个参数啊！亲！这就是权值共享啊！亲！这就是卷积神经网络的主打卖点啊！亲！（有点烦了，呵呵）也许你会问，这样做靠谱吗？为什么可行呢？这个……共同学习。
 
 ​    好了，你就会想，这样提取特征也忒不靠谱吧，这样你只提取了一种特征啊？对了，真聪明，我们需要提取多种特征对不？假如一种滤波器，也就是一种卷积核就是提出图像的一种特征，例如某个方向的边缘。那么我们需要提取不同的特征，怎么办，加多几种滤波器不就行了吗？对了。所以假设我们加到100种滤波器，每种滤波器的参数不一样，表示它提出输入图像的不同特征，例如不同的边缘。这样每种滤波器去卷积图像就得到对图像的不同特征的放映，我们称之为Feature Map。所以100种卷积核就有100个Feature Map。这100个Feature Map就组成了一层神经元。到这个时候明了了吧。我们这一层有多少个参数了？100种卷积核x每种卷积核共享100个参数=100x100=10K，也就是1万个参数。才1万个参数啊！亲！（又来了，受不了了！）见下图右：不同的颜色表达不同的滤波器。
 
- ![http://img.my.csdn.net/uploads/201304/10/1365562217_2880.jpg](D:\Dropbox\job\codes\blog\source\clip_image514.jpg)
+ ![http://img.my.csdn.net/uploads/201304/10/1365562217_2880.jpg](clip_image514.jpg)
 
 ​    嘿哟，遗漏一个问题了。刚才说隐层的参数个数和隐层的神经元个数无关，只和滤波器的大小和滤波器种类的多少有关。那么隐层的神经元个数怎么确定呢？它和原图像，也就是输入的大小（神经元个数）、滤波器的大小和滤波器在图像中的滑动步长都有关！例如，我的图像是1000x1000像素，而滤波器大小是10x10，假设滤波器没有重叠，也就是步长为10，这样隐层的神经元个数就是(1000x1000 )/ (10x10)=100x100个神经元了，假设步长是8，也就是卷积核会重叠两个像素，那么……我就不算了，思想懂了就好。注意了，这只是一种滤波器，也就是一个Feature Map的神经元个数哦，如果100个Feature Map就是100倍了。由此可见，图像越大，神经元个数和需要训练的权值参数个数的贫富差距就越大。
 
- ![http://img.my.csdn.net/uploads/201304/10/1365562245_8389.jpg](D:\Dropbox\job\codes\blog\source\clip_image516.jpg)
+ ![http://img.my.csdn.net/uploads/201304/10/1365562245_8389.jpg](clip_image516.jpg)
 
    需要注意的一点是，上面的讨论都没有考虑每个神经元的偏置部分。所以权值个数需要加1 。这个也是同一种滤波器共享的。
 
@@ -2971,7 +2971,7 @@ http://blog.csdn.net/u014595019/article/details/51884529
 
 pooling之前，我们先把CNN的流程图贴一下。
 
-[![CNN流程](D:\Dropbox\job\codes\blog\source\clip_image518.gif)](http://oegkvp6e0.bkt.clouddn.com/16-10-4/81375205.jpg)
+[![CNN流程](clip_image518.gif)](http://oegkvp6e0.bkt.clouddn.com/16-10-4/81375205.jpg)
 
 从输入，然后卷积提取feature map，然后需要进行激活。
 
@@ -3015,17 +3015,17 @@ pooling之前，我们先把CNN的流程图贴一下。
 
 xavier是如何完成初始化工作的呢？它的初始化公式如下所示：
 
-定义参数所在层的输入维度为n，输出维度为m，那么参数将以均匀分布的方式在![[-\sqrt{\frac{6}{m+n}},\sqrt{\frac{6}{m+n}}]](D:\Dropbox\job\codes\blog\source\clip_image520.gif)的范围内进行初始化。
+定义参数所在层的输入维度为n，输出维度为m，那么参数将以均匀分布的方式在![[-\sqrt{\frac{6}{m+n}},\sqrt{\frac{6}{m+n}}]](clip_image520.gif)的范围内进行初始化。
 
 那么这个公式是如何计算出来的呢？关于这个问题我们需要一段漫长的推导。在推导之前我们要强调一个关键点，就是参数的标准差，或者方差。前面我们提到了Caffe中的debug_info主要展示了数据的L1 norm，对于均值为0的数据来说，这个L1 norm可以近似表示标准差。
 
 我们将用到以下和方差相关的定理：
 
-假设有随机变量x和w，它们都服从均值为0，方差为![\sigma](D:\Dropbox\job\codes\blog\source\clip_image522.gif)的分布，那么：
+假设有随机变量x和w，它们都服从均值为0，方差为![\sigma](clip_image522.gif)的分布，那么：
 
-w*x就会服从均值为0，方差为![\sigma^2](D:\Dropbox\job\codes\blog\source\clip_image524.gif)的分布
+w*x就会服从均值为0，方差为![\sigma^2](clip_image524.gif)的分布
 
-w*x+w*x就会服从均值为0，方差为![2*\sigma^2](D:\Dropbox\job\codes\blog\source\clip_image526.gif)的分布
+w*x+w*x就会服从均值为0，方差为![2*\sigma^2](clip_image526.gif)的分布
 
 以下内容主要来自论文《Understanding the difficulty of training deep feedforward neural network》的理解，这里将以我个人的理解做一下解读，如果有错欢迎来喷。
 
@@ -3033,7 +3033,7 @@ w*x+w*x就会服从均值为0，方差为![2*\sigma^2](D:\Dropbox\job\codes\blog
 
 在大神的假想世界中，x和w都是靠近0的比较小的数字，那么它们最终计算出来的数字也应该是一个靠近0，比较小的数字。我们再看一眼tanh函数和它对应的梯度函数：
 
-![https://pic3.zhimg.com/9b7de17962ef31509e41957d0f318042_b.png](D:\Dropbox\job\codes\blog\source\clip_image528.gif)![https://pic3.zhimg.com/4657a64ed40e2a4de13e4b0a4fc01342_b.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image530.gif)
+![https://pic3.zhimg.com/9b7de17962ef31509e41957d0f318042_b.png](clip_image528.gif)![https://pic3.zhimg.com/4657a64ed40e2a4de13e4b0a4fc01342_b.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image530.gif)
 
  
 
@@ -3053,40 +3053,40 @@ w*x+w*x就会服从均值为0，方差为![2*\sigma^2](D:\Dropbox\job\codes\blog
 
 我们的脑中迅速回忆起我们接触过的浅层模型——logistic regression，SVM。为了它们的表现能够更好，我们都会把特征做初始化，细心处理，比方说做白化处理，使他的均值方差保持好，然后用浅层模型一波训练完成。现在我们采用了深层模型，输入的第一层我们是可以做到数据的白化的——减去均值，除以一个标准差。但是里面层次的数据，你总不好伸手进入把它们也搞白化吧！（当然，后来真的有人伸进去了，还做得不错）那我们看看如果在中间层不做处理会发生什么？
 
-我们假设所有的输入数据x满足均值为0，方差为![\sigma_x](D:\Dropbox\job\codes\blog\source\clip_image532.gif)的分布，我们再将参数w以均值为0，方差为![\sigma_w](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image534.gif)的方式进行初始化。我们假设第一次是大家喜闻乐见的卷积层，卷积层共有n个参数（n=channel*kernel_h*kernel_w），于是为了计算出一个线性部分的结果，我们有：
+我们假设所有的输入数据x满足均值为0，方差为![\sigma_x](clip_image532.gif)的分布，我们再将参数w以均值为0，方差为![\sigma_w](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image534.gif)的方式进行初始化。我们假设第一次是大家喜闻乐见的卷积层，卷积层共有n个参数（n=channel*kernel_h*kernel_w），于是为了计算出一个线性部分的结果，我们有：
 
-![z_j=\sum^n_i{w_i*x_i}](D:\Dropbox\job\codes\blog\source\clip_image536.gif)
+![z_j=\sum^n_i{w_i*x_i}](clip_image536.gif)
 
 
 这个公式的下标不准确，大家姑且这么看了，也就是说，线性输出部分的一个结果值，实际上是由n个乘加计算出来的，那么下面是一道抢答题，按照我们刚才对x和w的定义，加上前面我们说过的两个方差计算公式，这个z会服从一个什么分布呢？
 
 均值肯定还是0嘛，没得说。
 
-方差好像积累了一大堆东西：![n*\sigma_x*\sigma_w](D:\Dropbox\job\codes\blog\source\clip_image538.gif)
+方差好像积累了一大堆东西：![n*\sigma_x*\sigma_w](clip_image538.gif)
 
 然后我们通过那个靠意念构建的具有“线性特征”的非线性层，奇迹般地发现一切都没有变化，那么下一层的数据就成了均值为0，方差为![n*\sigma_x*\sigma_w](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image538.gif)的“随机变量”（姑且称之为随机变量吧）。
 
 为了更好地表达，我们将层号写在变量的上标处，于是就有：
 
-![\sigma^2_x=n^1*\sigma^1_x*\sigma^1_w](D:\Dropbox\job\codes\blog\source\clip_image540.gif)
+![\sigma^2_x=n^1*\sigma^1_x*\sigma^1_w](clip_image540.gif)
 
 
 我们将卷积层和全连接层统一考虑成n个参数的一层，于是接着就有：
 
-![\sigma^3_x=n^2*\sigma^2_x*\sigma^2_w](D:\Dropbox\job\codes\blog\source\clip_image542.gif)
+![\sigma^3_x=n^2*\sigma^2_x*\sigma^2_w](clip_image542.gif)
 
 
 如果我们是一个k层的网络（这里主要值卷积层+全连接层的总和数），我们就有
 
-![\sigma^k_x=n^{k-1}*\sigma^{k-1}_x*\sigma^{k-1}_w=n^{k-1}*n^{k-2}*\sigma^{k-2}_x*\sigma^{k-2}_w*\sigma^{k-1}_w](D:\Dropbox\job\codes\blog\source\clip_image544.gif)
+![\sigma^k_x=n^{k-1}*\sigma^{k-1}_x*\sigma^{k-1}_w=n^{k-1}*n^{k-2}*\sigma^{k-2}_x*\sigma^{k-2}_w*\sigma^{k-1}_w](clip_image544.gif)
 
 
 继续把这个公式展开，就会得到它的最终形态：
 
-![\sigma^k_x=\sigma^1_x*\prod_{i=1}^{k-1}n^i*\sigma^i_w ](D:\Dropbox\job\codes\blog\source\clip_image546.gif)
+![\sigma^k_x=\sigma^1_x*\prod_{i=1}^{k-1}n^i*\sigma^i_w ](clip_image546.gif)
 
 
-可以看出，后面的那个连乘实际上看着就像个定时炸弹（相信看到这，我应该能成功地吸引大家的注意力，帮助大家把非线性函数线性化的事情忘掉了……），如果![n^i*\sigma^i_w](D:\Dropbox\job\codes\blog\source\clip_image548.gif)总是大于1，那么随着层数越深，数值的方差会越来越大，反过来如果乘积小于1，那么随着层数越深，数值的方差就会越来越小。
+可以看出，后面的那个连乘实际上看着就像个定时炸弹（相信看到这，我应该能成功地吸引大家的注意力，帮助大家把非线性函数线性化的事情忘掉了……），如果![n^i*\sigma^i_w](clip_image548.gif)总是大于1，那么随着层数越深，数值的方差会越来越大，反过来如果乘积小于1，那么随着层数越深，数值的方差就会越来越小。
 
 越来越大，就容易Hold不住导致溢出，越来越小，就容易导致数据差异小而不易产生有力的梯度。这就是深层模型的一大命门。
 
@@ -3095,9 +3095,9 @@ w*x+w*x就会服从均值为0，方差为![2*\sigma^2](D:\Dropbox\job\codes\blog
 ![\sigma^2_x=n^1*\sigma^1_x*\sigma^1_w](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image540.gif)
 
 
-你一定会有这样一个想法（一定会有！），如果![\sigma_x^2=\sigma_x^1](D:\Dropbox\job\codes\blog\source\clip_image550.gif)，接着我们保证每一层输入的方差都保持一致，那么数值的幅度不就可以解决了么？于是乎：
+你一定会有这样一个想法（一定会有！），如果![\sigma_x^2=\sigma_x^1](clip_image550.gif)，接着我们保证每一层输入的方差都保持一致，那么数值的幅度不就可以解决了么？于是乎：
 
-![\sigma^1_w=\frac{1}{n^1}](D:\Dropbox\job\codes\blog\source\clip_image552.gif)
+![\sigma^1_w=\frac{1}{n^1}](clip_image552.gif)
 
 
 我们用均值为1，方差为上式的那个数字做初始化，不就可以解决了？
@@ -3106,9 +3106,9 @@ w*x+w*x就会服从均值为0，方差为![2*\sigma^2](D:\Dropbox\job\codes\blog
 
 后向
 
-上面说的是前向的，那么后向呢？后向传播时，如果可以让方差保持一致，同样地会有前向传播的效果，梯度可以更好地在网络中流动。由于假设是线性的，那么回流的梯度公式是![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825102828480-1848646102.png](D:\Dropbox\job\codes\blog\source\clip_image554.gif)，可以写成![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825102857480-1839422847.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image556.gif)。令回流的方差不变，那么权值又可以初始化成![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825102957823-1298341345.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image558.gif)。注意一个是前向，一个是后向的，两者的n 是不同的。取平均![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825103107901-1842569720.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image560.gif)。
+上面说的是前向的，那么后向呢？后向传播时，如果可以让方差保持一致，同样地会有前向传播的效果，梯度可以更好地在网络中流动。由于假设是线性的，那么回流的梯度公式是![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825102828480-1848646102.png](clip_image554.gif)，可以写成![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825102857480-1839422847.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image556.gif)。令回流的方差不变，那么权值又可以初始化成![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825102957823-1298341345.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image558.gif)。注意一个是前向，一个是后向的，两者的n 是不同的。取平均![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825103107901-1842569720.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image560.gif)。
 
-最后，是使用均匀分布来初始化权值的，得到初始化的范围![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825103206105-345756944.png](D:\Dropbox\job\codes\blog\source\clip_image562.gif)。
+最后，是使用均匀分布来初始化权值的，得到初始化的范围![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825103206105-345756944.png](clip_image562.gif)。
 
 另外一种MSRA的初始化的方法，可以学习http://blog.csdn.net/shuzfan/article/details/51347572，实验效果表现要好一些，但貌似xavier用的要多一些。
 
@@ -3124,17 +3124,17 @@ w*x+w*x就会服从均值为0，方差为![2*\sigma^2](D:\Dropbox\job\codes\blog
 
 先说一说BN解决的问题，论文说要解决 Internal covariate shift 的问题，covariate shift 是指源空间与目标空间中条件概率一致，但是边缘概率不同。在深度网络中，越深的网络对特征的扭曲就越厉害（应该是这样说吧……），但是特征本身对于类别的标记是不变的，所以符合这样的定义。BN通过把输出层的数据归一化到mean = 0， var = 1的分布中，可以让边缘概率大致相同吧（知乎魏大牛说不可以完全解决，因为均值方差相同不代表分布相同~~他应该是对的），所以题目说是reducing。
 
-那么BN是怎么实现的呢？它是通过计算min batch 的均值与方差，然后使用公式归一化![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825085205714-409058413.png](D:\Dropbox\job\codes\blog\source\clip_image564.gif)。例如激活函数是sigmoid，那么输出归一化后的图像就是
+那么BN是怎么实现的呢？它是通过计算min batch 的均值与方差，然后使用公式归一化![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825085205714-409058413.png](clip_image564.gif)。例如激活函数是sigmoid，那么输出归一化后的图像就是
 
-![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825085349573-1311836065.png](D:\Dropbox\job\codes\blog\source\clip_image566.gif)
+![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825085349573-1311836065.png](clip_image566.gif)
 
 中间就是接近线性了，这样，导数几乎为常数1，这样不就可以解决梯度消失的问题了吗？
 
 但是，对于ReLU函数，这个是否起作用呢？好像未必吧，不过我觉得这个归一化可以解决ReLU不能把数据压缩的问题，这样可以使得每层的数据的规模基本一致了。上述[（3）](http://blog.csdn.net/happynear/article/details/44238541)中写到一个BN的优点，我觉得和我的想法是一致的，就是可以使用更高的学习率。如果每层的scale不一致，实际上每层需要的学习率是不一样的，同一层不同维度的scale往往也需要不同大小的学习率，通常需要使用最小的那个学习率才能保证损失函数有效下降，Batch Normalization将每层、每维的scale保持一致，那么我们就可以直接使用较高的学习率进行优化。这样就可以加快收敛了。我觉得还是主要用来减少covariate shift 的。
 
-但是，上述归一化会带来一个问题，就是破坏原本学习的特征的分布。那怎么办？论文加入了两个参数，来恢复它本来的分布![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825090428651-1468426404.png](D:\Dropbox\job\codes\blog\source\clip_image568.gif)这个带入归一化的式子看一下就可以知道恢复原来分布的条件了。但是，如果恢复了原来的分布，那还需要归一化？我开始也没想明白这个问题，后来看看别人的解释，注意到新添加的两个参数，实际上是通过训练学习的，就是说，最后可能恢复，也可能没有恢复。这样可以增加网络的capicity，网络中就存在多种不同的分布了。最后抄一下BP的公式：
+但是，上述归一化会带来一个问题，就是破坏原本学习的特征的分布。那怎么办？论文加入了两个参数，来恢复它本来的分布![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825090428651-1468426404.png](clip_image568.gif)这个带入归一化的式子看一下就可以知道恢复原来分布的条件了。但是，如果恢复了原来的分布，那还需要归一化？我开始也没想明白这个问题，后来看看别人的解释，注意到新添加的两个参数，实际上是通过训练学习的，就是说，最后可能恢复，也可能没有恢复。这样可以增加网络的capicity，网络中就存在多种不同的分布了。最后抄一下BP的公式：
 
-![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825090916839-823484609.png](D:\Dropbox\job\codes\blog\source\clip_image570.gif)
+![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825090916839-823484609.png](clip_image570.gif)
 
  
 
@@ -3142,7 +3142,7 @@ w*x+w*x就会服从均值为0，方差为![2*\sigma^2](D:\Dropbox\job\codes\blog
 
 最后贴一个算法的流程，以及结构图，结构图是来自  [ http://yeephycho.github.io/2016/08/03/Normalizations-in-neural-networks/](http://www.cnblogs.com/jie-dcai/p/ http:/yeephycho.github.io/2016/08/03/Normalizations-in-neural-networks/)  
 
-![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825092021026-1448312243.png](D:\Dropbox\job\codes\blog\source\clip_image572.gif)    ![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825092046526-228597745.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image574.gif)
+![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825092021026-1448312243.png](clip_image572.gif)    ![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825092046526-228597745.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image574.gif)
 
  
 
@@ -3169,23 +3169,23 @@ w*x+w*x就会服从均值为0，方差为![2*\sigma^2](D:\Dropbox\job\codes\blog
 
 Sigmoid 是使用范围最广的一类激活函数，具有指数函数形状 。正式定义为：
 
-![https://www.52ml.net/wp-content/uploads/2016/08/d2d1335c99df1923da4f228da3da9bdd_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image576.jpg)
+![https://www.52ml.net/wp-content/uploads/2016/08/d2d1335c99df1923da4f228da3da9bdd_b.jpg](clip_image576.jpg)
 
 可见，sigmoid 在定义域内处处可导，且两侧导数逐渐趋近于0，即：
 
-![https://www.52ml.net/wp-content/uploads/2016/08/5f8e0c7f461bef0a54428044b8e5a38a_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image578.jpg)
+![https://www.52ml.net/wp-content/uploads/2016/08/5f8e0c7f461bef0a54428044b8e5a38a_b.jpg](clip_image578.jpg)
 
 Bengio 教授等[1]将具有这类性质的激活函数定义为软饱和激活函数。与极限的定义类似，饱和也分为左饱和与右饱和：
- 左饱和：![https://www.52ml.net/wp-content/uploads/2016/08/be5a0620bf869ba91a44220a7173655d_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image580.jpg)
+ 左饱和：![https://www.52ml.net/wp-content/uploads/2016/08/be5a0620bf869ba91a44220a7173655d_b.jpg](clip_image580.jpg)
 
-右饱和：![https://www.52ml.net/wp-content/uploads/2016/08/80a6f2edd14d4653bd6402eab62b1119_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image582.jpg)
+右饱和：![https://www.52ml.net/wp-content/uploads/2016/08/80a6f2edd14d4653bd6402eab62b1119_b.jpg](clip_image582.jpg)
  与软饱和相对的是硬饱和激活函数，即：f'(x)=0，当 |x| > c，其中 c 为常数。同理，硬饱和也分为左饱和和右饱和。常见的 ReLU 就是一类左侧硬饱和激活函数。
  Sigmoid 的软饱和性，使得深度神经网络在二三十年里一直难以有效的训练，是阻碍神经网络发展的重要原因。具体来说，由于在后向传递过程中，sigmoid向下传导的梯度包含了一个f'(x) 因子（sigmoid关于输入的导数），因此一旦输入落入饱和区，f'(x) 就会变得接近于0，导致了向底层传递的梯度也变得非常小。此时，网络参数很难得到有效训练。这种现象被称为梯度消失。一般来说， sigmoid 网络在 5 层之内就会产生梯度消失现象[2]。梯度消失问题至今仍然存在，但被新的优化方法有效缓解了，例如DBN中的分层预训练，Batch Normalization的逐层归一化，Xavier和MSRA权重初始化等代表性技术。
  Sigmoid 的饱和性虽然会导致梯度消失，但也有其有利的一面。例如它在物理意义上最为接近生物神经元。 (0, 1) 的输出还可以被表示作概率，或用于输入的归一化，代表性的如Sigmoid交叉熵损失函数
 
 ###### tanh
 
-![https://www.52ml.net/wp-content/uploads/2016/08/adbf164a53f8341cbf3a08c301b99b59_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image584.jpg)
+![https://www.52ml.net/wp-content/uploads/2016/08/adbf164a53f8341cbf3a08c301b99b59_b.jpg](clip_image584.jpg)
 
 可见，tanh(x)=2sigmoid(2x)-1，也具有软饱和性。Xavier在文献[2]中分析了sigmoid与tanh的饱和现象及特点，具体见原论文。此外，文献 [3] 中提到tanh 网络的收敛速度要比sigmoid快。因为 tanh 的输出均值比 sigmoid 更接近 0，SGD会更接近 natural gradient[4]（一种二次优化技术），从而降低所需的迭代次数。
 
@@ -3194,7 +3194,7 @@ Bengio 教授等[1]将具有这类性质的激活函数定义为软饱和激活�
 虽然2006年Hinton教授提出通过分层无监督预训练解决深层网络训练困难的问题，但是深度网络的直接监督式训练的最终突破，最主要的原因是采用了新型激活函数ReLU[5, 6]。与传统的sigmoid激活函数相比，ReLU能够有效缓解梯度消失问题，从而直接以监督的方式训练深度神经网络，无需依赖无监督的逐层预训练，这也是2012年深度卷积神经网络在ILSVRC竞赛中取得里程碑式突破的重要原因之一。
  ReLU的 正式定义为：
 
-![https://www.52ml.net/wp-content/uploads/2016/08/0effc747d9b2fee78c14e390743fab69_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image586.jpg)
+![https://www.52ml.net/wp-content/uploads/2016/08/0effc747d9b2fee78c14e390743fab69_b.jpg](clip_image586.jpg)
 
 可见，ReLU 在x<0 时硬饱和。由于 x>0时导数为 1，所以，ReLU 能够在x>0时保持梯度不衰减，从而缓解梯度消失问题。但随着训练的推进，部分输入会落入硬饱和区，导致对应权重无法更新。这种现象被称为“神经元死亡”。
 
@@ -3204,11 +3204,11 @@ ReLU另外一个性质是提供神经网络的稀疏表达能力，在Bengio教�
 
 PReLU[10]、ELU[7]等激活函数不具备这种稀疏性，但都能够提升网络性能。本文作者在文章[8]中给出了一些实验比较结果。首先，在cifar10上采用NIN网络，实验结果为 PReLU > ELU > ReLU，稀疏性并没有带来性能提升。其次，在 ImageNet上采用类似于[11] 中model E的15 层网络，实验结果则是ReLU最好。为了验证是否是稀疏性的影响，以 LReLU [12]为例进一步做了四次实验，负半轴的斜率分别为1，0.5，0.25, 0.1，需要特别说明的是，当负半轴斜率为1时，LReLU退化为线性函数，因此性能损失最大。实验结果展现了斜率大小与网络性能的一致性。综合上述实验可知，ReLU的稀疏性与网络性能之间并不存在绝对正负比关系。
 
-![https://www.52ml.net/wp-content/uploads/2016/08/1248c4bdbc1285fc1ab1586c25f65c51_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image588.jpg)
+![https://www.52ml.net/wp-content/uploads/2016/08/1248c4bdbc1285fc1ab1586c25f65c51_b.jpg](clip_image588.jpg)
 
 ###### PReLU
 
-PReLU [10]是ReLU 和 LReLU的改进版本，具有非饱和性：![https://www.52ml.net/wp-content/uploads/2016/08/b4b11ec05caefa5709936aad0c30f18c_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image590.jpg)
+PReLU [10]是ReLU 和 LReLU的改进版本，具有非饱和性：![https://www.52ml.net/wp-content/uploads/2016/08/b4b11ec05caefa5709936aad0c30f18c_b.jpg](clip_image590.jpg)
 
 与LReLU相比，PReLU中的负半轴斜率a可学习而非固定。原文献建议初始化a为0.25，不采用正则。个人认为，是否采用正则应当视具体的数据库和网络，通常情况下使用正则能够带来性能提升。
 
@@ -3226,7 +3226,7 @@ PReLU [10]是ReLU 和 LReLU的改进版本，具有非饱和性：![https://www.
 
  **Maxout**
 
-Maxout[13]是ReLU的推广，其发生饱和是一个零测集事件（measure zero event）。正式定义为：![https://www.52ml.net/wp-content/uploads/2016/08/8358833218327d45cdd3f19a33d5479b_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image591.jpg)
+Maxout[13]是ReLU的推广，其发生饱和是一个零测集事件（measure zero event）。正式定义为：![https://www.52ml.net/wp-content/uploads/2016/08/8358833218327d45cdd3f19a33d5479b_b.jpg](clip_image591.jpg)
 
 Maxout网络能够近似任意连续函数，且当w2,b2,…,wn,bn为0时，退化为ReLU。 其实，Maxout的思想在视觉领域存在已久。例如，在HOG特征里有这么一个过程：计算三个通道的梯度强度，然后在每一个像素位置上，仅取三个通道中梯度强度最大的数值，最终形成一个通道。这其实就是Maxout的一种特例。
 
@@ -3236,7 +3236,7 @@ Maxout能够缓解梯度消失，同时又规避了ReLU神经元死亡的缺点�
 
 ELU[7]融合了sigmoid和ReLU，具有左侧软饱性。其正式定义为：
 
-![https://www.52ml.net/wp-content/uploads/2016/08/1f9dfafa84713629c9c9d7f83a65ae7f_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image593.jpg)
+![https://www.52ml.net/wp-content/uploads/2016/08/1f9dfafa84713629c9c9d7f83a65ae7f_b.jpg](clip_image593.jpg)
 
 右侧线性部分使得ELU能够缓解梯度消失，而左侧软饱能够让ELU对输入变化或噪声更鲁棒。ELU的输出均值接近于零，所以收敛速度更快。经本文作者实验，ELU的收敛性质的确优于ReLU和PReLU。在cifar10上，ELU 网络的loss 降低速度更快；在 ImageNet上，不加 Batch Normalization 30 层以上的 ReLU 网络会无法收敛，PReLU网络在MSRA的Fan-in （caffe ）初始化下会发散，而 ELU 网络在Fan-in/Fan-out下都能收敛 。实验代码见[GitHub – Coldmooon/Code-for-MPELU: Code for Improving Deep Neural Network with Multiple Parametric Exponential Linear Units](https://link.zhihu.com/?target=https%3A//github.com/Coldmooon/Code-for-MPELU/)。
 
@@ -3244,25 +3244,25 @@ ELU[7]融合了sigmoid和ReLU，具有左侧软饱性。其正式定义为：
  **Noisy Activation Functions**
 
 engio教授在ICML 2016 提出了一种激活策略[1]，可用于多种软饱和激活函数，例如 sigmoid和 tanh。
- ![https://www.52ml.net/wp-content/uploads/2016/08/c86a421c50eb93422b429359352e4d6e_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image595.jpg)
+ ![https://www.52ml.net/wp-content/uploads/2016/08/c86a421c50eb93422b429359352e4d6e_b.jpg](clip_image595.jpg)
 
 当激活函数发生饱和时， 网络参数还能够在两种动力下继续更新：正则项梯度和噪声梯度。引入适当的噪声能够扩大SGD的参数搜索范围，从而有机会跳出饱和区。在激活函数中引入噪声的更早工作可追溯到[5]，但文献[5]的工作并不考虑噪声引入的时间和大小。本篇的特点在于，只在饱和区才引入噪声，且噪声量与饱和程度相关——原式与泰勒展开式一次项之差 δ。算法1中g表示sigmoid，用于归一化 δ。注意，ReLU的 δ恒为0，无法直接加噪声，所以作者把噪声加在了输入上。
 
 ###### CReLU
 
-CReLU [14]是Wenling Shang 发表在 ICML 2016的工作，本篇同样提出了一种激活策略:![https://www.52ml.net/wp-content/uploads/2016/08/9ac0d477f5f93582d101fbe34efdab5b_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image597.jpg)其中，[] 表示 ReLU（其他亦可）。
+CReLU [14]是Wenling Shang 发表在 ICML 2016的工作，本篇同样提出了一种激活策略:![https://www.52ml.net/wp-content/uploads/2016/08/9ac0d477f5f93582d101fbe34efdab5b_b.jpg](clip_image597.jpg)其中，[] 表示 ReLU（其他亦可）。
 
-作者在观察第一层滤波器（filter）时发现，滤波器相位具有成对现象（pair-grouping phenomenon）。这一发现揭示了网络的底层学到了一些冗余滤波器来提取输入的正负相位信息的可能性。因此可以考虑采用适当的操作移除这些冗余滤波器。对此，作者提出了CReLU，将激活函数的输入额外做一次取反，等价于将输入相位旋转180°。这种策略可以看作在网络中加入相位的先验。实验在cifar10上观察到能以更少的参数获得性能提升。![https://www.52ml.net/wp-content/uploads/2016/08/8fee4c646e207612a5af2b8519e69f62_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image598.jpg)
+作者在观察第一层滤波器（filter）时发现，滤波器相位具有成对现象（pair-grouping phenomenon）。这一发现揭示了网络的底层学到了一些冗余滤波器来提取输入的正负相位信息的可能性。因此可以考虑采用适当的操作移除这些冗余滤波器。对此，作者提出了CReLU，将激活函数的输入额外做一次取反，等价于将输入相位旋转180°。这种策略可以看作在网络中加入相位的先验。实验在cifar10上观察到能以更少的参数获得性能提升。![https://www.52ml.net/wp-content/uploads/2016/08/8fee4c646e207612a5af2b8519e69f62_b.jpg](clip_image598.jpg)
 
 使用CReLU时，要有意识的将滤波器数量减半，否则， 网络参数变为2倍。
 
 ###### MPELU
 
-MPELU[8]是我们组的工作，将分段线性与ELU统一到了一种形式下。在NIN+CIFAR10，本文作者发现ELU与LReLU性能一致，而与PReLU差距较大。经过分析，ELU泰勒展开的一次项就是LReLU。当在ELU前加入BN让输入集中在0均值附近， 则ELU与LReLU之差——泰勒展开高次项会变小，粗略估计，约55.57%的激活值误差小于0.01。因此，受PReLU启发，令α可学习能够提高性能。此外，引入参数β能够进一步控制ELU的函数形状。正式定义为：![https://www.52ml.net/wp-content/uploads/2016/08/db68b78cc73afce863882909ed5c3e52_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image600.jpg)
+MPELU[8]是我们组的工作，将分段线性与ELU统一到了一种形式下。在NIN+CIFAR10，本文作者发现ELU与LReLU性能一致，而与PReLU差距较大。经过分析，ELU泰勒展开的一次项就是LReLU。当在ELU前加入BN让输入集中在0均值附近， 则ELU与LReLU之差——泰勒展开高次项会变小，粗略估计，约55.57%的激活值误差小于0.01。因此，受PReLU启发，令α可学习能够提高性能。此外，引入参数β能够进一步控制ELU的函数形状。正式定义为：![https://www.52ml.net/wp-content/uploads/2016/08/db68b78cc73afce863882909ed5c3e52_b.jpg](clip_image600.jpg)
 
 α 和 β可以使用正则。α, β 固定为1时，MPELU 退化为 ELU； β 固定为很小的值时，MPELU 近似为 PReLU；当α=0，MPELU 等价于 ReLU。
 
-MPELU 的优势在于同时具备 ReLU、PReLU和 ELU的优点。首先，MPELU具备ELU的收敛性质，能够在无 Batch Normalization 的情况下让几十层网络收敛。其次，作为一般化形式， MPELU较三者的推广能力更强。简言之，MPELU = max(ReLU, PReLU, ELU)。![https://www.52ml.net/wp-content/uploads/2016/08/e88b386770bf13be03d3abc1b0a7fcd5_b.jpg](D:\Dropbox\job\codes\blog\source\clip_image601.jpg)
+MPELU 的优势在于同时具备 ReLU、PReLU和 ELU的优点。首先，MPELU具备ELU的收敛性质，能够在无 Batch Normalization 的情况下让几十层网络收敛。其次，作为一般化形式， MPELU较三者的推广能力更强。简言之，MPELU = max(ReLU, PReLU, ELU)。![https://www.52ml.net/wp-content/uploads/2016/08/e88b386770bf13be03d3abc1b0a7fcd5_b.jpg](clip_image601.jpg)
 
 当前对ELU网络普遍采用的初始化方法是 MSRA。这在实际中是可行的，只是不具备理论解释性。我们的工作利用泰勒公式和MSRA的推导过程，为ELU网络初始化提供了理论解释。此外，Dmytro 提出了 LSUV[15]，理论上可以用于 ELU/MPELU 的初始化。但在30/52层ELU网络上，发现 LSUV 会导致ELU网络在几次迭代之内发散，网络文件见[GitHub – Coldmooon/Code-for-MPELU: Code for Improving Deep Neural Network with Multiple Parametric Exponential Linear Units](https://link.zhihu.com/?target=https%3A//github.com/Coldmooon/Code-for-MPELU/)。
 
@@ -3278,15 +3278,15 @@ MPELU 的优势在于同时具备 ReLU、PReLU和 ELU的优点。首先，MPELU�
 
  Highway Network主要解决的问题是，网络深度加深，梯度信息回流受阻造成网络训练困难的问题。先看下面的一张对比图片，分别是没有highway 和有highway的。
 
-![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825105536809-1612541498.png](D:\Dropbox\job\codes\blog\source\clip_image603.gif)
+![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825105536809-1612541498.png](clip_image603.gif)
 
 可以看到，当网络加深，训练的误差反而上升了，而加入了highway之后，这个问题得到了缓解。一般来说，深度网络训练困难是由于梯度回流受阻的问题，可能浅层网络没有办法得到调整，或者我自己YY的一个原因是（回流的信息经过网络之后已经变形了，很可能就出现了internal covariate shift类似的问题了）。Highway Network 受LSTM启发，增加了一个门函数，让网络的输出由两部分组成，分别是网络的直接输入以及输入变形后的部分。
 
-假设定义一个非线性变换为![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825111511210-1977603883.png](D:\Dropbox\job\codes\blog\source\clip_image605.gif)，定义门函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825111614663-2094832596.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image607.gif)，携带函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825111719069-2105557854.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image609.gif)。对于门函数取极端的情况0/1会有![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112030976-1119275235.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image611.gif)，而对应的门函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825111614663-2094832596.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image607.gif)使用sigmoid函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112354835-1146971693.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image613.gif)，则极端的情况不会出现。
+假设定义一个非线性变换为![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825111511210-1977603883.png](clip_image605.gif)，定义门函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825111614663-2094832596.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image607.gif)，携带函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825111719069-2105557854.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image609.gif)。对于门函数取极端的情况0/1会有![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112030976-1119275235.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image611.gif)，而对应的门函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825111614663-2094832596.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image607.gif)使用sigmoid函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112354835-1146971693.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image613.gif)，则极端的情况不会出现。
 
-一个网络的输出最终变为![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825113228788-1961954823.png](D:\Dropbox\job\codes\blog\source\clip_image615.gif)，注意这里的乘法是element-wise multiplication。
+一个网络的输出最终变为![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825113228788-1961954823.png](clip_image615.gif)，注意这里的乘法是element-wise multiplication。
 
-注意，门函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112548413-1844330811.png](D:\Dropbox\job\codes\blog\source\clip_image617.gif)，转换![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112606804-195948719.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image619.gif)，![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112622460-390893481.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image621.gif)与![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112642741-2041334531.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image623.gif)的维度应该是相同的。如果不足，可以用0补或者用一个卷积层去变化。
+注意，门函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112548413-1844330811.png](clip_image617.gif)，转换![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112606804-195948719.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image619.gif)，![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112622460-390893481.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image621.gif)与![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825112642741-2041334531.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image623.gif)的维度应该是相同的。如果不足，可以用0补或者用一个卷积层去变化。
 
 在初始化的时候，论文是把偏置 b 初始化为负数，这样可以让携带函数 C 偏大，这样做的好处是什么呢？可以让更多的信息直接回流到输入，而不需要经过一个非线性转化。我的理解是，在BP算法时，这一定程度上增大了梯度的回流，而不会被阻隔；在前向流动的时候，把允许原始的信息直接流过，增加了容量，就好像LSTM那样，可以有long - term temporal dependencies。
 
@@ -3294,13 +3294,13 @@ MPELU 的优势在于同时具备 ReLU、PReLU和 ELU的优点。首先，MPELU�
 
 ###### **Residual Network**
 
- ResNet的结构与Highway很类似，如果把Highway的网络变一下形会得到![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825214601866-394945573.png](D:\Dropbox\job\codes\blog\source\clip_image625.gif)，而在ResNet中，直接把门函数T(x)去掉，就得到一个残差函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825214813101-1464832322.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image627.gif)，而且会得到一个恒等的映射 x ，对的，这叫残差网络，它解决的问题与Highway一样，都是网络加深导致的训练困难且精度下降的问题。残差网络的一个block如下：
+ ResNet的结构与Highway很类似，如果把Highway的网络变一下形会得到![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825214601866-394945573.png](clip_image625.gif)，而在ResNet中，直接把门函数T(x)去掉，就得到一个残差函数![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825214813101-1464832322.png](file:///C:/Users/xling/AppData/Local/Temp/msohtmlclip1/01/clip_image627.gif)，而且会得到一个恒等的映射 x ，对的，这叫残差网络，它解决的问题与Highway一样，都是网络加深导致的训练困难且精度下降的问题。残差网络的一个block如下：
 
-![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825215113272-1356819.png](D:\Dropbox\job\codes\blog\source\clip_image629.gif)
+![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825215113272-1356819.png](clip_image629.gif)
 
 是的，就是这么简单，但是，网络很强大呀。而且实验证明，在网络加深的时候，依然很强大。那为什么这么强大呢？我觉得是因为identity map是的梯度可以直接回流到了输入层。至于是否去掉门函数会更好呢，这个并不知道。在作者的另一篇论文《Identity Mappings in Deep Residual Networks》中，实验证明了使用identity map会比加入卷积更优。而且通过调整激活函数和归一化层的位置到weight layer之前，称为 pre-activation，会得到更优的结果。
 
-![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825220257210-599155165.png](D:\Dropbox\job\codes\blog\source\clip_image631.gif)
+![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825220257210-599155165.png](clip_image631.gif)
 
 对于网络中的一些虚线层，他们的shortcut就连接了两个维度不同的feature，这时，有两种解决办法（1）在维度减少的部分直接使用 identity 映射，同时对于feature map增加部分用0补齐。（2）通过1*1的卷积变形得到。对于这个1*1的投影是怎么做的，可以参考VGG-16。我开始也很纳闷，例如上面的虚线，输入有64个Feature，输出是128个Feature，如果是用128个kernel做卷积，应该有64*128个feature啊。纠结很久，看了看VGG的参数个数就明白了，如下图
 
@@ -3308,7 +3308,7 @@ MPELU 的优势在于同时具备 ReLU、PReLU和 ELU的优点。首先，MPELU�
 
  
 
- ![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825221439726-1361269362.png](D:\Dropbox\job\codes\blog\source\clip_image633.jpg)
+ ![http://images2015.cnblogs.com/blog/637085/201608/637085-20160825221439726-1361269362.png](clip_image633.jpg)
 
  
 
@@ -3388,7 +3388,7 @@ MPELU 的优势在于同时具备 ReLU、PReLU和 ELU的优点。首先，MPELU�
 
 卷积计算是一个窗口在目标FM上滑动。上下左右相邻的窗口间会有很多重复计算。winograd把相邻的窗口合并为一个大窗口后计算，然后还原出原结果。假设原来3x3的窗口滑动四次，生成四个1x1的输出。winograd把4个3x3的窗口合成一个4x4的窗口与FM相乘，生成1个2x2的输出。然后我们把2x2的输出变为4个1x1的输出。
 
-![image-20200128114102242](D:\Dropbox\job\codes\blog\source\image-20200128114102242.png)
+![image-20200128114102242](image-20200128114102242.png)
 
 
 
@@ -3430,7 +3430,7 @@ PAI自动混合精度训练---TensorCore硬件加速单元在阿里PAI平台落�
 
 
 
-![image-20200128145100616](D:\Dropbox\job\codes\blog\source\image-20200128145100616.png)
+![image-20200128145100616](image-20200128145100616.png)
 
 
 
@@ -3440,11 +3440,11 @@ PAI自动混合精度训练---TensorCore硬件加速单元在阿里PAI平台落�
 
 为了解决这个问题，我们提出并实现了FP16 Propagation方案。基本思想是，计算图中节点的FP16转换顺序并不是随意的，而是从MatMul/Conv2D节点开始向下游传播，那么我们只要在gradient unscaling的位置(使我们自己添加的Mul节点）做一个特殊标记，FP16的传播遇到这个标记便停止，从而保证gradient unscaling之后的节点都不会被转换为FP16.
 
-![image-20200128140735178](D:\Dropbox\job\codes\blog\source\image-20200128140735178.png)
+![image-20200128140735178](image-20200128140735178.png)
 
 
 
-![image-20200128140954288](D:\Dropbox\job\codes\blog\source\image-20200128140954288.png)
+![image-20200128140954288](image-20200128140954288.png)
 
 
 
@@ -3520,17 +3520,17 @@ combine = [train_df, test_df]
 
 train_df.head()
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image002-1580092228605.jpg)
+![img](clip_image002-1580092228605.jpg)
 
 train_df.tail()
 
 train_df.info()
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image004-1580092228607.jpg)
+![img](clip_image004-1580092228607.jpg)
 
 train_df.describe()
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image006-1580092228607.jpg)
+![img](clip_image006-1580092228607.jpg)
 
  
 
@@ -3538,7 +3538,7 @@ train_df.describe()
 
 train_df[['Pclass', 'Survived']].groupby(['Pclass'], as_index=False).mean().sort_values(by='Survived', ascending=False)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image008-1580092228607.jpg)
+![img](clip_image008-1580092228607.jpg)
 
  
 
@@ -3551,7 +3551,7 @@ g.map(plt.hist, 'Age', bins=20)
 
  
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image010-1580092228607.jpg)
+![img](clip_image010-1580092228607.jpg)
 
  
 
@@ -3561,7 +3561,7 @@ grid.map(plt.hist, 'Age', alpha=.5, bins=20)
 
 grid.add_legend();
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image012-1580092228607.jpg)
+![img](clip_image012-1580092228607.jpg)
 
  
 
@@ -3571,7 +3571,7 @@ grid.map(sns.barplot, 'Sex', 'Fare', alpha=.5, ci=None)
 
 grid.add_legend()
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image014-1580092228607.jpg)
+![img](clip_image014-1580092228607.jpg)
 
  
 
@@ -3592,7 +3592,7 @@ train_df.shape, test_df.shape
 
 Out[21]:
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image016-1580092228607.jpg)
+![img](clip_image016-1580092228607.jpg)
 
 ### Completing.
 
@@ -3652,7 +3652,7 @@ train_df.head()
 
 Out[25]:
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image018-1580092228608.jpg)
+![img](clip_image018-1580092228608.jpg)
 
  
 
@@ -3806,7 +3806,7 @@ print('mean-train **{:.2f}** std-train **{:.2f}** mean-test **{:.2f}** std-test 
 
  
 
-![https://www.kaggle.io/svf/1077333/f8eecce4cf447dccad546c8ec882e0d1/__results___files/__results___12_1.png](D:\Dropbox\job\codes\blog\source\clip_image020-1580092228608.gif)
+![https://www.kaggle.io/svf/1077333/f8eecce4cf447dccad546c8ec882e0d1/__results___files/__results___12_1.png](clip_image020-1580092228608.gif)
 
 #### Heatmap
 
@@ -3838,7 +3838,7 @@ print('mean-train **{:.2f}** std-train **{:.2f}** mean-test **{:.2f}** std-test 
 
 plot_correlation_map( titanic )
 
-![https://www.kaggle.io/svf/775411/6ca987c38aca3e5ea5ab340af99edc8f/__results___files/__results___14_0.png](D:\Dropbox\job\codes\blog\source\clip_image022-1580092228608.gif)
+![https://www.kaggle.io/svf/775411/6ca987c38aca3e5ea5ab340af99edc8f/__results___files/__results___14_0.png](clip_image022-1580092228608.gif)
 
  
 
@@ -3901,7 +3901,7 @@ grid.add_legend()
 ```
 
 
- ![https://www.kaggle.io/svf/1145136/05331c373d1edddc1d3f1983652794ba/__results___files/__results___44_1.png](D:\Dropbox\job\codes\blog\source\clip_image024-1580092228609.gif)
+ ![https://www.kaggle.io/svf/1145136/05331c373d1edddc1d3f1983652794ba/__results___files/__results___44_1.png](clip_image024-1580092228609.gif)
 
 ## Tensorflow
 
@@ -4061,7 +4061,7 @@ python mnist_replica.py --ps_hosts=localhost:2222 --worker_hosts=localhost:2223 
 
 15, ADAM: A METHOD FOR STOCHASTIC OPTIMIZATION
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image026-1580092228609.jpg)
+![img](clip_image026-1580092228609.jpg)
 
 
 
@@ -4083,19 +4083,19 @@ epsilon：该参数是非常小的数，其为了防止在实现中除以零（�
 
 #### 用tensorboard分析mnist
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image028-1580092228609.jpg)
+![img](clip_image028-1580092228609.jpg)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image030-1580092228609.jpg)
+![img](clip_image030-1580092228609.jpg)
 
  
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image032-1580092228609.jpg)
+![img](clip_image032-1580092228609.jpg)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image034-1580092228610.jpg)
+![img](clip_image034-1580092228610.jpg)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image036-1580092228610.jpg)
+![img](clip_image036-1580092228610.jpg)
 
-![img](D:\Dropbox\job\codes\blog\source\clip_image038-1580092228610.jpg)
+![img](clip_image038-1580092228610.jpg)
 
  
 
