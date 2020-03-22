@@ -29,9 +29,63 @@ categories: scientists
 
 ## Differentiable programming 
 
+### 19, Learning to Drive by Differentiating through Scenes， 
+
+https://avik-pal.github.io/blog/learning_to_drive.html
+
+没有看懂。
+
+Inverse raytracing. 基于渲染结果，推测产生渲染结果的参数（比如光源位置）。
+
+介绍了可微分物理引擎，用于仿真。但是没有理解与其他物理引擎有什么区别。
+
+和强化学习比较，DP也需要设计reward。那和RL有什么区别？
+
+好像DP就是指基于梯度学习参数，减少人工知识。
+
+挑战之一：很多问题不可微。可能就涉及到估计梯度，降低方差。
+
+我的猜想：当前的NN是可微的，可以做很多事情。NN可以看作一种代码，有些参数需要学习。相比传统代码，NN的表达能力有限，不容易表现递归、逻辑判断等语法。DP做的事能够让表达能力更强的代码也可微。
+
+
+
+### 19, Differentiable Programming with Julia by Mike Innes
+
+https://www.youtube.com/watch?v=LjWzgTPFu14
+
+DP核心是用代码表示模型，基于梯度下降和训练数据找到模型的参数。
+
+比RL快，因为模型是人工先验。
+
+为了实现DP，需要让增强AD，使其支持分支判断、递归等；需要在TPU等加速器高效运行。很多编译器工作。
+
+
+
+### 19, A Differentiable Programming System to Bridge ML and Scientific Computing
+
+
+
+### 19, JAX 
+
+使得numpy可微。基于XLA加速。
+
+https://news.ycombinator.com/item?id=18636054
+
+tensorflow很难实现二阶梯度——不能并行求梯度。JAX很容易实现。
+
+不是数值求解梯度，JAX更快、更高效。不是符号求解。
+
+
+
 ### 19, DIFFERENTIABLE COMPUTER GRAPHICS FOR TRAINING AND VERIFICATION OF MACHINE PERCEPTION
 
+
+
 ### 19, Differentiable Monte Carlo Ray Tracing through Edge Sampling
+
+[Differentiable Programming with Julia by Mike Innes, https://www.youtube.com/watch?v=LjWzgTPFu14]
+
+
 
 
 
