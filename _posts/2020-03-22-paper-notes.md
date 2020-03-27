@@ -29,6 +29,10 @@ categories: scientists
 
 ## Differentiable programming 
 
+### 19, DiffEqFlux.jl – A Julia Library for Neural Differential Equations
+
+
+
 ### 19, Learning to Drive by Differentiating through Scenes， 
 
 https://avik-pal.github.io/blog/learning_to_drive.html

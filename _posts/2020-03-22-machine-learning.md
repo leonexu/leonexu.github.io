@@ -3,7 +3,7 @@
 title: machine learning
 description: 
 categories: scientists
----定时器 你真的会使用吗？
+---
 ```
 
 
@@ -131,6 +131,44 @@ $P$，$B_1$，$B_2$的形式如下
 
 
 # ML
+
+## 可微分编程
+
+### Static Single Assignment
+
+[Static Single Assignment，https://www.youtube.com/watch?v=N4lERgtjYHQ]
+
+编译器领域的一个技术。给一组赋值语句。对语句中每个变量赋值的一种方法，使得每个变量都有自己唯一的编号。很简单。
+
+有很多好处。
+
+
+
+### 自动微分
+
+[微分编程（一）：传统自动微分的三宗罪，https://zhuanlan.zhihu.com/p/105662113]
+
+前向模式（即tangent mode, forward mode）
+
+反向模式（即adjoint mode, backward mode）
+
+混合模式。
+
+
+
+现在常见的是反向模式，其有三个问题
+
+1. 需要为op定义正反向规则。在可微分编程DP场景算法复杂，可能遇到没见过的op，就不能处理。可以把高级op转换为底层指令，这样就只定义少量底层指令的规则即可。但是会导致计算图庞大，访存压力剧增。
+
+   底层指令规则也不是万能，比如不能处理sampling和递归。
+
+2. 需要保存中间结果，增加了访存压力。特别是循环需要展开，计算图可能很大。
+
+3. 计算k阶微分需要遍历计算图$2^k$次，低效。
+
+
+
+
 
 ## 偏微分方程 
 
