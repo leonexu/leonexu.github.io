@@ -31,67 +31,9 @@ categories: scientists
 
 ## Computer Graphics
 
-### **19, Mitsuba 2: A Retargetable Forward and Inverse Renderer**
+### probabilistic programming
 
-[http://rgl.epfl.ch/publications/NimierDavidVicini2019Mitsuba2]
-
-贡献1：一个能高效利用cache且并行度高（利用vectorization）的光线追踪算法（下图右）。
-
-![image-20200329214628358](image-20200329214628358.png)
-
-贡献2：自动微分框架
-
-现有的TF，pytorch不适合非计算密集的应用，而且不支持一些重要op。
-
-维护计算图。优化计算图。
-
-![image-20200329213959265](image-20200329213959265.png)
-
-
-
-
-
-![image-20200329214730132](image-20200329214730132.png)
-
-贡献3：把c++代码转换为高效的GPU代码
-
-![image-20200329213844906](image-20200329213844906.png)
-
-
-
-### 19, Automatically Translating Image Processing Libraries to Halide
-
-把图像处理的C++代码转换为halide DSL，以便在各种平台都可以优化。
-
-我们现在可能没有支配多平台的需求。
-
-只能转换单个函数，可能适用范围受限。
-
-
-
-### 19, Staged Metaprogramming for Shader System Development
-
-### 19, Staged Metaprogramming for Shader System Development
-
-### 19, DiffTaichi: Differentiable Programming for Physical Simulation
-
-### 18, Differentiable Programming for Image Processing and Deep Learning in Halide
-
-### 18, GPU Optimizations of Material Point Method and Collision Detection
-
-### 18, Rendering Tutorial II: Monte Carlo Path Tracing
-
-[GAMES Webinar 2018-66期-赵爽, https://v.qq.com/x/page/y0740eh4z76.html]
-
-需要计算每个点的亮度。理论上需要计算空间中所有散射到点上的光线的积分，但是实际光线数量无限，做不到。所以只采样一部分光线，对其求和作为积分的近似。挑战在于高效的构建从点到光源的光线路径。
-
-
-
-
-
-### Accelerating sampling
-
-#### 19, Gen: A General-Purpose Probabilistic Programming System with Programmable Inference：
+### 19, Gen: A General-Purpose Probabilistic Programming System with Programmable Inference：
 
   更灵活的实现各种概率模型（HM，HMC，MCMC等）。
 
@@ -101,35 +43,21 @@ categories: scientists
 
   好像主要是贡献是软件工程。[http://probcomp.csail.mit.edu/videos-talks-podcasts/]
 
-
-
-#### 18, Approximate Program Smoothing Using Mean-Variance Statistics, with Application to Procedural Shader Bandlimiting: 
+### 18, Approximate Program Smoothing Using Mean-Variance Statistics, with Application to Procedural Shader Bandlimiting: 
 
   基于compiler去噪。没什么后续工作跟进，好像不是为了提高效率。
 
-
-
-#### 17, Cataloging the Visible Universe through Bayesian Inference at Petascale
+### 17, Cataloging the Visible Universe through Bayesian Inference at Petascale
 
 做了超算级别的大规模VI。但是也没有什么深入的性能优化。
 
-
-
-#### 16, Swift: Compiled Inference for Probabilistic Programming Languages 
+### 16, Swift: Compiled Inference for Probabilistic Programming Languages 
 
 针对概率编程（即后验分布推断）的编译器，优化内存管理，降低运行时开销。与CG看不出直接关系。没什么后续工作跟进。
 
 
 
-## Differentiable programming
-
-### 19, AcMC 2 : Accelerating Markov Chain Monte Carlo Algorithms
-
-自动把概率模型转换为高效的FPGA代码的编译器。
-
-我们还是要先确认MCMC是不是CG的瓶颈。
-
-
+## Differentiable programming 
 
 ### 19, DiffEqFlux.jl – A Julia Library for Neural Differential Equations
 
