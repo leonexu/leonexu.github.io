@@ -27,11 +27,181 @@ categories: scientists
 
 # models, algorithms
 
+## HPC
+
+### Weather forcast
+
+
+
+#### 市场分析
+
+**分类**
+
+Atmospheric Science：需要大量使用科学计算
+
+中国气象服务产业发展报告：预计未来十年气象服务产业规模至少500亿美元。一直找不到这份报告，需要付费。
+
+
+
+**公司**
+
+墨迹天气，成立十年，年营收只有两三亿，主要靠广告。 https://new.qq.com/omn/20191013/20191013A0G6X500.html
+
+climacell：融资7000万
+
+AccuWeather：62年成立，年收约1亿刀 [https://www.owler.com/company/accuweather]
+
+气候和天气公司的总收入约为30亿美元，整个行业的总价值约为60亿美元 https://knowledge.wharton.upenn.edu/article/todays-forecast-for-the-weather-business-increased-revenues-and-a-focus-on-innovation/
+
+
+
+整个行业数十亿美元 [National Weather Service Enterprise Analysis Report Findings on changes in the private weather industry June 8, 2017]
+
+![image-20200404083931478](image-20200404083931478.png)
+
+
+
+**影响的产业** 
+
+[这些气象公司让 IBM 愿意掏 20 亿美金收购，https://36kr.com/p/5051967]
+
+![image-20200404084246923](image-20200404084246923.png)
+
+
+
+The Climate Corporation在 2013 年 10 月被全球最大的种子与农药公司孟山都公司（Monsanto Company）以 9.3 亿美元收购。
+
+
+
+
+
+#### 20, A Neural Weather Model for Eight-Hour Precipitation Forecasting (MetNet: A Neural Weather Model for Precipitation Forecasting)
+
+
+
+谷歌的气象预测。无物理模型。能够在未来8小时内以2分钟的间隔以1 km的分辨率预测未来的降水。
+
+![image-20200404215825390](image-20200404215825390.png)
+
+看来气象预报挑战不大。
+
+
+
+#### 20, WeatherBench: A benchmark dataset for data-driven weather forecasting
+
+建立了一个基于ML预测气象的数据集
+
+
+
+**气象分类预报**
+
+短期：6h～2天，1km
+
+中期：数天～2周，全球范围
+
+
+
+**Related work**
+
+好像介绍的基本上都是完全无物理模型知识的，纯数据驱动的模型。有的场景可以超过基线。
+
+
+
+**验证**
+
+图中，CNN，LR（线性回归）是ML方案。Operational 和IFS是SOTA物理模型方案。climatology是简化的物理模型方案。ML方案距离物理模型方案还差一点。
+
+![image-20200404002343522](image-20200404002343522.png)
+
+dataset: https://github.com/pangeo-data/WeatherBench
+
+
+
+**讨论：**
+
+可能训练技巧能够弥补ML的精度缺陷。
+
+
+
+#### 19, Weather and climate forecasting with neural networks: using general circulation models (GCMs) with different complexity as a study ground
+
+基于NN的气象预测依然有很多挑战。
+
+<img src="image-20200405233647718.png" alt="image-20200405233647718" style="zoom: 80%;" />
+
+
+
+#### 19, Can Machines Learn to Predict Weather - Using Deep Learning to Predict Gridded 500-hPa Geopotential Height From Historical Weather Data
+
+使用完全无物理模型的CNN预测气象。
+
+
+
+![image-20200404213639978](image-20200404213639978.png)
+
+
+
+基线是climatology, persistence, CFS, Barotropic。好像是说CNN方法超越了基线，且$\tau$ LSTM误差最小。可能最下面的线是理想最优值？
+
+![image-20200404214017115](image-20200404214017115.png)
+
+在某些其他场景比不过最优的物理模型。可以超过一些简单的物理模型。
+
+
+
+### 市场分析
+
+#### THE DATACENTER STARTS TO PERK UP FOR NVIDIA
+
+https://www.nextplatform.com/2019/11/15/the-datacenter-starts-to-perk-up-for-nvidia/
+
+英伟达的数据中心可能很大部分是HPC + AI。虽然在上涨，但是看不出HPC单独的趋势。
+
+![image-20200404145155586](image-20200404145155586.png)
+
+
+
+#### 19, Hyperion Research HPC Market Update from ISC 2019
+
+https://www.youtube.com/watch?v=i98nMw1XFbE
+
+https://www.hpcwire.com/2019/06/18/at-isc-for-the-hpc-industry-these-are-the-good-old-days/
+
+
+
+HPC里超算的比例近半。
+
+![image-20200404135828842](image-20200404135828842.png)
+
+
+
+气象比例不大。
+
+![image-20200404135703574](image-20200404135703574.png)
+
+
+
+主要讲硬件，缺少软件投入的数据。
+
+
+
+#### 16, THE IMPACT OF NATIONAL HIGH PERFORMANCE COMPUTING
+
+UK政府的HPC重要性的分析报告。给了很多HPC的应用。但是没有看出能帮公司赚多少钱。
+
 
 
 ## Computer Graphics
 
-### **19, Mitsuba 2: A Retargetable Forward and Inverse Renderer**
+### ML for MPM (differentiable MPM/CG)
+
+#### 概要：
+
+**落地**：蒙特卡洛计算支持，稀疏雅可比，降低内存消耗
+
+
+
+#### **19, Mitsuba 2: A Retargetable Forward and Inverse Renderer**
 
 [http://rgl.epfl.ch/publications/NimierDavidVicini2019Mitsuba2]
 
@@ -59,6 +229,74 @@ categories: scientists
 
 
 
+#### 19, DiffTaichi: Differentiable Programming for Physical Simulation
+
+#### 19, A Differential Theory of Radiative Transfer
+
+#### 19, Reparameterizing Discontinuous Integrands for Differentiable Rendering
+
+#### 19, Non-linear sphere tracing for rendering deformed signed distance fields
+
+#### 19, Differentiable Surface Splatting for Point-based Geometry Processing
+
+#### 19, The Camera Offset Space: Real-time Potentially Visible Set Computations for Streaming Rendering
+
+#### 19, Real2Sim: Visco-elastic parameter estimation from dynamic motion
+
+#### 19, Video-Guided Real-to-Virtual Parameter Transfer for Viscous Fluids
+
+#### 19, Fluid Carving: Intelligent Resizing for Fluid Simulation Data
+
+#### 19, ScalarFlow: A Large-Scale Volumetric Data Set of Real-world Scalar Transport Flows for Computer Animation and Machine Learning
+
+#### 19, Differentiable Rendering Theory and Applications
+
+#### 19, Quadrilateral Mesh Generation : Meromorphic Quartic Differentials and Abel-Jacobi Condition
+
+#### 19, Differentiable Rendering for Mesh and Implicit Field
+
+#### 19, Accelerated Complex Finite Difference for Expedient Deformable Simulation
+
+#### 18, Differentiable Programming for Image Processing and Deep Learning in Halide
+
+#### 19, Learning to Drive by Differentiating through Scenes， 
+
+https://avik-pal.github.io/blog/learning_to_drive.html
+
+没有看懂。
+
+Inverse raytracing. 基于渲染结果，推测产生渲染结果的参数（比如光源位置）。
+
+介绍了可微分物理引擎，用于仿真。但是没有理解与其他物理引擎有什么区别。
+
+和强化学习比较，DP也需要设计reward。那和RL有什么区别？
+
+好像DP就是指基于梯度学习参数，减少人工知识。
+
+挑战之一：很多问题不可微。可能就涉及到估计梯度，降低方差。
+
+我的猜想：当前的NN是可微的，可以做很多事情。NN可以看作一种代码，有些参数需要学习。相比传统代码，NN的表达能力有限，不容易表现递归、逻辑判断等语法。DP做的事能够让表达能力更强的代码也可微。
+
+
+
+#### 19, DIFFERENTIABLE COMPUTER GRAPHICS FOR TRAINING AND VERIFICATION OF MACHINE PERCEPTION
+
+
+
+#### 19, Differentiable Monte Carlo Ray Tracing through Edge Sampling
+
+[Differentiable Programming with Julia by Mike Innes, https://www.youtube.com/watch?v=LjWzgTPFu14]
+
+
+
+#### 19, A Collection of Jacobian Sparsity Acceleration Tools for Julia
+
+#### 19, Sparsity Programming: Automated Sparsity-Aware Optimizations in Differentiable Programming
+
+#### 18, Solving Stiff Ordinary Differential Equations
+
+#### 18, chainQueen: A Real-Time Differentiable Physical Simulator for Soft Robotics
+
 ### 19, Automatically Translating Image Processing Libraries to Halide
 
 把图像处理的C++代码转换为halide DSL，以便在各种平台都可以优化。
@@ -70,12 +308,6 @@ categories: scientists
 
 
 ### 19, Staged Metaprogramming for Shader System Development
-
-### 19, Staged Metaprogramming for Shader System Development
-
-### 19, DiffTaichi: Differentiable Programming for Physical Simulation
-
-### 18, Differentiable Programming for Image Processing and Deep Learning in Halide
 
 ### 18, GPU Optimizations of Material Point Method and Collision Detection
 
@@ -135,26 +367,6 @@ categories: scientists
 
 
 
-### 19, Learning to Drive by Differentiating through Scenes， 
-
-https://avik-pal.github.io/blog/learning_to_drive.html
-
-没有看懂。
-
-Inverse raytracing. 基于渲染结果，推测产生渲染结果的参数（比如光源位置）。
-
-介绍了可微分物理引擎，用于仿真。但是没有理解与其他物理引擎有什么区别。
-
-和强化学习比较，DP也需要设计reward。那和RL有什么区别？
-
-好像DP就是指基于梯度学习参数，减少人工知识。
-
-挑战之一：很多问题不可微。可能就涉及到估计梯度，降低方差。
-
-我的猜想：当前的NN是可微的，可以做很多事情。NN可以看作一种代码，有些参数需要学习。相比传统代码，NN的表达能力有限，不容易表现递归、逻辑判断等语法。DP做的事能够让表达能力更强的代码也可微。
-
-
-
 ### 19, Differentiable Programming with Julia by Mike Innes
 
 https://www.youtube.com/watch?v=LjWzgTPFu14
@@ -183,21 +395,9 @@ tensorflow很难实现二阶梯度——不能并行求梯度。JAX很容易实�
 
 
 
-### 19, DIFFERENTIABLE COMPUTER GRAPHICS FOR TRAINING AND VERIFICATION OF MACHINE PERCEPTION
+### ODENet
 
-
-
-### 19, Differentiable Monte Carlo Ray Tracing through Edge Sampling
-
-[Differentiable Programming with Julia by Mike Innes, https://www.youtube.com/watch?v=LjWzgTPFu14]
-
-
-
-
-
-## ODENet
-
-### 18, Deep Neural Networks Motivated By Differential Equations
+#### 18, Deep Neural Networks Motivated By Differential Equations
 
 [Lars Ruthotto: "Deep Neural Networks Motivated By Differential Equations (Part 1/2)", https://www.youtube.com/watch?v=G2n2nJnh5kc]
 
@@ -243,7 +443,7 @@ OCA有两种做法
 
 
 
-### 18, Neural Ordinary Differential Equations
+#### 18, Neural Ordinary Differential Equations
 
 * 动机：用ODE分析解释网络结构
 * 方法
@@ -306,7 +506,7 @@ L是误差函数，z(t)是最后一层激活
 
 * 讨论
 
-#### 可以避免保存前向传播数据
+##### 可以避免保存前向传播数据
 
  [Lars Ruthotto: "Deep Neural Networks Motivated By Differential Equations (Part 1/2)"，https://www.youtube.com/watch?v=G2n2nJnh5kc]
 
@@ -330,7 +530,7 @@ L是误差函数，z(t)是最后一层激活
 
 
 
-#### Transformer, 3D点云可以用ODE解释优化	
+##### Transformer, 3D点云可以用ODE解释优化	
 
 [LIMITING THE DEEP LEARNING, YIPING LU PEKING UNIVERSITY]
 
@@ -338,7 +538,7 @@ L是误差函数，z(t)是最后一层激活
 
 
 
-#### 可以指导并行训练
+##### 可以指导并行训练
 
 ![image-20200223103243289](image-20200223103243289.png)
 
@@ -348,13 +548,13 @@ L是误差函数，z(t)是最后一层激活
 
 
 
-#### 使用更少的参数(?)
+##### 使用更少的参数(?)
 
 ![image-20200223152457526](image-20200223152457526.png)
 
 
 
-#### 不能控制网络层数（由ODE solver控制），比ResNet训练多2-4x耗时
+##### 不能控制网络层数（由ODE solver控制），比ResNet训练多2-4x耗时
 
 [Neural Ordinary Differential Equations - Best Paper Awards NeurIPS 2018， https://www.youtube.com/watch?v=V6nGT0Gakyg]
 
@@ -366,7 +566,7 @@ L是误差函数，z(t)是最后一层激活
 
 
 
-#### 需要积分，高维不容易求
+##### 需要积分，高维不容易求
 
 训练慢。要求每层结构相同，不灵活。需要把多个不同的OdeNet叠加起来形成灵活的ODE。
 
@@ -1532,6 +1732,79 @@ microbatch的效果明显
 主要用作降低内存消耗，不是端到端速度。
 
 ![1579835910220](1579835910220.png)
+
+
+
+
+
+### TPU
+#### 19, High Performance Monte Carlo Simulation of Ising Model on TPU Clusters
+
+Ising模型是物理上重要的模型。
+
+其假设系统由分子构成。各个分子有正负两种状态，取决于系统温度和周边分子的状态。
+
+系统处于$\bold{\sigma}$状态时的能量：![image-20200405140712891](image-20200405140712891.png)
+
+对应的概率：![image-20200405140852942](image-20200405140852942.png)
+
+其中$\sigma_i$表示分子i当前的状态(0或1)。$<i,j>$表示i和j分子相邻。 J和$\mu$是超参。本文里，我们假设J=1，$\mu$等于0。
+
+当系统温度超过一定值，整个系统的分子状态会发生突变。比如磁铁温度超过700度会失去磁性。
+
+可以用于金融，建模金融市场收到巨大影响时状态的突变，比如暴跌。
+
+给定温度，可以用MC求解。
+
+每个时间步，系统状态基于一定概率（$\pi(\bold{\sigma})$?）转变。以一定概率接受此新状态。
+
+我们把系统分为黑白两色。因为每个分子只收到其邻居的影响。可以看到每次可以并行更新所有白色或所有黑色。
+
+![image-20200405142741651](image-20200405142741651.png)
+
+为了计算$\pi(\bold{\sigma})$，我们需要计算H，即对于每个分子i，需要计算$\sum_{<i,j>}{\sigma_i \sigma_j}$，即计算i与邻接分子状态的和。
+
+首先，TPU可以每次计算一个128 x 128的矩阵乘法。我们把整个系统分成多个128x128的子矩阵，第i行j列的子矩阵的状态概率表示为$\sigma_{ij}$。
+
+![image-20200405141822382](image-20200405141822382.png)
+
+对于每个每个子矩阵，我们计算$\pi(\sigma)$。我们设计一个矩阵k。
+
+![image-20200405141150725](image-20200405141150725.png)
+
+那么$\sigma_{ij}$对应的邻接求和等于![image-20200405142532629](image-20200405142532629.png)
+
+nn代表nearest neighbor。
+
+对于每个子矩阵，其上下左右边界上的求和算不了，需要单独算。我们另外进建立一个矩阵M。
+
+![image-20200405142353940](image-20200405142353940.png)
+
+以下几行分别算单独上下左右边界的求和：
+
+![image-20200405142440718](image-20200405142440718.png)
+
+所以完整流程如下。每次确定一个颜色，根据K求和，再根据M求各个边界的和，得到完整nn。根据计算接受概率。更新状态。然后翻转颜色，进入下一个迭代。
+
+![image-20200405142615228](image-20200405142615228.png)
+
+这个方法效率不高，因为每次只能算一个颜色。
+
+可以把状态组织成这种样子
+
+![image-20200405143136080](image-20200405143136080.png)
+
+每个子矩阵![image-20200405143229497](image-20200405143229497.png)进一步分为四个子子矩阵![image-20200405143236591](image-20200405143236591.png)，![image-20200405143312910](image-20200405143312910.png)等
+
+每个子子矩阵的状态：
+
+![image-20200405143221476](image-20200405143221476.png)
+
+![image-20200405143344689](image-20200405143344689.png)
+
+然后这样算，效率会高一些（待细读）
+
+![image-20200405143453409](image-20200405143453409.png)
 
 
 
